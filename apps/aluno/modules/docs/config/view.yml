@@ -1,0 +1,4 @@
+editSuccess:
+  javascripts:    [/js/tinymce/jscripts/tiny_mce/tiny_mce.js]
+newSuccess:
+  javascripts:    [/js/tinymce/jscripts/tiny_mce/tiny_mce.js]

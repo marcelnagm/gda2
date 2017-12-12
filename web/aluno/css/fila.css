@@ -1,0 +1,187 @@
+.content {
+    background-color:#EFEFEF;
+    margin:0px;
+    margin-top:2px;
+    padding:3px;
+    padding-top:3px;
+    border: 1px solid #9090A0;
+}
+    h3 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.content {
+    background-color:#EFEFEF;
+    margin:0px;
+    margin-top:2px;
+    padding:3px;
+    padding-top:3px;
+    border: 1px solid #9090A0;
+}
+BODY{
+    margin:0;
+    padding:0;
+}
+BODY, TD, TH, P {
+        font-family: Verdana, Arial,sans-serif;
+        font-size: 11px;
+}
+IMG{border:0}
+
+.aba{
+    display:none;
+}
+
+#conteudo{
+    margin:7px;
+}
+@media print{
+
+    #aviso,
+    .content,
+    fieldset
+         {border:0}
+
+    #menu,
+    .aba,
+    .menu .botao
+        {display: none}
+
+}
+
+BODY #sistema {
+    text-align: center;
+    margin: 0px;
+    margin-top:2%;
+    padding: 0px;
+    padding-bottom:50%;
+}
+#sistema {
+    font-family: Arial, sans-serif;
+}
+BODY #tinymce.mceContentBody{
+    font-family: Arial, sans-serif;
+}
+TD, TH {
+    font-size:12px;
+}
+H2 {
+    margin:0px;
+    margin-bottom:3px;
+    font-size:18px;
+}
+H3 {
+    margin:0px;
+    font-size:22px;
+}
+FORM {
+    margin: 0px;
+}
+IMG {
+    border: 0px;
+}
+UL LI {
+/*    list-style-image: url('../images/list.gif');*/
+	margin-bottom: 7px;
+}
+A, A:link, A:visited, A:hover {
+color: blue;
+text-decoration: none;
+}
+
+A:hover {
+text-decoration: underline;
+}
+.font_input {
+    font-family: Arial, sans-serif;
+    font-size:12pt;
+    font-weight:bold;
+}
+.aba {
+    color:#FFFFFF;
+/*    background:#9090A0 url('../images/canto.gif') top right no-repeat;*/
+    padding:3px;
+    padding-right:5px;
+    font-size:14px
+}
+.aba a,.aba a:visited{
+    color:lightblue;
+}
+.content {
+    background-color:#EFEFEF;
+    margin:0px;
+    margin-top:2px;
+    padding:3px;
+    padding-top:3px;
+    border: 1px solid #9090A0;
+}
+.btnCalendario img{
+    margin: 3px;
+    vertical-align: middle;
+}
+.bgblue{
+    background-color:#E0E2FF;
+    cursor: pointer;
+}
+#LstPainel{
+    margin:0;
+    padding:0;
+}
+#LstPainel li{
+    list-style: none;
+	list-style-image: none;
+    margin-bottom: 5px;
+/*	background: url('../images/painel_grad.png') repeat-x bottom #DCDCDC; */
+    width:200px;
+}
+#LstPainel a{
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 3px center;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 14px;
+    padding:5px 0 5px 55px;
+    border:1px solid #C7C7C7;
+    line-height:1.2em;
+}
+#LstPainel a.online:hover{
+	background-color:#FFF;
+}
+#LstPainel a .msg{
+	color:#000;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 10px;
+	line-height: 1em;
+}
+#LstPainel li a.offline{
+	text-decoration:none;
+	color:gray;
+}
+
+#formDisciplinas TD {
+    font-size: 12px;
+}
+#Disciplinas {
+    border-collapse:collapse;
+    margin-top:2px;
+}
+#Disciplinas TH, #Disciplinas TD {
+    font-family: Arial,sans-serif;
+    font-size: 12px;
+}
+#aviso {
+    padding:3px;
+    padding-bottom:0px;
+    margin-bottom:3px;
+    text-align:left;
+    border: 2px outset yellow;
+    background:#FFFFA8;
+}
+#aviso ul {
+    margin:0px;
+    margin-left:5px;
+    padding:0px;
+}

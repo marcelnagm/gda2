@@ -1,0 +1,81 @@
+show_periodo:
+  url: /turmacoordenador/periodo
+  param: { module: turmacoordenador, action: periodo }
+
+anteriores:
+  url: /ofertacoordenador/anterior
+  param: { module: ofertacoordenador, action: anterior }
+
+export_oferta:
+  url: /ofertacoordenador/export
+  param: { module: ofertacoordenador, action: export }
+
+relatorio:
+  url:   /relatorio/:action
+  param: { module: relatorio}
+
+tboferta:
+  class: sfPropelRouteCollection
+  options:
+    model:                tboferta
+    module:               ofertacoordenador
+    prefix_path:          /ofertacoordenador
+    column:               id_oferta
+    with_wildcard_routes: true
+
+tbaluno:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbaluno
+    module:               relatorio
+    prefix_path:          /aluno
+    column:               matricula
+    with_wildcard_routes: true
+
+
+
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+form_nota:
+  url:   /notas.json
+  param: { module: turma, action: salvaNota, sf_format: json }
+
+form_nnotas:
+  url:   /n_notas
+  param: { module: turma, action: salvaNNotas }
+
+auth_signin:
+  url:   /login
+  param: { module: auth, action: signin }
+
+auth_signout:
+  url:   /logout
+  param: { module: auth, action: signout }
+
+auth_cadastroSenha:
+  url:   /cadastroSenha
+  param: { module: auth, action: cadastroSenha }
+
+matricula:
+  url:   /oferta/:action
+  param: { module: ofertacoordenador}
+
+matricula:
+  url:   /sumula/:action
+  param: { module: sumula}
+
+
+# default rules
+homepage:
+  url:   /
+  param: { module: painel, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

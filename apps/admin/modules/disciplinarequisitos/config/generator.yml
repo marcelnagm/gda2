@@ -1,0 +1,22 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbdisciplinarequisitos
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbdisciplinarequisitos
+    plural:                tbdisciplinarequisitoss
+    route_prefix:          tbdisciplinarequisitos
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [id_requisito,_list_disciplina,Tbcursoversao,_list_requisito]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

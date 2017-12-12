@@ -1,0 +1,120 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Tbalunobackup
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Tbalunobackup
+    plural:                Tbalunobackups
+    route_prefix:          tbalunobackup
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields: ~
+      list:
+        object_actions:
+          _delete: ~
+          _edit: ~
+          AlunoFicha: {label: Gerar Ficha}
+        display: [=matricula,nome,rg,Tbcursoversao,Tbalunosituacao,Tbtipoingresso]
+        fields:
+          rg: {label: 'RG / Nº CN'}
+          cpf: {label: 'CPF'}
+          Tbcursoversao: {label: 'Versão de Curso'}
+          Tbalunosituacao: {label: 'Situação'}
+          Tbtipoingresso: {label: 'Tipo de Ingresso'}
+      filter:
+        display: [matricula,nome,sexo,rg,cpf,id_tipo_ingresso,dt_ingresso,id_situacao,dt_situacao,cod_curso,id_versao_curso,id_polo]
+        fields:
+          email: {label: e-mail}
+          numero: {label: Número}
+          matricula: {label: Matrícula}
+          fone_residencial: {label: Fone Residencial}
+          id_neces_especial: {label: Necessidade Especial}
+          dt_nascimento: {label: Data de Nascimento}
+          id_raca: {label: 'Raça/Cor'}
+          rg: {label: 'RG / Nº CN'}
+          rg_org_exped: {label: 'Órgão Expedidor' }
+          rg_dt_exped: {label: 'Data de Expedição'}
+          cpf: {label: 'CPF'}
+          titulo: {label: 'Título Eleitoral'}
+          titulo_zona: {label: 'Zona'}
+          titulo_secao: {label: 'Seção'}
+          id_trabalho: {label: Instituição}
+          cep_trabalho: {label: CEP}
+          fone_trabalho: {label: Telefone}
+          ramal_trabalho: {label: Ramal}
+          id_polo: {label: Pólo}
+          id_destino: {label: Instituição de Destino , help: 'Instituição de Destino da Transferência'}
+          qtd_irmaos: {label: Qtd. de Irmãos }
+          renda_familiar: {label: Renda Familiar}
+          id_religiao: {label: Religião}
+          pai_profissao: {label: Pai - Profissão}
+          pai_local_trabalho: {label: Pai - Local de Trabalho}
+          pai_fone: {label: Pai - Fone}
+          pai_id_nivel_instrucao: {label: Pai - Nível de Instrução}
+          mae_profissao: {label: Mãe - Profissão}
+          mae_local_trabalho: {label: Mãe - Local de Trabalho}
+          mae_fone: {label: Mãe - Fone}
+          mae_id_nivel_instrucao: {label: Mãe - Nível de Instrução}
+          pai: {label: Nome do Pai}
+          mae: {label: Nome da Mãe}
+          cep: {label: CEP / Endereço}
+          id_versao_curso: {label: Curso }
+          id_tipo_ingresso: {label: Tipo de Ingresso}
+          dt_ingresso: {label: Data de Ingresso}
+          id_situacao: {label: Situação}
+          dt_situacao: {label: Data da Situação}
+      form:
+        display:
+          "NONE": [matricula]
+          "Dados Pessoais": [nome,sexo,celular,fone_residencial,id_neces_especial,dt_nascimento,naturalidade,nacionalidade,id_raca,id_religiao,qtd_irmaos]
+          "Documentos": [cpf,rg,rg_org_exped,rg_dt_exped]
+          "Endereço": [cep,numero,complemento]
+          "Dados Acadêmicos": [id_versao_curso,id_tipo_ingresso,id_polo,dt_ingresso,id_situacao,dt_situacao]
+          "Filiação": [pai,pai_id_nivel_instrucao,pai_profissao,pai_local_trabalho,pai_fone,mae,mae_id_nivel_instrucao,mae_profissao,mae_local_trabalho,mae_fone,renda_familiar]
+        fields:
+          email: {label: e-mail}
+          numero: {label: Número}
+          matricula: {label: Matrícula}
+          fone_residencial: {label: Fone Residencial}
+          id_neces_especial: {label: Necessidade Especial}
+          dt_nascimento: {label: Data de Nascimento}
+          id_raca: {label: 'Raça/Cor'}
+          rg: {label: 'RG / Nº CN'}
+          rg_org_exped: {label: 'Órgão Expedidor' }
+          rg_dt_exped: {label: 'Data de Expedição'}
+          cpf: {label: 'CPF'}
+          titulo: {label: 'Título Eleitoral'}
+          titulo_zona: {label: 'Zona'}
+          titulo_secao: {label: 'Seção'}
+          id_trabalho: {label: Instituição}
+          cep_trabalho: {label: CEP}
+          fone_trabalho: {label: Telefone}
+          ramal_trabalho: {label: Ramal}
+          id_polo: {label: Pólo}
+          id_destino: {label: Instituição de Destino , help: 'Instituição de Destino da Transferência'}
+          qtd_irmaos: {label: Qtd. de Irmãos }
+          renda_familiar: {label: Renda Familiar}
+          id_religiao: {label: Religião}
+          pai_profissao: {label: Pai - Profissão}
+          pai_local_trabalho: {label: Pai - Local de Trabalho}
+          pai_fone: {label: Pai - Fone}
+          pai_id_nivel_instrucao: {label: Pai - Nível de Instrução}
+          mae_profissao: {label: Mãe - Profissão}
+          mae_local_trabalho: {label: Mãe - Local de Trabalho}
+          mae_fone: {label: Mãe - Fone}
+          mae_id_nivel_instrucao: {label: Mãe - Nível de Instrução}
+          pai: {label: Nome do Pai}
+          mae: {label: Nome da Mãe}
+          cep: {label: CEP / Endereço}
+          id_versao_curso: {label: Curso }
+          id_tipo_ingresso: {label: Tipo de Ingresso}
+          dt_ingresso: {label: Data de Ingresso}
+          id_situacao: {label: Situação}
+          dt_situacao: {label: Data da Situação}
+      edit:    ~
+      new:     ~

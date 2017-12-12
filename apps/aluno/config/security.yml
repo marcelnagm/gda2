@@ -1,0 +1,16 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/08-Security
+
+default:
+  is_secure: true
+
+validar:
+  is_secure: false
+
+oferta:
+  index:
+   is_secure: false
+  
+oferta:  
+  Filter:
+   is_secure: false

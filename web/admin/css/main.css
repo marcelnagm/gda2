@@ -1,0 +1,355 @@
+/*input,
+textarea,
+select {
+    border: 1px solid #AAAAFF;
+    padding: 1px 2px;
+    background: url('/images/inputBg.gif') left top no-repeat;
+}
+*/
+
+#ul_new ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 150px;
+}
+
+#ul_new ul li ul li {
+    left: 25px;
+    top: 0px;
+}
+
+#ul_new ul li {
+	position: relative;
+	}
+
+#ul_new li ul {
+	position: absolute;
+	left: 150px;
+	top: 0px;
+	display: none;
+	}
+
+#ul_new ul li a {
+	display: block;
+}
+
+#ul_new li:hover ul ul, li.over ul ul {
+        display:none;
+}
+
+#ul_new li:hover ul, li li:hover ul, li.over ul,
+li li.over ul {
+        display: block;
+} /* Aqui a magica */
+
+.ul_new ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 150px;
+}
+
+.ul_new ul li ul li {
+    left: 25px;
+    top: 0px;
+}
+
+.ul_new ul li {
+	position: relative;
+	}
+
+.ul_new li ul {
+	position: absolute;
+	left: 0px;
+	top: 24px;
+	display: none;
+	}
+
+.ul_new ul li a {
+	display: block;
+}
+
+.ul_new li:hover ul ul, li.over ul ul {
+        display:none;
+}
+
+.ul_new li:hover ul, li li:hover ul, li.over ul,
+li li.over ul {
+        display: block;
+} /* Aqui a magica */
+
+#sf_admin_bar {
+    margin-top: -40px;
+    vertical-align: middle;
+    line-height: 24px;
+}
+
+.sf_admin_filter {
+    display: none;
+}
+.sf_admin_filter{
+    position:relative;
+    z-index:1000;
+    float:right;
+}
+#sf_admin_bar .art-button-wrapper{
+    float:right;
+    margin-left: 10px;
+}
+
+.sf_admin_text a {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+ul.sf_admin_actions li,
+ul.sf_admin_td_actions li,
+ul.checkbox_list li
+{
+    background-image:none !important;
+    padding-left:0px !important;
+    list-style-type:none;
+}
+
+/* sfGuardPlugin */
+.siginform{
+    margin: auto;
+    width: 400px;
+    text-align: center;
+}
+.siginform table,
+.siginform input,
+.siginform ul li
+{
+    text-align: left;
+    font-size: 17px !important;
+}
+
+.siginform th{
+    text-align: right;
+    vertical-align: bottom;
+    padding-bottom: 7px;
+}
+
+.siginform ul.error_list li {
+    background:url('../sfPropelPlugin/images/error.png') no-repeat scroll 4px 4px transparent;
+    color:#FFFFFF;
+    list-style:none outside none;
+    padding:4px 4px 4px 25px;
+}
+
+.siginform ul.error_list {
+    background-color:#FF3333;
+    border:medium none;
+    color:#DD3333;
+    margin:0 0 7px;
+}
+
+.user-info-box {
+    float: right;
+    padding: 3px 5px;
+    margin: 3px 5px;
+    background-color: #1d6d60;
+}
+.user-info-box,
+.user-info-box a {
+    color: #FFF !important;
+    font-weight: bold;
+}
+
+.user-info-box a {
+    padding-left: 20px;
+    text-decoration: none !important;
+    vertical-align: middle;
+}
+.user-info-box a.trocar-senha {
+    background: url('../../images/icons/key-small.png') 3px center no-repeat;
+}
+.user-info-box a.logout {
+    background: url('../../images/icons/logout-small.png') 3px center no-repeat;
+}
+.user-info-box span{
+    margin-right: 5px;
+}
+
+.link-filter img,
+.art-button-wrapper img
+{
+    vertical-align: middle;
+}
+#sf_admin_bar .warning {
+    color: red;
+    letter-spacing: 1px;
+    float:right;
+    line-height: 24px;
+}
+
+#sf_admin_container .sf_admin_row.even {
+    background-color:#EFEFEF;
+}
+
+#btn_filter {
+    background: url('../../images/icons/filter_form.png') 7px center no-repeat;
+    padding-left: 25px !important;
+}
+.link-filter {
+    background: url('../../images/icons/find.png') 7px center no-repeat;
+    padding-left: 25px !important;
+    margin-top: 3px;
+    vertical-align:top;
+}
+
+.loading-bg {
+    background-image: url('../../images/loading.gif') !important;
+}
+
+
+.select-filter {
+    display:none;
+}
+
+/* icones do menu */
+#nav-one a{
+    background-position: 10px center;
+    background-repeat: no-repeat;
+}
+#nav-one a .t{
+    padding-left:32px;
+}
+#nav-one a.aluno {
+    background-image: url('../../images/icons/users-small.png') !important;
+}
+#nav-one a.professor {
+    background-image: url('../../images/icons/users-small.png') !important;
+}
+#nav-one a.curso {
+    background-image: url('../../images/icons/folder_table-small.png') !important;
+}
+#nav-one a.disciplina {
+    background-image: url('../../images/icons/folder_table-small.png') !important;
+}
+#nav-one a.operacoes {
+    background-image: url('../../images/icons/table_gear-small.png') !important;
+}
+#nav-one a.localizacao {
+    background-image: url('../../images/icons/building-small.png') !important;
+}
+#nav-one a.outros {
+    background-image: url('../../images/icons/menu-default-small.png') !important;
+}
+#nav-one a.relatorios {
+    background-image: url('../../images/icons/menu-default-small.png') !important;
+}
+#nav-one a.configuracao {
+    background-image: url('../../images/icons/configuracao-small.png') !important;
+}
+
+/* form buttons */
+input[type=submit]{
+    font-weight: bold;
+    color: green;
+}
+
+input[type=reset]{
+    font-weight: bold;
+    color: red;
+}
+
+/* quadro de avisos */
+#avisos h2{
+    text-align: center;
+}
+#avisos {
+    width: 500px;
+    padding: 0 20px;
+    font-size: 16px;
+    margin: auto;
+}
+
+/* checkbox list form */
+.sf_admin_form_row ul li {
+    background-image:none;
+    display:block !important;
+    list-style:none outside none;
+    margin:1px;
+    padding-right:10px;
+    white-space:nowrap;
+    width:inherit;
+}
+ul.ui-sortable li {
+    border: 3px solid #F0F0F0;
+    background-color: #F0F0F0;
+}
+ul.ui-sortable li:hover {
+    border-color: #FFFF88;
+    background: url('/images/icons/can_drag.png') center right no-repeat #FFFF88 !important;
+}
+.relatorio-form {
+    width:500px;
+}
+
+
+.sf_admin_form input[readonly] {
+    color: #000;
+    background-color: #FFF;
+    border:0;
+    font-weight: bold;
+}
+
+
+/* Situacoes do aluno */
+a.alunosituacao0, /* Aluno regular */
+a.alunosituacao12 /* Aluno especial */
+{
+    font-weight: bold;
+    color: green !important;
+}
+
+/* Horario da oferta */
+table.horario,
+table.horario td {
+    border:0;
+    margin:0;
+    padding:1px 3px 1px 1px;
+}
+
+.sf_admin_list_td_Tbperiodo {
+    white-space: nowrap;
+}
+
+.icone-pequeno {
+    text-decoration: none;
+    vertical-align: middle;
+    padding-left: 20px;
+    background-position: 2px center;
+    background-repeat: no-repeat;
+    line-height: 18px;
+    height: 18px;
+}
+
+.user-small{
+    background-image: url('../../images/icons/user-small.png');
+}
+
+.painel-small {
+    background-image: url('../../images/icons/painel-small.png');
+}
+
+.lista-turmas-small {
+    background-image: url('../../images/icons/lista-turmas-small.png');
+}
+
+.key-small{
+    background-image: url('../../images/icons/key-small.png');
+}
+.user_edit-small{
+    background-image: url('../../images/icons/user_edit-small.png');
+}
+.logout-small {
+    background-image: url('../../images/icons/logout-small.png');
+}
+
+.art-button-wrapper a.imprimir{
+    background-image: url('../../images/icons/printer-small.png');
+}

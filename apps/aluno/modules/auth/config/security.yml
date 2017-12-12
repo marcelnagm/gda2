@@ -1,0 +1,20 @@
+secure:
+  is_secure: false
+
+signin:
+  is_secure: false
+
+signout:
+  is_secure: false
+  
+cadastroSenha:
+  is_secure: false
+
+recuperaSenha:
+  is_secure: false
+
+recuperacaoCPF:
+  is_secure: false
+
+recuperacaoNome:
+  is_secure: false

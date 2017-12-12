@@ -1,0 +1,26 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/08-Security
+
+default:
+  is_secure: true
+
+index:
+  credentials: [listar]
+
+new:
+  credentials: [criar]
+  
+create:
+  credentials: [criar]
+
+edit:
+  credentials: [alterar]
+
+update:
+  credentials: [alterar]
+
+delete:
+  credentials: [apagar]
+
+transferirNotasHistorico:
+  credentials: [atualizar_historico]

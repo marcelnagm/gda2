@@ -1,0 +1,23 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           TbdisciplinaIgnorada
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              TbdisciplinaIgnorada
+    plural:                TbdisciplinaIgnoradas
+    route_prefix:          tbdisciplina_ignorada
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Lista de Disciplinas Ignoradas no Processo de Provável Formando
+        display: [Tbdisciplina]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

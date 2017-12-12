@@ -1,0 +1,46 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbperiodo
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbperiodo
+    plural:                tbperiodos
+    route_prefix:          tbperiodo
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [id_periodo,descricao,ano,semestre,periodo,dt_inicio,dt_fim]
+        fields:
+          id_periodo: { label: ID }
+      filter:  ~
+      form:
+        fields:
+          dt_inicio: { help: Data Inicio do Semestre }
+          dt_fim: { help: Data Fim do Semestre}
+          dt_fim_notas: { help: Data Final para lançamento de notas no Semestre}
+          dt_inicio_oferta: { help: Data Inicial que será disponilizada ao aluno a oferta de disciplinas }
+          dt_fim_oferta: { help: Data Final que a a oferta de disciplinas deixará de estar disponivel ao aluno}
+          dt_inicio_fila: { help: Data Inicial que será disponilizada ao aluno a fila eletronica }
+          dt_fim_fila: { help: Data Final que a fila eletronica deixará de estar disponivel ao aluno}
+          dt_inicio_resultado: { help: Data Inicial que será disponilizada ao aluno o resultado da fila eletronica }
+          dt_fim_resultado: { help: Data Final que o resultado da fila eletronica deixará de estar disponivel ao aluno}
+          dt_inicio_oferta_cadastro: { help: Data Inicial que será disponilizada ao coordenador permissão para cadastro da oferta }
+          dt_fim_oferta_cadastro: { help: Data Final para cadastro da oferta pelos coordenadores}          
+          dt_inicio_cadastro: { help: Data Inicial para cadastro dos calouros}
+          dt_fim_cadastro: { help: Data Final para cadastro dos calouros}
+          dt_inicio_ajuste: { help: Data Inicial cadastro da oferta complementar}
+          dt_fim_ajuste: { help: Data Final cadastro da oferta complementar}
+          dt_inicio_ajuste_fila: { help: Data Inicial para a fila eletronica complementar}
+          dt_fim_ajuste_fila: { help: Data Final para a fila eletronica complementar}
+          dt_inicio_ajuste_resultado: { help: Data Inicial para o resultado da fila eletronica complementar}
+          dt_fim_ajuste_resultado: { help: Data Final para o resultado da fila eletronica complementar}
+          dt_inicio_trancamento: { help: Data Inicial para o aluno trancar disciplinas }
+          dt_fim_trancamento: { help: Data Final para o aluno trancar disciplinas }
+      edit:    ~
+      new:     ~

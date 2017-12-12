@@ -1,0 +1,31 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Tbalunomatricula
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Tbalunomatricula
+    plural:                Tbalunomatriculas
+    route_prefix:          tbalunomatricula
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        actions:
+          _new: ~
+        display: [=matricula,nome,cpf,Tbcursoversao,Tbalunosituacao,Tbtipoingresso]
+        object_actions:
+          _delete: ~
+          _edit: ~
+      filter:
+        display: [matricula,nome,cpf,id_tipo_ingresso,dt_ingresso,id_situacao,dt_situacao,cod_curso,id_versao_curso,id_polo,sexo,id_raca,pingifes_sit_matricula]
+      form:    ~
+      edit:    ~
+      new:        
+        fields:
+          matricula: {help: "Valor formado por: ano e semestre de ingresso, código do curso e posição no vestibular" }
+      

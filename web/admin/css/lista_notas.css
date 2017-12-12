@@ -1,0 +1,115 @@
+.objNota{
+    width:2.5em !important;
+    margin: 0px;
+    padding: 0px;
+}
+
+.caixaErro{
+    border: 1px solid red;
+    background-color: #efdede;
+}
+
+.caixaFoco{
+    border: 1px solid blue;
+    background-color: #fefeb5;
+}
+
+#iconeImpressora{
+    float:right;
+    text-align:right;
+}
+td.caixa {
+    padding:1px !important;
+    vertical-align: middle;
+    text-align: center !important;
+}
+th {
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #CCC !important;
+    padding:1px 3px !important
+}
+td.mf , td.mp, td.conceito {
+    text-align: center;
+}
+
+#legenda {
+    width:26em;
+    line-height:1.6em;
+    margin: 3px auto;
+}
+
+.conceito span{
+    width:1.5em;
+    color:white;
+    font-weight:bold;
+    text-align:center;
+    padding: 1px 3px;
+    margin: 1px;
+}
+
+.conceito1,
+.conceito4
+{
+    background-color:blue;
+}
+
+.conceito2,
+.conceito3
+{
+    background-color:red;
+}
+
+#status {
+    /*display:none;*/
+    z-index: 3000;
+    font-size: 14px;
+    color:#FFF;
+    padding: 0;
+    padding-bottom: 11px;
+    position: absolute;
+    max-width: 200px;
+    text-align: left;
+}
+
+
+#status.semSeta {
+    background: none !important;
+    position: fixed !important;
+    top:30%;
+    left:40%;
+    max-width: 700px;
+}
+
+#status span{
+    padding:3px 5px;
+    display: block;
+}
+
+#status.ok {
+    background: url('../images/seta_status_ok.png') 17px bottom no-repeat;
+}
+
+#status.ok span{
+    background-color: #06763e;
+    border: 1px solid #06763e;
+}
+
+#status.erro {
+    background: url('../images/seta_status_erro.png') 17px bottom no-repeat;
+}
+
+#status.erro span{
+    background-color: #8c0512;
+    border: 1px solid #8c0512;
+}
+
+.formnotas td {
+    vertical-align: middle;
+    margin: 0;
+    
+}
+
+.formnotas {
+    border-collapse: collapse;
+}

@@ -1,0 +1,21 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbcursonivel
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbcursonivel
+    plural:                tbcursonivels
+    route_prefix:          tbcursonivel
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    ~
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

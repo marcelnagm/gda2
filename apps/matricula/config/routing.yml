@@ -1,0 +1,29 @@
+#tbaluno:
+#  class: sfPropelRouteCollection
+#  options:
+#    model:                Tbaluno
+#    module:               vestibular
+#    prefix_path:          /vestibular
+#    column:               matricula
+#    with_wildcard_routes: true
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+mediafile:
+  url: /media/:filename.pdf/*
+  param: { module: media, action: show }
+
+# default rules
+homepage:
+  url:   /
+  param: { module: main, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

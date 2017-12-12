@@ -1,0 +1,22 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Tbvagas
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Tbvagas
+    plural:                Tbvagass
+    route_prefix:          tbvagas
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [Tbcursoversao,vagas,vagas_segunda_opcao,processo]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

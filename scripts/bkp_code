@@ -1,0 +1,7 @@
+#!/bin/bash
+DATE=$(date +%Y-%m-%d-%H%M)
+CODE_DIR="/var/www-ssl/gda2/"
+BACKUP_DIR="/var/backups/www/"
+
+cd $CODE_DIR
+tar czvf ${BACKUP_DIR}gda2_${DATE}.tgz * > /dev/null

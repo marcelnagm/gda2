@@ -1,0 +1,29 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbcursoversao
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbcursoversao
+    plural:                tbcursoversaos
+    route_prefix:          tbcursoversao
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [id_versao_curso,descricao,Tbcurso,situacao,ch_obr,ch_eletiva,ch_total,Tbturno,semestre_inicio,cod_integracao]
+        fields:
+          id_versao_curso: {label: ID}
+          semestre_inicio: {label: Semestre de Inicio}
+          Tbturno: {label: Turno}
+        actions:
+          _new: ~
+          exportar: { action: exportar }
+      filter: ~
+      form:    ~
+      edit:    ~
+      new:     ~

@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<xliff version="1.0">
+    <file original="global" source-language="en_US" datatype="plaintext">
+        <body>
+            <trans-unit>
+                <source>Choose an action</source>
+                <target>Selecione uma ação</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Filter Form</source>
+                <target>Filtro</target>
+            </trans-unit>
+            <trans-unit>
+                <source>results</source>
+                <target>resultados</target>
+            </trans-unit>
+            <trans-unit>
+                <source>go</source>
+                <target>Executar</target>
+            </trans-unit>
+            <trans-unit>
+                <source>List</source>
+                <target>Lista</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Back to list</source>
+                <target>Voltar para lista</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Required.</source>
+                <target>Campo de preenchimento obrigatório</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Are you sure?</source>
+                <target>Tem certeza em executar esta ação?</target>
+            </trans-unit>
+            <trans-unit>
+                <source>[0] no result|[1] 1 result|(1,+Inf] %1% results</source>
+                <target>[0] nenhum registro|[1] 1 registro|(1,+Inf] %1% registros</target>
+            </trans-unit>
+            <trans-unit>
+                <source>The result is filtered</source>
+                <target>O resultado foi filtrado</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

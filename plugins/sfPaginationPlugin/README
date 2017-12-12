@@ -1,0 +1,229 @@
+sfPaginationPlugin plugin
+==============
+
+The `sfPaginationPlugin` is a symfony plugin that provides a better and
+a easy way to use pagination in symfony.
+
+It manages pagination and also generates a table for pagination navigation.
+
+Installation
+------------
+
+  * Install the plugin
+
+        $ symfony plugin:install sfPaginationPlugin
+
+  * Enable one or more modules in your `settings.yml` (optional)
+    * For general use:  sfPaginationPlugin
+
+            [php]
+            all:
+              .settings:
+                enabled_modules:      [default, sfPaginationPlugin]
+
+  * Clear you cache
+
+        $ symfony cc
+
+  * Configure the CSS classes of the rendered pagination in /plugins/sfPaginationPlugin/config/app.yml:
+
+        [yml]
+        all:
+          sfPaginationPlugin:
+            #class of parent UL
+            ul_class:   pagination-flickr
+            #class of li for next button
+            li_next:    next
+            #class of li for previous button
+            li_prev:    previous
+            #class of li for active page button
+            li_active:  active
+            #class of li for normal page button
+            li:         ''
+            #default number of entries per page
+            default_entries: 20
+            #a list of all available option for entrie per page
+            entries_per_page: [20,60,80,100]
+
+Using in you application
+------------------------
+
+  * Create pagination in action:
+
+    * Using Propel Criteria:
+
+            [php]
+
+            $c = new Criteria();
+
+            // This function requires the following parameters
+            // First: Criteria of selection
+            // Second: The Peer class/table from which we select
+            // Third: The request variable of the action where we run it
+            $pgr = new sfPaginationPlugin($c, 'Posts', $request, sfPaginationClass);
+
+            // We set the URL to which all our pages will point to
+            $pgr->setAction('posts/index');
+
+            // We set the number of entries per page
+            $pgr->setEntries(20);
+
+            // We run the query and do the pagination
+            $pgr->Run();
+
+            // We send the result to the template
+            $this->pgr = $pgr;
+
+    * Using Propel Custom Query:
+
+            [php]
+
+            $sql = "SELECT * FROM posts ORDER by posts.post_date";
+
+            $pgr = new sfPaginationPlugin($sql, '', $request, sfPaginationQuery);
+            $pgr->setAction('posts/index');
+            $pgr->setEntries(20);
+            $pgr->Run();
+            $this->pgr = $pgr;
+
+  * Use pagination in template:
+
+    * Using Propel Criteria:
+
+            [php]
+
+            <!-- Generate the pagination menu -->
+            <?=$pgr->Render()?>
+
+            <!-- Returns an array with objects as Peer Classes -->
+            <? foreach($pgr->getResults() as $post): ?>
+              <? echo $post->getPost(); ?>
+            <? endforeach; ?>
+
+    * Using Propel Custom Query:
+
+            [php]
+
+            <!-- Generate the pagination menu -->
+            <?=$pgr->Render()?>
+
+            <!-- Returns an array with objects as Propel Statement Classes -->
+            <? foreach($pgr->getResults() as $post): ?>
+              <? echo $post->post; ?>
+            <? endforeach; ?>
+
+Aditional features
+------------------
+
+  * Move additional parameters thru pages
+
+        [php]
+
+        // Adds a parameter to the pagination links
+        // First: label
+        // Second: value
+        $pgr->AddParam('id', 4);
+
+What it does
+------------
+
+  * It uses Symfony Pager to create a simple way to paginate
+
+  * The Pagination menu is the following form
+
+        [php]
+
+        <style>
+            #sfPaginationPluginCssUl li{
+                border:0; margin:0; padding:0;
+                font-size:11px;
+                list-style:none;
+            }
+            
+            #sfPaginationPluginCssUl a{
+                border:solid 1px #DDDDDD;
+                margin-right:2px;
+            }
+                           
+            #sfPaginationPluginCssUl .next a,
+            #sfPaginationPluginCssUl .previous a {
+                font-weight:bold;
+                border:solid 1px #FFFFFF;
+            }
+            
+            #sfPaginationPluginCssUl .active{
+                color:#ff0084;
+                font-weight:bold;
+                display:block;
+                float:left;
+                padding:4px 6px;
+            }
+            
+            #sfPaginationPluginCssUl a:link,
+            #sfPaginationPluginCssUl a:visited {
+                color:#0063e3;
+                display:block;
+                float:left;
+                padding:3px 6px;
+                text-decoration:none;
+            }
+            
+            #sfPaginationPluginCssUl a:hover{
+                border:solid 1px #666666;
+            }
+        </style>
+        <table width="100%">
+          <tr>
+            <td width="60%">
+              <ul class="ul_class">
+                <li class="li_prev">
+                  <a>
+                    Prev
+                  </a>
+                </li>
+                <li class="li_active">
+                  <a>
+                    1
+                  </a>
+                </li>
+                <li class="li">
+                  <a>
+                    2
+                  </a>
+                </li>
+                <li class="li">
+                  <a>
+                    3
+                  </a>
+                </li>
+                <li class="li_next">
+                  <a>
+                    Next
+                  </a>
+                </li>
+              </ul>
+            </td>
+            <td width="40%">
+              <ul class="ul_class">
+                <li class="li_prev">
+                  Entries
+                </li>
+                <li class="li_active">
+                  <a>
+                    20
+                  </a>
+                </li>
+                <li class="li">
+                  <a>
+                    60
+                  </a>
+                </li>
+                <li class="li">
+                  <a>
+                    100
+                  </a>
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </table>

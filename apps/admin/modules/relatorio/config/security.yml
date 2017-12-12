@@ -1,0 +1,13 @@
+## YAML Template.
+all:
+  is_secure: true
+
+
+AlunoDiploma:
+  credentials: [aluno_diploma]
+
+AlunoHistorico:
+  credentials: [aluno_diploma]
+
+AlunoDeclaracao:
+  credentials: [aluno_diploma]

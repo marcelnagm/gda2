@@ -1,0 +1,23 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbofertasituacao
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbofertasituacao
+    plural:                tbofertasituacaos
+    route_prefix:          tbofertasituacao
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Lista de Situações
+        max_per_page: 10
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

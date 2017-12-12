@@ -1,0 +1,1152 @@
+propel:
+  _attributes:
+    package: lib.model
+    defaultIdMethod: native
+  tbdocs:
+    _attributes: { phpName: Tbdocs }
+    id_docs: { phpName: IdDocs, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    data_entrada: { phpName: DataEntrada, type: TIMESTAMP, required: false }
+    data_finalizado: { phpName: DataFinalizado, type: TIMESTAMP, required: false }
+    data_saida: { phpName: DataSaida, type: TIMESTAMP, required: false }
+    nome_entrada: { phpName: NomeEntrada, type: VARCHAR, required: false }
+    nome_finalizado: { phpName: NomeFinalizado, type: VARCHAR, required: false }
+    nome_saida: { phpName: NomeSaida, type: VARCHAR, required: false }
+    descricao: { phpName: Descricao, type: VARCHAR, required: true }
+  tbmatriculacomprovante:
+    _attributes: { phpName: TbmatriculaComprovante }
+    id_comprovante: { phpName: IdComprovante, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    matricula: { phpName: Matricula, type: BIGINT, required: true, foreignTable: tbalunomatricula, foreignReference: matricula }
+    datahora: { phpName: DataHora, type: TIMESTAMP, required: false }
+    codigo: { phpName: Codigo, type: VARCHAR, required: false }
+    situacao: { phpName: Situacao, type: VARCHAR, default: INDEFINIDO, required: true }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbalunomatricula:
+    _attributes: { phpName: Tbalunomatricula }
+    id_pessoa: { phpName: IdPessoa, type: INTEGER, autoIncrement: true, sequence: tbpessoa_id_pessoa_seq, required: true }
+    matricula: { phpName: Matricula, primaryKey: true, autoIncrement: false, type: BIGINT, required: true }
+    nome: { phpName: Nome, type: VARCHAR, size: '100', required: true }
+    celular: { phpName: Celular, type: VARCHAR, size: '15', required: false }
+    email: { phpName: Email, type: VARCHAR, size: '100', required: false }
+    fone_residencial: { phpName: FoneResidencial, type: VARCHAR, size: '15', required: false }
+    id_neces_especial: { phpName: IdNecesEspecial, type: VARCHAR, required: true, foreignTable: tbnecesespecial, foreignReference: id_neces_especial }
+    dt_nascimento: { phpName: DtNascimento, type: DATE, required: true }
+    naturalidade: { phpName: Naturalidade, type: INTEGER, required: true, foreignTable: tbcidade, foreignReference: id_cidade }
+    uf_nascimento: { phpName: UfNascimento, type: CHAR, size: '2', required: false }
+    nacionalidade: { phpName: Nacionalidade, type: INTEGER, required: true, foreignTable: tbpais, foreignReference: id_pais }
+    sexo: { phpName: Sexo, type: CHAR, size: '1', required: true }
+    estado_civil: { phpName: EstadoCivil, type: VARCHAR, size: '15', required: false }
+    titulo: { phpName: Titulo, type: VARCHAR, size: '20', required: false }
+    titulo_zona: { phpName: TituloZona, type: INTEGER, required: false }
+    titulo_secao: { phpName: TituloSecao, type: INTEGER, required: false }
+    rg: { phpName: Rg, type: VARCHAR, size: '20', required: true }
+    rg_dt_exped: { phpName: RgDtExped, type: DATE, required: false }
+    rg_org_exped: { phpName: RgOrgExped, type: VARCHAR, size: '10', required: false }
+    cpf: { phpName: Cpf, type: VARCHAR, size: '11', required: true }
+    reservista: { phpName: Reservista, type: VARCHAR, size: '20', required: false }
+    pai: { phpName: Pai, type: VARCHAR, size: '50', required: false }
+    mae: { phpName: Mae, type: VARCHAR, size: '50', required: false }
+    cep: { phpName: Cep, type: VARCHAR, size: '9', required: true, foreignTable: tblogradouro, foreignReference: cep }
+    numero: { phpName: Numero, type: VARCHAR, size: '8', required: true }
+    complemento: { phpName: Complemento, type: VARCHAR, size: '50', required: false }
+    id_versao_curso: { phpName: IdVersaoCurso, type: INTEGER, required: true, foreignTable: tbcursoversao, foreignReference: id_versao_curso }
+    id_tipo_ingresso: { phpName: IdTipoIngresso, type: INTEGER, required: true, foreignTable: tbtipoingresso, foreignReference: id_tipo_ingresso }
+    dt_ingresso: { phpName: DtIngresso, type: DATE, required: true }
+    id_situacao: { phpName: IdSituacao, type: INTEGER, required: true, foreignTable: tbalunosituacao, foreignReference: id_situacao }
+    dt_situacao: { phpName: DtSituacao, type: DATE, required: false }
+    id_2grau: { phpName: Id2grau, type: INTEGER, required: false, foreignTable: tbinstexterna, foreignReference: id_inst_externa }
+    ano_concl_2grau: { phpName: AnoConcl2grau, type: INTEGER, required: false }
+    op_ingresso: { phpName: OpIngresso, type: INTEGER, required: false, default: 0 }
+    id_polo: { phpName: IdPolo, type: INTEGER, required: true, default: 0, foreignTable: tbpolos, foreignReference: id_polo }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    id_raca: { phpName: IdRaca, type: INTEGER, required: true, foreignTable: tbaluno_racacor, foreignReference: id_raca }
+    _indexes: { aluno_idx: [matricula, nome] }
+  tbnivelinstrucao:
+    _attributes: { phpName: Tbnivelinstrucao }
+    id_nivel_instrucao: { phpName: IdNivelInstrucao, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '255',required: true }
+  tbreligiao:
+    _attributes: { phpName: Tbreligiao }
+    id_religiao: { phpName: IdReligiao, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '255',required: true }
+  tbalunobackup:
+    _attributes: { phpName: Tbalunobackup }
+    id_pessoa: { phpName: IdPessoa, type: INTEGER, autoIncrement: true, sequence: tbpessoa_id_pessoa_seq, required: true }
+    matricula: { phpName: Matricula, primaryKey: true, autoIncrement: false, type: BIGINT, required: true }
+    nome: { phpName: Nome, type: VARCHAR, size: '100', required: true }
+    celular: { phpName: Celular, type: VARCHAR, size: '15', required: false }
+    email: { phpName: Email, type: VARCHAR, size: '100', required: false }
+    fone_residencial: { phpName: FoneResidencial, type: VARCHAR, size: '15', required: false }
+    foto: { phpName: Foto, type: BLOB, required: false }
+    id_neces_especial: { phpName: IdNecesEspecial, type: VARCHAR, required: true, foreignTable: tbnecesespecial, foreignReference: id_neces_especial }
+    dt_nascimento: { phpName: DtNascimento, type: DATE, required: true }
+    naturalidade: { phpName: Naturalidade, type: INTEGER, required: true, foreignTable: tbcidade, foreignReference: id_cidade }
+    uf_nascimento: { phpName: UfNascimento, type: CHAR, size: '2', required: false }
+    nacionalidade: { phpName: Nacionalidade, type: INTEGER, required: true, foreignTable: tbpais, foreignReference: id_pais }
+    sexo: { phpName: Sexo, type: CHAR, size: '1', required: true }
+    estado_civil: { phpName: EstadoCivil, type: VARCHAR, size: '15', required: false }
+    titulo: { phpName: Titulo, type: VARCHAR, size: '20', required: false }
+    titulo_zona: { phpName: TituloZona, type: INTEGER, required: false }
+    titulo_secao: { phpName: TituloSecao, type: INTEGER, required: false }
+    rg: { phpName: Rg, type: VARCHAR, size: '20', required: true }
+    rg_dt_exped: { phpName: RgDtExped, type: DATE, required: false }
+    rg_org_exped: { phpName: RgOrgExped, type: VARCHAR, size: '10', required: false }
+    cpf: { phpName: Cpf, type: VARCHAR, size: '11', required: true }
+    reservista: { phpName: Reservista, type: VARCHAR, size: '20', required: false }
+    pai: { phpName: Pai, type: VARCHAR, size: '50', required: false }
+    mae: { phpName: Mae, type: VARCHAR, size: '50', required: false }
+    cep: { phpName: Cep, type: VARCHAR, size: '9', required: true, foreignTable: tblogradouro, foreignReference: cep }
+    numero: { phpName: Numero, type: VARCHAR, size: '8', required: true }
+    complemento: { phpName: Complemento, type: VARCHAR, size: '50', required: false }
+    id_versao_curso: { phpName: IdVersaoCurso, type: INTEGER, required: true, foreignTable: tbcursoversao, foreignReference: id_versao_curso }
+    id_tipo_ingresso: { phpName: IdTipoIngresso, type: INTEGER, required: true, foreignTable: tbtipoingresso, foreignReference: id_tipo_ingresso }
+    dt_ingresso: { phpName: DtIngresso, type: DATE, required: true }
+    id_situacao: { phpName: IdSituacao, type: INTEGER, required: true, foreignTable: tbalunosituacao, foreignReference: id_situacao }
+    dt_situacao: { phpName: DtSituacao, type: DATE, required: false }
+    id_destino: { phpName: IdDestino, type: INTEGER, required: false, foreignTable: tbinstexterna, foreignReference: id_inst_externa }
+    id_2grau: { phpName: Id2grau, type: INTEGER, required: false, foreignTable: tbinstexterna, foreignReference: id_inst_externa }
+    ano_concl_2grau: { phpName: AnoConcl2grau, type: INTEGER, required: false }
+    id_3grau: { phpName: Id3grau, type: INTEGER, required: false, foreignTable: tbinstexterna, foreignReference: id_inst_externa }
+    ano_concl_3grau: { phpName: AnoConcl3grau, type: INTEGER, required: false }
+    id_trabalho: { phpName: IdTrabalho, type: INTEGER, required: false, foreignTable: tbinstexterna, foreignReference: id_inst_externa }
+    cep_trabalho: { phpName: CepTrabalho, type: VARCHAR, size: '8', required: false, foreignTable: tblogradouro, foreignReference: cep }
+    fone_trabalho: { phpName: FoneTrabalho, type: VARCHAR, size: '15', required: false }
+    ramal_trabalho: { phpName: RamalTrabalho, type: VARCHAR, size: '5', required: false }
+    media_geral: { phpName: MediaGeral, type: NUMERIC, size: '10', scale: '2', required: false }
+    ch_eletiva_cursada:    { phpName: ChEletivaCursada, type: INTEGER, required: false }
+    ch_eletiva_solicitada: { phpName: ChEletivaSolicitada, type: INTEGER, required: false }
+    ch_obrig_cursada:      { phpName: ChObrigCursada, type: INTEGER, required: false }
+    ch_obrig_solicitada:   { phpName: ChObrigSolicitada, type: INTEGER, required: false }
+    ch_total:              { phpName: ChTotal, type: INTEGER, required: false }
+    op_ingresso: { phpName: OpIngresso, type: INTEGER, required: false, default: 0 }
+    id_polo: { phpName: IdPolo, type: INTEGER, required: true, default: 0, foreignTable: tbpolos, foreignReference: id_polo }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    id_antigo: { lazyLoad: true, phpName: IdAntigo, type: INTEGER, required: false }
+    id_raca: { phpName: IdRaca, type: INTEGER, required: true, foreignTable: tbaluno_racacor, foreignReference: id_raca }
+    qtd_irmaos: { phpName: QtdIrmaos, type: INTEGER, required: false, default: 0 }
+    renda_familiar: { phpName: RendaFamiliar, type: VARCHAR, size: '20', required: false}
+    id_religiao: { phpName: IdReligiao, type: INTEGER, required: true, default: 4, foreignTable: tbreligiao, foreignReference: id_religiao }
+    pai_profissao: { phpName: PaiProfissao, type: VARCHAR, size: '100', required: false}
+    pai_local_trabalho: { phpName: PaiLocalTrabalho, type: VARCHAR, size: '100', required: false}
+    pai_fone: { phpName: PaiFone, type: VARCHAR, size: '25', required: false}
+    pai_id_nivel_instrucao: { phpName: PaiIdNivelInstrucao, type: INTEGER, required: true, foreignTable: tbnivelinstrucao, foreignReference: id_nivel_instrucao }
+    mae_profissao: { phpName: MaeProfissao, type: VARCHAR, size: '100', required: false}
+    mae_local_trabalho: { phpName: MaeLocalTrabalho, type: VARCHAR, size: '100', required: false}
+    mae_fone: { phpName: MaeFone, type: VARCHAR, size: '25', required: false}
+    mae_id_nivel_instrucao: { phpName: MaeIdNivelInstrucao, type: INTEGER, required: true, foreignTable: tbnivelinstrucao, foreignReference: id_nivel_instrucao }
+    _indexes: { aluno_idx: [matricula, nome] }
+  tbpendenciatipo:
+    _attributes: { phpName: Tbpendenciatipo }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '255',required: true }
+  tbpendencia:
+    _attributes: { phpName: Tbpendencia }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    matricula: { phpName: Matricula, type: BIGINT, required: true, foreignTable: tbaluno, foreignReference: matricula }
+    id_tipo: { phpName: IdTipo, type: INTEGER, required: true, foreignTable: tbpendenciatipo, foreignReference: id }
+    resolvido: { phpName: Resolvido, type: BOOLEAN, default: false, required: true }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbvalidacaotipo:
+    _attributes: { phpName: Tbvalidacaotipo }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '255',required: true }
+  tbvalidacao:
+    _attributes: { phpName: Tbvalidacao }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    matricula: { phpName: Matricula, type: VARCHAR, size: '25',required: true }
+    num_auth: { phpName: NumAuth, type: VARCHAR, size: '255', required: true}
+    data: { phpName: Data, type: DATE, required: true }
+    hora: { phpName: Hora, type: TIME, required: true }
+    id_tipo: { phpName: IdTipo, type: INTEGER, required: true, default: 0, foreignTable: tbvalidacaotipo, foreignReference: id }
+    ativo: { phpName: Ativo, type: INTEGER, required: true, default: 0 }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbpolos:
+    _attributes: { phpName: Tbpolos }
+    id_polo: { phpName: IdPolo, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '40', required: true }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbrestaurantesenha:
+    _attributes: { phpName: Tbrestaurantesenha }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    login: { phpName: Login, type: VARCHAR, size: '255',required: true }
+    senha: { phpName: Senha, type: VARCHAR, size: '255', required: true}
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbfilacalouros:
+    id_fila_calouros: { phpName: IdFilaCalouros, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    id_oferta: { phpName: IdOferta, type: INTEGER, required: true, foreignTable: tboferta, foreignReference: id_oferta }
+    id_versao_curso: { phpName: IdVersaoCurso, type: INTEGER, required: true, foreignTable: tbcursoversao, foreignReference: id_versao_curso }
+    id_periodo: { phpName: IdPeriodo, type: INTEGER, required: true, foreignTable: tbperiodo, foreignReference: id_periodo }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbvagas:
+    id_vagas: { phpName: IdVagas, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    id_versao_curso: { phpName: IdVersaoCurso, type: INTEGER, required: true, foreignTable: tbcursoversao, foreignReference: id_versao_curso }
+    vagas: { phpName: Vagas, type: INTEGER, required: true }
+    vagas_segunda_opcao: { phpName: VagasSegundaOpcao, type: INTEGER, required: true, default: 0 }
+    processo: { phpName: Processo, type: VARCHAR, size: '20', required: true }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbloadfile:
+    _attributes: { phpName: Tbloadfile }
+    file: { phpName: file, type: VARCHAR, size: '255', required: true }
+    description: { phpName: description, type: VARCHAR, size: '255', required: true }
+    id: { phpName: id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbloadaluno:
+    _attributes: { phpName: Tbloadaluno }
+    matricula: { phpName: Matricula, primaryKey: true, autoIncrement: false, type: BIGINT, required: true }
+    nome: { phpName: Nome, type: VARCHAR, size: '100', required: true }
+    sexo: { phpName: Sexo, type: CHAR, size: '1', required: true }
+    rg: { phpName: Rg, type: VARCHAR, size: '20', required: false }
+    rg_org_exped: { phpName: RgOrgExped, type: VARCHAR, size: '10', required: false }
+    cpf: { phpName: Cpf, type: VARCHAR, size: '11', required: false }
+    id_versao_curso: { phpName: IdVersaoCurso, type: INTEGER, required: true, foreignTable: tbcursoversao, foreignReference: id_versao_curso }
+    id_tipo_ingresso: { phpName: IdTipoIngresso, type: INTEGER, required: true, foreignTable: tbtipoingresso, foreignReference: id_tipo_ingresso }
+    id_situacao: { phpName: IdSituacao, type: INTEGER, required: true, foreignTable: tbalunosituacao, foreignReference: id_situacao }
+    classificacao: { phpName: Classificacao, type: INTEGER, size: '11', required: false }
+    opcao: { phpName: Opcao, type: VARCHAR, size: '15', required: false }
+    processo: { phpName: Processo, type: VARCHAR, size: '20', required: true }
+    op_ingresso: { phpName: OpIngresso, type: INTEGER, required: false, default: 0 }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    _indexes: { aluno_idx: [matricula, nome] }
+  tbaluno:
+    _attributes: { phpName: Tbaluno }
+    id_pessoa: { phpName: IdPessoa, type: INTEGER, autoIncrement: true, sequence: tbpessoa_id_pessoa_seq, required: true }
+    matricula: { phpName: Matricula, primaryKey: true, autoIncrement: false, type: BIGINT, required: true }
+    nome: { phpName: Nome, type: VARCHAR, size: '100', required: true }
+    celular: { phpName: Celular, type: VARCHAR, size: '15', required: false }
+    email: { phpName: Email, type: VARCHAR, size: '100', required: false }
+    fone_residencial: { phpName: FoneResidencial, type: VARCHAR, size: '15', required: false }
+    foto: { phpName: Foto, type: BLOB, required: false }
+    id_neces_especial: { phpName: IdNecesEspecial, type: VARCHAR, required: true, foreignTable: tbnecesespecial, foreignReference: id_neces_especial }
+    dt_nascimento: { phpName: DtNascimento, type: DATE, required: true }
+    naturalidade: { phpName: Naturalidade, type: INTEGER, required: true, foreignTable: tbcidade, foreignReference: id_cidade }
+    uf_nascimento: { phpName: UfNascimento, type: CHAR, size: '2', required: false }
+    nacionalidade: { phpName: Nacionalidade, type: INTEGER, required: true, foreignTable: tbpais, foreignReference: id_pais }
+    sexo: { phpName: Sexo, type: CHAR, size: '1', required: true }
+    estado_civil: { phpName: EstadoCivil, type: VARCHAR, size: '15', required: false }
+    titulo: { phpName: Titulo, type: VARCHAR, size: '20', required: false }
+    titulo_zona: { phpName: TituloZona, type: INTEGER, required: false }
+    titulo_secao: { phpName: TituloSecao, type: INTEGER, required: false }
+    rg: { phpName: Rg, type: VARCHAR, size: '20', required: true }
+    rg_dt_exped: { phpName: RgDtExped, type: DATE, required: false }
+    rg_org_exped: { phpName: RgOrgExped, type: VARCHAR, size: '20', required: false }
+    cpf: { phpName: Cpf, type: VARCHAR, size: '11', required: true }
+    reservista: { phpName: Reservista, type: VARCHAR, size: '20', required: false }
+    pai: { phpName: Pai, type: VARCHAR, size: '50', required: false }
+    mae: { phpName: Mae, type: VARCHAR, size: '50', required: false }
+    cep: { phpName: Cep, type: VARCHAR, size: '9', required: true, foreignTable: tblogradouro, foreignReference: cep }
+    numero: { phpName: Numero, type: VARCHAR, size: '8', required: true }
+    complemento: { phpName: Complemento, type: VARCHAR, size: '50', required: false }
+    id_versao_curso: { phpName: IdVersaoCurso, type: INTEGER, required: true, foreignTable: tbcursoversao, foreignReference: id_versao_curso }
+    id_tipo_ingresso: { phpName: IdTipoIngresso, type: INTEGER, required: true, foreignTable: tbtipoingresso, foreignReference: id_tipo_ingresso }
+    dt_ingresso: { phpName: DtIngresso, type: DATE, required: true }
+    id_situacao: { phpName: IdSituacao, type: INTEGER, required: true, foreignTable: tbalunosituacao, foreignReference: id_situacao }
+    dt_situacao: { phpName: DtSituacao, type: DATE, required: false }
+    id_destino: { phpName: IdDestino, type: INTEGER, required: false, foreignTable: tbinstexterna, foreignReference: id_inst_externa }
+    id_2grau: { phpName: Id2grau, type: INTEGER, required: false, foreignTable: tbinstexterna, foreignReference: id_inst_externa }
+    ano_concl_2grau: { phpName: AnoConcl2grau, type: INTEGER, required: false }
+    id_3grau: { phpName: Id3grau, type: INTEGER, required: false, foreignTable: tbinstexterna, foreignReference: id_inst_externa }
+    ano_concl_3grau: { phpName: AnoConcl3grau, type: INTEGER, required: false }
+    id_trabalho: { phpName: IdTrabalho, type: INTEGER, required: false, foreignTable: tbinstexterna, foreignReference: id_inst_externa }
+    cep_trabalho: { phpName: CepTrabalho, type: VARCHAR, size: '8', required: false, foreignTable: tblogradouro, foreignReference: cep }
+    fone_trabalho: { phpName: FoneTrabalho, type: VARCHAR, size: '15', required: false }
+    ramal_trabalho: { phpName: RamalTrabalho, type: VARCHAR, size: '5', required: false }
+    media_geral: { phpName: MediaGeral, type: NUMERIC, size: '10', scale: '2', required: false }
+    ch_eletiva_cursada:    { phpName: ChEletivaCursada, type: INTEGER, required: false }
+    ch_eletiva_solicitada: { phpName: ChEletivaSolicitada, type: INTEGER, required: false }
+    ch_obrig_cursada:      { phpName: ChObrigCursada, type: INTEGER, required: false }
+    ch_obrig_solicitada:   { phpName: ChObrigSolicitada, type: INTEGER, required: false }
+    ch_total:              { phpName: ChTotal, type: INTEGER, required: false }
+    op_ingresso: { phpName: OpIngresso, type: INTEGER, required: false, default: 0 }
+    id_polo: { phpName: IdPolo, type: INTEGER, required: true, default: 0, foreignTable: tbpolos, foreignReference: id_polo }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    id_antigo: { lazyLoad: true, phpName: IdAntigo, type: INTEGER, required: false }
+    id_raca: { phpName: IdRaca, type: INTEGER, required: true, foreignTable: tbaluno_racacor, foreignReference: id_raca }
+    enade: { phpName: Enade, type: BOOLEAN, default: false, required: false }
+    _indexes: { aluno_idx: [matricula, nome] }
+  tbaluno_atual:
+    _attributes: { phpName: TbalunoAtual }
+    nome: { phpName: Nome, type: VARCHAR, size: '100', required: false }
+    matricula: { phpName: Matricula, type: BIGINT, primaryKey: true, required: true }
+    dt_nascimento: { phpName: DtNascimento, type: DATE, required: true }
+    naturalidade: { phpName: Naturalidade, type: VARCHAR, size: '40', required: true }
+    uf_nascimento: { phpName: UfNascimento, type: CHAR, size: '2', required: true }
+    nacionalidade: { phpName: Nacionalidade, type: VARCHAR, size: '15', required: true }
+    sexo: { phpName: Sexo, type: CHAR, size: '1', required: true }
+    estado_civil: { phpName: EstadoCivil, type: VARCHAR, size: '15', required: true }
+    pai: { phpName: Pai, type: VARCHAR, size: '50', required: false }
+    mae: { phpName: Mae, type: VARCHAR, size: '50', required: false }
+    celular: { phpName: Celular, type: VARCHAR, size: '15', required: false }
+    fone_residencial: { phpName: FoneResidencial, type: VARCHAR, size: '15', required: false }
+    email1: { phpName: Email1, type: VARCHAR, size: '60', required: false }
+    email2: { phpName: Email2, type: VARCHAR, size: '60', required: false }
+    end_residencial: { phpName: EndResidencial, type: VARCHAR, size: '60', required: true }
+    bairro_residencial: { phpName: BairroResidencial, type: VARCHAR, size: '40', required: true }
+    cep_residencial: { phpName: CepResidencial, type: VARCHAR, size: '8', required: true }
+    numero: { phpName: Numero, type: VARCHAR, size: '8', required: true }
+    complemento: { phpName: Complemento, type: VARCHAR, size: '50', required: false }
+    grau_2: { phpName: Grau2, type: VARCHAR, size: '100', required: true }
+    uf_conc_2: { phpName: UfConc2, type: CHAR, size: '2', required: true }
+    ano_concl_2grau: { phpName: AnoConcl2grau, type: CHAR, size: '4', required: true }
+    local_trabalho: { phpName: LocalTrabalho, type: VARCHAR, size: '100', required: false }
+    end_trabalho: { phpName: EndTrabalho, type: VARCHAR, size: '60', required: false }
+    bairro_trabalho: { phpName: BairroTrabalho, type: VARCHAR, size: '40', required: false }
+    cep_trabalho: { phpName: CepTrabalho, type: VARCHAR, size: '8', required: false }
+    fone_trabalho: { phpName: FoneTrabalho, type: VARCHAR, size: '15', required: false }
+    ramal_trabalho: { phpName: RamalTrabalho, type: VARCHAR, size: '5', required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbalunodiploma:
+    _attributes: { phpName: Tbalunodiploma }
+    id_aluno_diploma: { phpName: IdAlunoDiploma, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    matricula: { phpName: Matricula, type: BIGINT, required: false, foreignTable: tbaluno, foreignReference: matricula }
+    dt_entrega: { phpName: DtEntrega, type: DATE, required: false }
+    dt_entrega_historico: { phpName: DtEntregaHistorico, type: DATE, required: false }
+    dt_enade: { phpName: DtEnade, type: DATE, required: false }
+    n_registro: { phpName: NRegistro, type: INTEGER, required: false }
+    dt_registro: { phpName: DtRegistro, type: DATE, required: false }
+    livro: { phpName: Livro, type: VARCHAR, size: '8', required: false }
+    folha: { phpName: Folha, type: INTEGER, required: false }
+    n_processo: { phpName: NProcesso, type: VARCHAR, size: '20', required: false }
+    obs: { phpName: Obs, type: LONGVARCHAR, required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    _uniques: { tbalunodiploma_matricula_key: [matricula], tbalunodiploma_matricula_key1: [matricula], tbalunodiploma_matricula_key2: [matricula], tbalunodiploma_matricula_key3: [matricula, n_registro, livro] }
+  tbaluno_import:
+    _attributes: { phpName: TbalunoImport }
+    id_pessoa: { phpName: IdPessoa, type: INTEGER, autoIncrement: true, required: true }
+    nome: { phpName: Nome, type: VARCHAR, size: '100', required: false }
+    celular: { phpName: Celular, type: VARCHAR, size: '255', required: false }
+    email: { phpName: Email, type: VARCHAR, size: '100', required: false }
+    fone_residencial: { phpName: FoneResidencial, type: VARCHAR, size: '20', required: false }
+    foto: { phpName: Foto, type: BLOB, required: false }
+    id_neces_especial: { phpName: IdNecesEspecial, type: VARCHAR, required: false }
+    matricula: { phpName: Matricula, type: BIGINT, required: false }
+    dt_nascimento: { phpName: DtNascimento, type: DATE, required: false }
+    naturalidade: { phpName: Naturalidade, type: VARCHAR, size: '255', required: false }
+    uf_nascimento: { phpName: UfNascimento, type: VARCHAR, size: '255', required: false }
+    nacionalidade: { phpName: Nacionalidade, type: VARCHAR, size: '255', required: false }
+    sexo: { phpName: Sexo, type: CHAR, size: '1', required: false }
+    estado_civil: { phpName: EstadoCivil, type: VARCHAR, size: '15', required: false }
+    titulo: { phpName: Titulo, type: VARCHAR, size: '20', required: false }
+    titulo_zona: { phpName: TituloZona, type: INTEGER, required: false }
+    titulo_secao: { phpName: TituloSecao, type: INTEGER, required: false }
+    rg: { phpName: Rg, type: VARCHAR, size: '20', required: false }
+    rg_dt_exped: { phpName: RgDtExped, type: DATE, required: false }
+    rg_org_exped: { phpName: RgOrgExped, type: VARCHAR, size: '10', required: false }
+    cpf: { phpName: Cpf, type: VARCHAR, size: '11', required: false }
+    reservista: { phpName: Reservista, type: VARCHAR, size: '20', required: false }
+    pai: { phpName: Pai, type: VARCHAR, size: '50', required: false }
+    mae: { phpName: Mae, type: VARCHAR, size: '50', required: false }
+    cep: { phpName: Cep, type: VARCHAR, size: '9', required: false }
+    numero: { phpName: Numero, type: VARCHAR, size: '8', required: false }
+    complemento: { phpName: Complemento, type: VARCHAR, size: '255', required: false }
+    id_versao_curso: { phpName: IdVersaoCurso, type: INTEGER, required: false }
+    id_tipo_ingresso: { phpName: IdTipoIngresso, type: INTEGER, required: false }
+    dt_ingresso: { phpName: DtIngresso, type: DATE, required: true }
+    id_situacao: { phpName: IdSituacao, type: INTEGER, required: true }
+    dt_situacao: { phpName: DtSituacao, type: DATE, required: true }
+    id_destino: { phpName: IdDestino, type: INTEGER, required: false }
+    id_2grau: { phpName: Id2grau, type: INTEGER, required: false }
+    ano_concl_2grau: { phpName: AnoConcl2grau, type: INTEGER, required: false }
+    id_3grau: { phpName: Id3grau, type: INTEGER, required: false }
+    ano_concl_3grau: { phpName: AnoConcl3grau, type: INTEGER, required: false }
+    id_trabalho: { phpName: IdTrabalho, type: INTEGER, required: false }
+    cep_trabalho: { phpName: CepTrabalho, type: VARCHAR, size: '8', required: false }
+    fone_trabalho: { phpName: FoneTrabalho, type: VARCHAR, size: '255', required: false }
+    ramal_trabalho: { phpName: RamalTrabalho, type: VARCHAR, size: '20', required: false }
+    media_geral: { phpName: MediaGeral, type: NUMERIC, size: '10', scale: '2', required: false }
+    ch_eletiva_cursada: { phpName: ChEletivaCursada, type: INTEGER, required: false }
+    ch_eletiva_solicitada: { phpName: ChEletivaSolicitada, type: INTEGER, required: false }
+    ch_obrig_cursada: { phpName: ChObrigCursada, type: INTEGER, required: false }
+    ch_obrig_solicitada: { phpName: ChObrigSolicitada, type: INTEGER, required: false }
+    ch_total: { phpName: ChTotal, type: VARCHAR, required: false }
+    id_antigo: { phpName: IdAntigo, type: INTEGER, required: false }
+    inst2grau: { phpName: Inst2grau, type: VARCHAR, size: '255', required: false }
+    inst3grau: { phpName: Inst3grau, type: VARCHAR, size: '255', required: false }
+    insttrabalho: { phpName: Insttrabalho, type: VARCHAR, size: '255', required: false }
+    id_naturalidade: { phpName: IdNaturalidade, type: INTEGER, required: false }
+    id_nacionalidade: { phpName: IdNacionalidade, type: INTEGER, required: false }
+  tbalunoperiodo:
+    _attributes: { phpName: Tbalunoperiodo }
+    id_aluno_periodo: { phpName: IdAlunoPeriodo, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    matricula: { phpName: Matricula, type: BIGINT, required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    id_periodo: { phpName: IdPeriodo, type: VARCHAR, required: false }
+  tbalunosenha:
+    _attributes: { phpName: Tbalunosenha }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    matricula: { phpName: Matricula, type: BIGINT, required: false, foreignTable: tbaluno, foreignReference: matricula }
+    senha: { phpName: Senha, type: VARCHAR, size: '255', required: true}
+    _uniques: { tbalunosenha_matricula_key: [matricula] }
+  tbalunosituacao:
+    _attributes: { phpName: Tbalunosituacao }
+    id_situacao: { phpName: IdSituacao, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '30', required: false }
+    sigla_pingifes: { phpName: SiglaPingifes, type: VARCHAR, size: '4', required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbalunosolicitacao:
+    _attributes: { phpName: Tbalunosolicitacao }
+    id_solicitacao: { phpName: IdSolicitacao, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    matricula: { phpName: Matricula, type: BIGINT, required: true, foreignTable: tbaluno, foreignReference: matricula }
+    situacao: { phpName: Situacao, type: VARCHAR, size: '10', required: true }
+    tipo: { phpName: Tipo, type: VARCHAR, size: '30', required: true  }
+    descricao: { phpName: Descricao, type: LONGVARCHAR, required: true  }
+    observacao: { phpName: Observacao, type: LONGVARCHAR, required: false  }
+    data_solicitacao: { phpName: DataSolicitacao, type: DATE, required: true }
+    data_encerrado: { phpName: DataEncerrado, type: DATE }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbaluno_racacor:
+    _attributes: { phpName: Tbalunoracacor }
+    id_raca: { phpName: IdRaca, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '25', required: false }
+    sigla_pingifes: { phpName: SiglaPingifes, type: VARCHAR, size: '2', required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbaviso:
+    _attributes: { phpName: Tbaviso }
+    id_aviso: { phpName: IdAviso, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    titulo: { phpName: Titulo, type: VARCHAR, size: '50', required: true }
+    texto: { phpName: Texto, type: LONGVARCHAR, required: false }
+    publicado: { phpName: Publicado, type: BOOLEAN, required: false }
+    local: { phpName: Local, type: VARCHAR, required: true, foreignTable: tbaviso_local, foreignReference: nome}
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbaviso_local:
+    _attributes: { phpName: TbavisoLocal }
+    id_local: { phpName: IdLocal, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    nome: { phpName: Nome, type: VARCHAR, required: false }
+    descricao: { phpName: Descricao, type: VARCHAR, required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    _uniques: { tbaviso_local_nome_key: [nome] }
+  tbbairro:
+    _attributes: { phpName: Tbbairro }
+    id_bairro: { phpName: IdBairro, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '50', required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbbanca:
+    _attributes: { phpName: Tbbanca }
+    banca_id: { phpName: BancaId, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    matricula: { phpName: Matricula, type: BIGINT, required: true, foreignTable: tbaluno, foreignReference: matricula }
+    nomeorientador: { phpName: Nomeorientador, type: VARCHAR, size: '100', required: true }
+    primeiromembro: { phpName: Primeiromembro, type: VARCHAR, size: '100', required: true }
+    segundomembro: { phpName: Segundomembro, type: VARCHAR, size: '100', required: true }
+    terceiromembro: { phpName: Terceiromembro, type: VARCHAR, size: '100', required: false }
+    quartomembro: { phpName: Quartomembro, type: VARCHAR, size: '100', required: false }
+    datadefesa: { phpName: Datadefesa, type: DATE, required: true }
+    resultado: { phpName: Resultado, type: VARCHAR, size: '20', required: true }
+    mediabanca: { phpName: Mediabanca, type: NUMERIC, size: '10', scale: '2', required: false }
+    titulomonografia: { phpName: Titulomonografia, type: LONGVARCHAR, required: true }
+    _uniques: { tbbanca_matricula_key: [matricula] }
+  tbcampus:
+    _attributes: { phpName: Tbcampus }
+    id_campus: { phpName: IdCampus, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '25', required: false }
+    id_cidade: { phpName: IdCidade, type: VARCHAR, required: false, foreignTable: tbcidade, foreignReference: id_cidade }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbcarater:
+    _attributes: { phpName: Tbcarater }
+    id_carater: { phpName: IdCarater, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '12', required: false }
+    sucinto: { phpName: Sucinto, type: VARCHAR, size: '10', required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbcidade:
+    _attributes: { phpName: Tbcidade }
+    id_cidade: { phpName: IdCidade, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '30', required: false }
+    id_estado: { phpName: IdEstado, type: INTEGER, required: true, foreignTable: tbestado, foreignReference: id_estado }
+    id_pais: { phpName: IdPais, type: INTEGER, required: true, foreignTable: tbpais, foreignReference: id_pais }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbconceito:
+    _attributes: { phpName: Tbconceito }
+    id_conceito: { phpName: IdConceito, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '25', required: false }
+    sucinto: { phpName: Sucinto, type: VARCHAR, size: '3', required: false }
+    sigla_pingifes: { phpName: SiglaPingifes, type: VARCHAR, size: '4', required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbcurriculodisciplinas:
+    _attributes: { phpName: Tbcurriculodisciplinas }
+    id_curriculo_disciplina: { phpName: IdCurriculoDisciplina, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    id_versao_curso: { phpName: IdVersaoCurso, type: INTEGER, required: false, foreignTable: tbcursoversao, foreignReference: id_versao_curso }
+    id_setor: { phpName: IdSetor, type: INTEGER, required: false, foreignTable: tbsetor, foreignReference: id_setor }
+    cod_disciplina: { phpName: CodDisciplina, type: VARCHAR, size: '8', required: false, foreignTable: tbdisciplina, foreignReference: cod_disciplina }
+    semestre_disciplina: { phpName: SemestreDisciplina, type: INTEGER, required: false }
+    id_carater: { phpName: IdCarater, type: VARCHAR, required: false, foreignTable: tbcarater, foreignReference: id_carater }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbgrade_equivalente:
+    _attributes: { phpName: TbgradeEquivalente, comment: 'Relação de disciplinas equivalentes das grades antigas no sistema' }
+    id_grade_equivalente: { phpName: IdFila, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    id_curriculo_disciplina: { phpName: IdCurriculoDisciplina, type: INTEGER, required: true, foreignTable: tbcurriculodisciplinas, foreignReference: id_curriculo_disciplina, primaryKey: true, onDelete: cascade  }
+    cod_disciplina: { phpName: CodDisciplina, type: VARCHAR, size: '10', required: true, foreignTable: tbdisciplina, foreignReference: cod_disciplina, primaryKey: true, onDelete: cascade  }
+    _uniques: { tbgrade_equivalente_cod_disciplina_key: [id_curriculo_disciplina] }
+  tbcurso:
+    _attributes: { phpName: Tbcurso }
+    cod_curso: { phpName: CodCurso, type: INTEGER, primaryKey: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '70', required: false }
+    sucinto: { phpName: Sucinto, type: VARCHAR, size: '25', required: false }
+    centro: { phpName: Centro, type: VARCHAR, size: '15', required: false }
+    id_nivel: { phpName: IdNivel, type: INTEGER, required: true, foreignTable: tbcursonivel, foreignReference: id_nivel }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbcursonivel:
+    _attributes: { phpName: Tbcursonivel }
+    id_nivel: { phpName: IdNivel, type: INTEGER, primaryKey: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '15', required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbcursoversao:
+    _attributes: { phpName: Tbcursoversao }
+    id_versao_curso: { phpName: IdVersaoCurso, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    id_formacao: { phpName: IdFormacao, type: INTEGER, required: false, foreignTable: tbformacao, foreignReference: id_formacao }
+    cod_curso: { phpName: CodCurso, type: INTEGER, required: true, foreignTable: tbcurso, foreignReference: cod_curso }
+    id_turno: { phpName: IdTurno, type: INTEGER, required: true, foreignTable: tbturno, foreignReference: id_turno }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '100', required: false }
+    situacao: { phpName: Situacao, type: VARCHAR, size: '10', required: false }
+    doc_criacao: { phpName: DocCriacao, type: LONGVARCHAR, required: false }
+    dt_criacao: { phpName: DtCriacao, type: DATE, required: false }
+    dt_inicio: { phpName: DtInicio, type: DATE, required: true }
+    dt_termino: { phpName: DtTermino, type: DATE, required: false }
+    id_campus: { phpName: IdCampus, type: INTEGER, required: false, foreignTable: tbcampus, foreignReference: id_campus }
+    id_setor: { phpName: IdSetor, type: INTEGER, required: false, foreignTable: tbsetor, foreignReference: id_setor }
+    prazo_min: { phpName: PrazoMin, type: CHAR, size: '3', required: false }
+    prazo_max: { phpName: PrazoMax, type: CHAR, size: '3', required: false }
+    cred_obr: { phpName: CredObr, type: VARCHAR, required: false }
+    cred_eletivo: { phpName: CredEletivo, type: VARCHAR, required: false }
+    cred_total: { phpName: CredTotal, type: VARCHAR, required: false }
+    ch_obr: { phpName: ChObr, type: INTEGER, required: false }
+    ch_eletiva: { phpName: ChEletiva, type: INTEGER, required: false }
+    ch_total: { phpName: ChTotal, type: VARCHAR, required: false }
+    semestre_inicio: { phpName: SemestreInicio, type: INTEGER, required: false }
+    cod_integracao: { phpName: CodIntegracao, type: VARCHAR, size: '30', required: false }
+    cod_integracao_tipo: { phpName: CodIntegracaoTipo, type: CHAR, size: '1', required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbdisciplina:
+    _attributes: { phpName: Tbdisciplina }
+    cod_disciplina: { phpName: CodDisciplina, primaryKey: true, autoIncrement: false, type: VARCHAR, size: '8', required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '100', required: true }
+    sucinto: { phpName: Sucinto, type: VARCHAR, size: '40', required: true }
+    inicio: { phpName: Inicio, type: DATE, required: false }
+    termino: { phpName: Termino, type: DATE, required: false }
+    ch: { phpName: Ch, type: INTEGER, required: true }
+    ch_teorica: { phpName: ChTeorica, type: INTEGER, required: true }
+    ch_pratica: { phpName: ChPratica, type: INTEGER, required: true }
+    cred_pratico: { phpName: CredPratico, type: VARCHAR, required: true }
+    cred_teorico: { phpName: CredTeorico, type: VARCHAR, required: true }
+    id_situacao: { phpName: IdSituacao, type: INTEGER, required: true, default: 1, foreignTable: tbdisciplinasituacao, foreignReference: id_situacao }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    _indexes: { tbdisciplina_cod_disciplina_idx: [cod_disciplina] }
+    _uniques: { tbdisciplina_cod_disciplina_key: [cod_disciplina] }
+  tbdisciplinarequisitos:
+    _attributes: { phpName: Tbdisciplinarequisitos }
+    id_requisito: { phpName: IdRequisito, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    cod_disciplina: { phpName: CodDisciplina, type: VARCHAR, size: '15', required: true, foreignTable: tbdisciplina, foreignReference: cod_disciplina }
+    id_versao_curso: { phpName: IdVersaoCurso, type: INTEGER, required: true, foreignTable: tbcursoversao, foreignReference: id_versao_curso }
+    cod_disc_requisito: { phpName: CodDiscRequisito, type: VARCHAR, size: '15', required: false, foreignTable: tbdisciplina, foreignReference: cod_disciplina }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    _uniques: { unic_disciplinas: [cod_disciplina, id_versao_curso, cod_disc_requisito] }
+  tbdisciplinacorequisitos:
+    _attributes: { phpName: Tbdisciplinacorequisitos }
+    id_corequisito: { phpName: IdCoRequisito, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    cod_disciplina: { phpName: CodDisciplina, type: VARCHAR, size: '15', required: true, foreignTable: tbdisciplina, foreignReference: cod_disciplina }
+    id_versao_curso: { phpName: IdVersaoCurso, type: INTEGER, required: true, foreignTable: tbcursoversao, foreignReference: id_versao_curso }
+    cod_disc_corequisito: { phpName: CodDiscCoRequisito, type: VARCHAR, size: '15', required: false, foreignTable: tbdisciplina, foreignReference: cod_disciplina }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    _uniques: { unic_disciplinas: [cod_disciplina, id_versao_curso, cod_disc_corequisito] }
+  tbdisciplina_ignorada:
+    _attributes: { phpName: TbdisciplinaIgnorada }
+    id_disciplina_ignorada: { phpName: IdDisciplinaIgnorada, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    cod_disciplina: { phpName: CodDisciplina, type: VARCHAR, size: '8', required: true, foreignTable: tbdisciplina, foreignReference: cod_disciplina }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    _uniques: { unic_disciplinas_ignoradas: [ id_disciplina_ignorada , cod_disciplina ] }
+  tbdisciplinamask:
+    _attributes: { phpName: TbdisciplinaMask }
+    id_disciplina_mask: { phpName: IdDisciplinaMask, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    cod_disciplina: { phpName: CodDisciplina, type: VARCHAR, size: '8', required: true, foreignTable: tbdisciplina, foreignReference: cod_disciplina }
+    cod_disciplina_mask: { phpName: CodDisciplinaMask, type: VARCHAR, size: '8', required: true, foreignTable: tbdisciplina, foreignReference: cod_disciplina }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    _uniques: { unic_disciplinas_ignoradas: [ id_disciplina_mask , cod_disciplina ] }
+  tbdisciplinasituacao:
+    _attributes: { phpName: Tbdisciplinasituacao }
+    id_situacao: { phpName: IdSituacao, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '30', required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbestado:
+    _attributes: { phpName: Tbestado }
+    id_estado: { phpName: IdEstado, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    uf: { phpName: Uf, type: CHAR, size: '2', required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '25', required: false }
+    id_pais: { phpName: IdPais, type: INTEGER, required: true, foreignTable: tbpais, foreignReference: id_pais }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    _uniques: { tbestado_uf_key: [uf], tbestado_uf_key1: [uf] }
+  tbfila:
+    _attributes: { phpName: Tbfila }
+    id_fila: { phpName: IdFila, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    matricula: { phpName: Matricula, type: BIGINT, required: true, foreignTable: tbaluno, foreignReference: matricula }
+    id_oferta: { phpName: IdOferta, type: INTEGER, required: true, foreignTable: tboferta, foreignReference: id_oferta }
+    id_situacao: { phpName: IdSituacao, type: INTEGER, required: true, foreignTable: tbfilasituacao, foreignReference: id_situacao}
+    pontos: { phpName: Pontos, type: VARCHAR, required: false }
+    reprovacoes: { phpName: Reprovacoes, type: INTEGER, required: false }
+    formando: { phpName: Formando, type: INTEGER, required: false}
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    _indexes: { tbfila_id_oferta_idx: [id_oferta], tbfila_matricula_idx: [matricula] }
+  tbfila_bkp:
+    _attributes: { phpName: TbfilaBkp }
+    id_fila: { phpName: IdFila, type: INTEGER, autoIncrement: true, required: true }
+    matricula: { phpName: Matricula, type: BIGINT, required: true }
+    id_oferta: { phpName: IdOferta, type: INTEGER, required: true }
+    hora_insert: { phpName: HoraInsert, type: TIMESTAMP, size: '-4', required: false}
+    hora_delete: { phpName: HoraDelete, type: TIMESTAMP, size: '-4', required: false }
+    id_situacao: { phpName: IdSituacao, type: INTEGER, required: true}
+  tbfilasituacao:
+    _attributes: { phpName: Tbfilasituacao }
+    id_situacao: { phpName: IdSituacao, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '25', required: false }
+    sucinto: { phpName: Sucinto, type: VARCHAR, size: '10', required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbformacao:
+    _attributes: { phpName: Tbformacao }
+    id_formacao: { phpName: IdFormacao, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '30', required: false }
+    abreviatura: { phpName: Abreviatura, type: VARCHAR, size: '10', required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbhistorico:
+    _attributes: { phpName: Tbhistorico }
+    id_historico: { phpName: IdHistorico, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    id_periodo: { phpName: IdPeriodo, type: INTEGER, required: true, foreignTable: tbperiodo, foreignReference: id_periodo }
+    matricula: { phpName: Matricula, type: BIGINT, required: true, foreignTable: tbaluno, foreignReference: matricula }
+    cod_disciplina: { phpName: CodDisciplina, type: VARCHAR, size: '8', required: true, foreignTable: tbdisciplina, foreignReference: cod_disciplina }
+    media: { phpName: Media, type: NUMERIC, size: '10', scale: '2', required: true }
+    faltas: { phpName: Faltas, type: INTEGER, required: true }
+    id_conceito: { phpName: IdConceito, type: INTEGER, required: true, foreignTable: tbconceito, foreignReference: id_conceito }
+    duplicado: { phpName: Duplicado, type: BOOLEAN, required: false }
+    #carater: { phpName: Carater, type: VARCHAR, size: 20, required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    _indexes: { tbhistorico_idx: [matricula] }
+    _uniques: { tbhistorico_uniq: [id_periodo,matricula,cod_disciplina] }
+  tbinstexterna:
+    _attributes: { phpName: Tbinstexterna }
+    id_inst_externa: { phpName: IdInstExterna, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '100', required: false }
+    sucinto: { phpName: Sucinto, type: VARCHAR, size: '40', required: false }
+    uf: { phpName: Uf, type: CHAR, size: '2', required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    id_tipo: { phpName: IdTipo, type: INTEGER, required: true, foreignTable: tbinstexternatipo, foreignReference: id_tipo }
+  tbinstexternatipo:
+    _attributes: { phpName: Tbinstexternatipo }
+    id_tipo: { phpName: IdTipo, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '15', required: false }    
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tblogradouro:
+    _attributes: { phpName: Tblogradouro }
+    id_logradouro: { phpName: IdLogradouro, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '100', required: false }
+    cep: { phpName: Cep, type: CHAR, size: '8', required: true }
+    id_bairro: { phpName: IdBairro, type: INTEGER, required: true, foreignTable: tbbairro, foreignReference: id_bairro }
+    id_cidade: { phpName: IdCidade, type: INTEGER, required: true, foreignTable: tbcidade, foreignReference: id_cidade }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    _uniques: { tblogradouro_cep_key: [cep] }
+  tbnecesespecial:
+    _attributes: { phpName: Tbnecesespecial }
+    id_neces_especial: { phpName: IdNecesEspecial, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '50', required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbofertasituacao:
+    _attributes: { phpName: Tbofertasituacao }
+    id_situacao: { phpName: IdSituacao, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '30', required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tboferta:
+    _attributes: { phpName: Tboferta }
+    id_oferta: { phpName: IdOferta, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    id_periodo: { phpName: IdPeriodo, type: INTEGER, required: true, foreignTable: tbperiodo, foreignReference: id_periodo }
+    id_turno: { phpName: IdTurno, type: INTEGER, required: true, foreignTable: tbturno, foreignReference: id_turno }
+    cod_curso: { phpName: CodCurso, type: INTEGER, required: true, foreignTable: tbcurso, foreignReference: cod_curso }
+    cod_curso_destino: { phpName: CodCursoDestino, type: INTEGER, required: false, foreignTable: tbcurso, foreignReference: cod_curso }
+    cod_disciplina: { phpName: CodDisciplina, type: VARCHAR, size: '8', required: true, foreignTable: tbdisciplina, foreignReference: cod_disciplina }
+    turma: { phpName: Turma, type: CHAR, size: '5', required: true }
+    id_sala: { phpName: IdSala, type: INTEGER, required: true, foreignTable: tbsala, foreignReference: id_sala }
+    vagas: { phpName: Vagas, type: INTEGER, required: true }
+    matriculados: { phpName: Matriculados, type: INTEGER, required: false }
+    excesso: { phpName: Excesso, type: INTEGER, required: false }
+    cancelados: { phpName: Cancelados, type: INTEGER, required: false }
+    trancados: { phpName: Trancados, type: INTEGER, required: false }
+    id_matricula_prof: { phpName: IdMatriculaProf, type: INTEGER, required: true, foreignTable: tbprofessor, foreignReference: matricula_prof }
+    id_matricula_prof2: { phpName: IdMatriculaProf2, type: INTEGER, required: false, foreignTable: tbprofessor, foreignReference: matricula_prof }
+    id_setor: { phpName: IdSetor, type: INTEGER, required: true, foreignTable: tbsetor, foreignReference: id_setor }
+    dt_inicio: { phpName: DtInicio, type: DATE, required: false }
+    dt_fim: { phpName: DtFim, type: DATE, required: false }
+    id_situacao: { phpName: IdSituacao, type: INTEGER, required: true, foreignTable: tbofertasituacao, foreignReference: id_situacao }
+    id_polo: { phpName: IdPolo, type: INTEGER, required: true, default: 0, foreignTable: tbpolos, foreignReference: id_polo }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    _indexes: { tboferta_cod_disciplina_idx: [cod_disciplina], tboferta_id_periodo_idx: [id_periodo], turma_idx: [turma] }
+    _uniques: { tboferta_id_periodo_key: [id_periodo, cod_disciplina, turma] }
+  tbofertacoordenador:
+        _attributes: { phpName: Tbofertacoordenador }
+        id_oferta_coordenador: { phpName: IdOfertaCoordenador, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+        matricula_prof: { phpName: MatriculaProf, type: INTEGER, required: true, foreignTable: tbprofessor, foreignReference: matricula_prof }
+        id_oferta: { phpName: IdOferta, type: INTEGER, required: true, foreignTable: tboferta, foreignReference: id_oferta  }
+        created_at: { phpName: CreatedAt, type: DATE, required: false }
+        updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+        created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+        updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+        _indexes: { tbofertacoordenador_idx: [matricula_prof]}
+  tbofertahorario:
+    _attributes: { phpName: Tbofertahorario }
+    dia: { phpName: Dia, type: INTEGER, required: true }
+    hora_inicio: { phpName: HoraInicio, type: TIME, required: true }
+    hora_fim: { phpName: HoraFim, type: TIME, required: true }
+    id_oferta: { phpName: IdOferta, type: INTEGER, required: true, foreignTable: tboferta, foreignReference: id_oferta }
+    id_horario: { phpName: IdHorario, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    _indexes: { dia_hora_inicio_idx: [dia, hora_inicio], tbofertahorario_idx: [dia, hora_inicio, hora_fim] }
+    _uniques: { tbofertahorario_uniq: [id_oferta, dia, hora_inicio] }
+  tbpais:
+    _attributes: { phpName: Tbpais }
+    id_pais: { phpName: IdPais, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '25', required: true }
+    sucinto: { phpName: Sucinto, type: VARCHAR, size: '5', required: true }
+    nacionalidade: { phpName: Nacionalidade, type: VARCHAR, size: '25', required: true }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbperiodo:
+    _attributes: { phpName: Tbperiodo }
+    id_periodo: { phpName: IdPeriodo, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '50', required: false }
+    ano: { phpName: Ano, type: INTEGER, required: true }
+    semestre: { phpName: Semestre, type: INTEGER, required: true }
+    periodo: { phpName: Periodo, type: INTEGER, required: true }
+    dt_inicio: { phpName: DtInicio, type: DATE, required: false }
+    dt_fim: { phpName: DtFim, type: DATE, required: false }
+    dt_fim_notas: { phpName: DtFimNotas, type: DATE, required: false }
+    dt_inicio_oferta: { phpName: DtInicioOferta, type: DATE, required: false }
+    dt_fim_oferta: { phpName: DtFimOferta, type: DATE, required: false }
+    dt_inicio_fila: { phpName: DtInicioFila, type: DATE, required: false }
+    dt_fim_fila: { phpName: DtFimFila, type: DATE, required: false }
+    dt_inicio_resultado: { phpName: DtInicioResultado, type: DATE, required: false }
+    dt_fim_resultado: { phpName: DtFimResultado, type: DATE, required: false }
+    dt_inicio_oferta_cadastro: { phpName: DtInicioOfertaCadastro, type: DATE, required: false }
+    dt_fim_oferta_cadastro: { phpName: DtFimOfertaCadastro, type: DATE, required: false }
+    dt_inicio_cadastro: { phpName: DtInicioCadastro, type: DATE, required: false }
+    dt_fim_cadastro: { phpName: DtFimCadastro, type: DATE, required: false }
+    dt_inicio_ajuste: { phpName: DtInicioAjuste, type: DATE, required: false }
+    dt_fim_ajuste: { phpName: DtFimAjuste, type: DATE, required: false }
+    dt_inicio_ajuste_fila: { phpName: DtInicioAjusteFila, type: DATE, required: false }
+    dt_fim_ajuste_fila: { phpName: DtFimAjusteFila, type: DATE, required: false }
+    dt_inicio_ajuste_resultado: { phpName: DtInicioAjusteResultado, type: DATE, required: false }
+    dt_fim_ajuste_resultado: { phpName: DtFimAjusteResultado, type: DATE, required: false }
+    dt_inicio_trancamento: { phpName: DtInicioTrancamento, type: DATE, required: false }
+    dt_fim_trancamento: { phpName: DtFimTrancamento, type: DATE, required: false }
+    sucinto: { phpName: Sucinto, type: VARCHAR, size: '50', required: false }
+    id_nivel: { phpName: IdNivel, type: INTEGER, required: true, foreignTable: tbcursonivel, foreignReference: id_nivel }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbpessoa:
+    _attributes: { phpName: Tbpessoa }
+    id_pessoa: { phpName: IdPessoa, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    nome: { phpName: Nome, type: VARCHAR, size: '100', required: false }
+    celular: { phpName: Celular, type: VARCHAR, size: '15', required: false }
+    email: { phpName: Email, type: VARCHAR, size: '100', required: false }
+    fone_residencial: { phpName: FoneResidencial, type: VARCHAR, size: '15', required: false }
+    foto: { phpName: Foto, type: BLOB, required: false }
+    id_neces_especial: { phpName: IdNecesEspecial, type: VARCHAR, required: false, foreignTable: tbnecesespecial, foreignReference: id_neces_especial }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbcoordenadorcurso:
+    _attributes: { phpName: Tbcoordenadorcurso }
+    id_coordenador_curso: { phpName: IdCoordenadorCurso, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    matricula_prof: { phpName: MatriculaProf, type: INTEGER,  primaryKey: true, required: true, foreignTable: tbprofessor, foreignReference: matricula_prof }
+    id_versao_curso: { phpName: IdVersaoCurso, type: INTEGER, primaryKey: true, required: false, foreignTable: tbcursoversao, foreignReference: id_versao_curso }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbprofessor:
+    _attributes: { phpName: Tbprofessor }
+    id_pessoa: { phpName: IdPessoa, type: INTEGER, sequence: tbpessoa_id_pessoa_seq, autoIncrement: true, required: true }
+    matricula_prof: { phpName: MatriculaProf, primaryKey: true, autoIncrement: false, type: INTEGER, required: true }
+    cpf: { phpName: Cpf, type: VARCHAR, size: '11', required: false }
+    siape: { phpName: Siape, type: INTEGER, required: TRUE}
+    nome: { phpName: Nome, type: VARCHAR, size: '100', required: false }
+    celular: { phpName: Celular, type: VARCHAR, size: '15', required: false }
+    fone_residencial: { phpName: FoneResidencial, type: VARCHAR, size: '15', required: false }
+    email: { phpName: Email, type: VARCHAR, size: '100', required: false }
+    foto: { phpName: Foto, type: BLOB, required: false }
+    id_neces_especial: { phpName: IdNecesEspecial, type: VARCHAR, required: false, foreignTable: tbnecesespecial, foreignReference: id_neces_especial }
+    cod_curso: { phpName: CodCurso, type: INTEGER, required: false, foreignTable: tbcurso, foreignReference: cod_curso }
+    id_tipo_vinculo: { phpName: IdTipoVinculo, type: INTEGER, required: false, foreignTable: tbproftipovinculo, foreignReference: id_tipo_vinculo }
+    id_formacao: { phpName: IdFormacao, type: INTEGER, required: false, foreignTable: tbformacao, foreignReference: id_formacao }
+    id_prof_sit: { phpName: IdProfSit, type: INTEGER, required: false, foreignTable: tbprofessorsituacao, foreignReference: id_situacao }
+    id_setor: { phpName: IdSetor, type: VARCHAR, required: false, foreignTable: tbsetor, foreignReference: id_setor }
+    coordenador: { phpName: Coordenador, type: BOOLEAN, default: false, required: true }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbprofessorsenha:
+    _attributes: { phpName: Tbprofessorsenha }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    matricula_prof: { phpName: MatriculaProf, type: INTEGER, required: true, foreignTable: tbprofessor, foreignReference: matricula_prof }
+    senha: { phpName: Senha, type: VARCHAR, size: '255', required: true }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    _uniques: { tbprofessorsenha_matricula_prof_: [matricula_prof] }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbprofessorticket:
+    _attributes: { phpName: Tbprofessorticket }
+    id_professorticket: { phpName: IdProfessorTicket, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    id_periodo: { phpName: IdPeriodo, type: INTEGER, required: true, foreignTable: tbperiodo, foreignReference: id_periodo }
+    matricula_prof: { phpName: MatriculaProf, type: INTEGER, required: false, foreignTable: tbprofessor, foreignReference: matricula_prof}
+    dt_inicio: { phpName: DtInicio, type: DATE, required: false }
+    dt_fim: { phpName: DtFim, type: DATE, required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    _uniques: { tbprofessorsenha_matricula_prof_: [matricula_prof] }
+  tbprofessorsituacao:
+    _attributes: { phpName: Tbprofessorsituacao }
+    id_situacao: { phpName: IdSituacao, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '20', required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbproftipovinculo:
+    _attributes: { phpName: Tbproftipovinculo }
+    id_tipo_vinculo: { phpName: IdTipoVinculo, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '20', required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbsala:
+    _attributes: { phpName: Tbsala }
+    id_sala: { phpName: IdSala, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    bloco: { phpName: Bloco, type: VARCHAR, size: '5', required: false }
+    capacidade: { phpName: Capacidade, type: INTEGER, required: false }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '20', required: false }
+    id_campus: { phpName: IdCampus, type: INTEGER, required: false, foreignTable: tbcampus, foreignReference: id_campus }
+    numero: { phpName: Numero, type: INTEGER, required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    _indexes: { sala_ndx: [bloco, numero] }
+  tbsetor:
+    _attributes: { phpName: Tbsetor }
+    id_setor: { phpName: IdSetor, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '50', required: false }
+    sucinto: { phpName: Sucinto, type: VARCHAR, size: '15', required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbtipoingresso:
+    _attributes: { phpName: Tbtipoingresso }
+    id_tipo_ingresso: { phpName: IdTipoIngresso, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '30', required: false }
+    sigla_pingifes: { phpName: SiglaPingifes, type: VARCHAR, size: '2', required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  tbturma:
+    _attributes: { phpName: Tbturma }
+    id_turma: { phpName: IdTurma, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    id_periodo: { phpName: IdPeriodo, type: INTEGER, required: true, foreignTable: tbperiodo, foreignReference: id_periodo }
+    cod_disciplina: { phpName: CodDisciplina, type: VARCHAR, required: true, foreignTable: tbdisciplina, foreignReference: cod_disciplina }
+    turma: { phpName: Turma, type: VARCHAR, required: true}
+    n_notas: { phpName: NNotas, type: INTEGER, required: false, defaultValue: 1 }
+    observacao: { phpName: Observacao, type: VARCHAR, size: '150', required: false }
+    notas_no_historico: { phpName: NotasNoHistorico, type: BOOLEAN, default: false, required: false }
+    id_oferta: { phpName: IdOferta, type: INTEGER, required: false, foreignTable: tboferta, foreignReference: id_oferta  }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    _indexes: { fki_: [cod_disciplina] }
+  tbturma_aluno:
+    _attributes: { phpName: TbturmaAluno }
+    id_aluno: { phpName: IdAluno, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    id_turma: { phpName: IdTurma, type: INTEGER, required: true, foreignTable: tbturma, foreignReference: id_turma }
+    matricula: { phpName: Matricula, type: BIGINT, required: false, foreignTable: tbaluno, foreignReference: matricula }
+    faltas: { phpName: Faltas, type: INTEGER, required: false }
+    media_parcial: { phpName: MediaParcial, type: NUMERIC, size: '10', scale: '2', required: false }
+    exame_recuperacao: { phpName: ExameRecuperacao, type: NUMERIC, size: '10', scale: '2', required: false }
+    media_final: { phpName: MediaFinal, type: NUMERIC, size: '10', scale: '2', required: false }
+    id_conceito: { phpName: IdConceito, type: INTEGER, required: false, foreignTable: tbconceito, foreignReference: id_conceito }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    _indexes: { fki: [matricula] }
+    _uniques: { tbturma_aluno_id_turma_key: [id_turma, matricula] }
+  tbturma_nota:
+    _attributes: { phpName: TbturmaNota }
+    id_nota: { phpName: IdNota, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    id_aluno: { phpName: IdAluno, type: INTEGER, required: true, foreignTable: tbturma_aluno, foreignReference: id_aluno, onDelete: cascade }
+    n_nota: { phpName: NNota, type: INTEGER, required: true }
+    valor: { phpName: Valor, type: NUMERIC, size: '10', scale: '2', required: true }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+    _uniques: { tbturma_nota_id_aluno_key: [id_aluno, n_nota] }    
+  tbturma_professor:
+    _attributes: { phpName: TbturmaProfessor }
+    id_turma: { phpName: IdTurma, type: INTEGER, required: false, foreignTable: tbturma, foreignReference: id_turma, primaryKey: true, onDelete: cascade }
+    matricula_prof: { phpName: MatriculaProf, type: INTEGER, required: false, foreignTable: tbprofessor, foreignReference: matricula_prof, primaryKey: true, onDelete: cascade }
+  tbturma_sumula:
+    _attributes: { phpName: TbturmaSumula }
+    id_sumula: { phpName: IdSumula, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    id_turma: { phpName: IdTurma, type: INTEGER, required: true, foreignTable: tbturma, foreignReference: id_turma }
+    data: { phpName: Data, type: DATE, required: true }
+    descricao: { phpName: Descricao, type: LONGVARCHAR, required: true }
+    matricula_prof: { phpName: MatriculaProf, type: INTEGER, required: true }
+  tbturno:
+    _attributes: { phpName: Tbturno }
+    id_turno: { phpName: IdTurno, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    descricao: { phpName: Descricao, type: VARCHAR, size: '20', required: false }
+    hora_inicial: { phpName: HoraInicial, type: TIME, required: false }
+    hora_final: { phpName: HoraFinal, type: TIME, required: false }
+    created_at: { phpName: CreatedAt, type: DATE, required: false }
+    updated_at: { phpName: UpdatedAt, type: DATE, required: false }
+    created_by: { phpName: CreatedBy, type: VARCHAR, size: '20' , required: false }
+    updated_by: { phpName: UpdatedBy, type: VARCHAR, size: '20', required: false }
+  censo2009:
+    _attributes: { phpName: Censo2009 }
+    aluno_c1: { phpName: AlunoC1, type: INTEGER, required: false }
+    aluno_c2: { phpName: AlunoC2, type: LONGVARCHAR, required: false }
+    aluno_c3: { phpName: AlunoC3, type: LONGVARCHAR, required: false }
+    aluno_c4_nome: { phpName: AlunoC4Nome, type: VARCHAR, required: false }
+    aluno_c5_cpf: { phpName: AlunoC5Cpf, type: VARCHAR, size: '11', required: false }
+    aluno_c6_doc_estrangeiro: { phpName: AlunoC6DocEstrangeiro, type: LONGVARCHAR, required: false }
+    aluno_c7_nascimento: { phpName: AlunoC7Nascimento, type: LONGVARCHAR, required: false }
+    aluno_c8_sexo: { phpName: AlunoC8Sexo, type: INTEGER, required: false }
+    aluno_c9_cor_raca: { phpName: AlunoC9CorRaca, type: INTEGER, required: false }
+    aluno_c10_mae: { phpName: AlunoC10Mae, type: VARCHAR, required: false }
+    aluno_c11_nacionalidade: { phpName: AlunoC11Nacionalidade, type: INTEGER, required: false }
+    aluno_c12_uf_nascimento: { phpName: AlunoC12UfNascimento, type: LONGVARCHAR, required: false }
+    aluno_c13_cidade_nascimento: { phpName: AlunoC13CidadeNascimento, type: LONGVARCHAR, required: false }
+    aluno_c14_pais_origem: { phpName: AlunoC14PaisOrigem, type: LONGVARCHAR, required: false }
+    aluno_c15_deficiencia: { phpName: AlunoC15Deficiencia, type: INTEGER, required: false }
+    aluno_c16_def_cegueria: { phpName: AlunoC16DefCegueria, type: LONGVARCHAR, required: false }
+    aluno_c17_def_baixa_visao: { phpName: AlunoC17DefBaixaVisao, type: LONGVARCHAR, required: false }
+    aluno_c18_def_surdez: { phpName: AlunoC18DefSurdez, type: LONGVARCHAR, required: false }
+    aluno_c19_def_auditiva: { phpName: AlunoC19DefAuditiva, type: LONGVARCHAR, required: false }
+    aluno_c20_def_fisica: { phpName: AlunoC20DefFisica, type: LONGVARCHAR, required: false }
+    aluno_c21_def_surdocegueira: { phpName: AlunoC21DefSurdocegueira, type: LONGVARCHAR, required: false }
+    aluno_c22_def_multipla: { phpName: AlunoC22DefMultipla, type: LONGVARCHAR, required: false }
+    aluno_c23_def_mental: { phpName: AlunoC23DefMental, type: LONGVARCHAR, required: false }
+    curso_c1_tipo_reg2: { phpName: CursoC1TipoReg2, type: INTEGER, required: false }
+    curso_c2_id_inep_curso: { phpName: CursoC2IdInepCurso, type: LONGVARCHAR, required: false }
+    curso_c3_cod_polo_inep: { phpName: CursoC3CodPoloInep, type: LONGVARCHAR, required: false }
+    curso_c4_turno_aluno: { phpName: CursoC4TurnoAluno, type: LONGVARCHAR, required: false }
+    curso_c5_situacao_vinculo: { phpName: CursoC5SituacaoVinculo, type: INTEGER, required: false }
+    curso_c6_data_ingresso: { phpName: CursoC6DataIngresso, type: LONGVARCHAR, required: false }
+    curso_c7_aluno_publica: { phpName: CursoC7AlunoPublica, type: LONGVARCHAR, required: false }
+    curso_c8_forma_ingresso_selecao_vestibular: { phpName: CursoC8FormaIngressoSelecaoVestibular, type: INTEGER, required: false }
+    curso_c9_forma_ingresso_selecao_enem: { phpName: CursoC9FormaIngressoSelecaoEnem, type: INTEGER, required: false }
+    curso_c10_forma_ingresso_selecao_outros: { phpName: CursoC10FormaIngressoSelecaoOutros, type: INTEGER, required: false }
+    curso_c11_forma_ingresso_selecao_pecg: { phpName: CursoC11FormaIngressoSelecaoPecg, type: INTEGER, required: false }
+    curso_c12_forma_ingresso_outras: { phpName: CursoC12FormaIngressoOutras, type: INTEGER, required: false }
+    curso_c13_programa_reserva_vagas: { phpName: CursoC13ProgramaReservaVagas, type: INTEGER, required: false }
+    curso_c14_programa_reserva_vagas: { phpName: CursoC14ProgramaReservaVagas, type: INTEGER, required: false }
+    curso_c15_programa_reserva_vagas: { phpName: CursoC15ProgramaReservaVagas, type: INTEGER, required: false }
+    curso_c16_programa_reserva_vagas: { phpName: CursoC16ProgramaReservaVagas, type: INTEGER, required: false }
+    curso_c17_programa_reserva_vagas: { phpName: CursoC17ProgramaReservaVagas, type: INTEGER, required: false }
+    curso_c18_programa_reserva_vagas: { phpName: CursoC18ProgramaReservaVagas, type: INTEGER, required: false }
+    curso_c19_financiamento_estudantil: { phpName: CursoC19FinanciamentoEstudantil, type: INTEGER, required: false }
+    curso_c20_financiamento_estudantil: { phpName: CursoC20FinanciamentoEstudantil, type: INTEGER, required: false }
+    curso_c21_financiamento_estudantil: { phpName: CursoC21FinanciamentoEstudantil, type: INTEGER, required: false }
+    curso_c22_financiamento_estudantil: { phpName: CursoC22FinanciamentoEstudantil, type: INTEGER, required: false }
+    curso_c23_financiamento_estudantil: { phpName: CursoC23FinanciamentoEstudantil, type: INTEGER, required: false }
+    curso_c24_financiamento_estudantil: { phpName: CursoC24FinanciamentoEstudantil, type: INTEGER, required: false }
+    curso_c25_financiamento_estudantil: { phpName: CursoC25FinanciamentoEstudantil, type: INTEGER, required: false }
+    curso_c26_financiamento_estudantil_n_reemb: { phpName: CursoC26FinanciamentoEstudantilNReemb, type: INTEGER, required: false }
+    curso_c27_financiamento_estudantil_n_reemb: { phpName: CursoC27FinanciamentoEstudantilNReemb, type: INTEGER, required: false }
+    curso_c28_financiamento_estudantil_n_reemb: { phpName: CursoC28FinanciamentoEstudantilNReemb, type: INTEGER, required: false }
+    curso_c29_financiamento_estudantil_n_reemb: { phpName: CursoC29FinanciamentoEstudantilNReemb, type: INTEGER, required: false }
+    curso_c30_financiamento_estudantil_n_reemb: { phpName: CursoC30FinanciamentoEstudantilNReemb, type: INTEGER, required: false }
+    curso_c31_financiamento_estudantil_n_reemb: { phpName: CursoC31FinanciamentoEstudantilNReemb, type: INTEGER, required: false }
+    curso_c32_financiamento_estudantil_n_reemb: { phpName: CursoC32FinanciamentoEstudantilNReemb, type: INTEGER, required: false }
+    curso_c33_apoio_social: { phpName: CursoC33ApoioSocial, type: INTEGER, required: false }
+    curso_c34_tipo_apoio_social: { phpName: CursoC34TipoApoioSocial, type: INTEGER, required: false }
+    curso_c35_tipo_apoio_social: { phpName: CursoC35TipoApoioSocial, type: INTEGER, required: false }
+    curso_c36_tipo_apoio_social: { phpName: CursoC36TipoApoioSocial, type: INTEGER, required: false }
+    curso_c37_tipo_apoio_social: { phpName: CursoC37TipoApoioSocial, type: INTEGER, required: false }
+    curso_c38_tipo_apoio_social: { phpName: CursoC38TipoApoioSocial, type: INTEGER, required: false }
+    curso_c39_tipo_apoio_social: { phpName: CursoC39TipoApoioSocial, type: INTEGER, required: false }
+    curso_c40_atividade_complementar: { phpName: CursoC40AtividadeComplementar, type: INTEGER, required: false }
+    curso_c41_atividade_complementar: { phpName: CursoC41AtividadeComplementar, type: INTEGER, required: false }
+    curso_c42_bolsa: { phpName: CursoC42Bolsa, type: INTEGER, required: false }
+    curso_c43_atividade_complementar: { phpName: CursoC43AtividadeComplementar, type: INTEGER, required: false }
+    curso_c44_bolsa: { phpName: CursoC44Bolsa, type: INTEGER, required: false }
+    curso_c45_atividade_complementar: { phpName: CursoC45AtividadeComplementar, type: INTEGER, required: false }
+    curso_c46_bolsa: { phpName: CursoC46Bolsa, type: INTEGER, required: false }
+    curso_c47_atividade_complementar: { phpName: CursoC47AtividadeComplementar, type: INTEGER, required: false }
+    curso_c48_bolsa: { phpName: CursoC48Bolsa, type: INTEGER, required: false }
+    curso_c49_semestre_conclusao: { phpName: CursoC49SemestreConclusao, type: INTEGER, required: false }
+    curso_c50_aluno_parfor: { phpName: CursoC50AlunoParfor, type: INTEGER, required: false }
+    aluno_c24_def_autismo: { phpName: AlunoC24, type: LONGVARCHAR, required: false }
+    aluno_c25_def_asperger: { phpName: AlunoC25, type: LONGVARCHAR, required: false }
+    aluno_c26_def_rett: { phpName: AlunoC26, type: LONGVARCHAR, required: false }
+    aluno_c27_def_tdi: { phpName: AlunoC27, type: LONGVARCHAR, required: false }
+    aluno_c28_def_superdotado: { phpName: AlunoC28, type: LONGVARCHAR, required: false }
+    curso_c51_semestre_referencia: { phpName: CursoC51, type: LONGVARCHAR, required: false }
+    curso_c52_curso_origem_transferencia: { phpName: CursoC52, type: LONGVARCHAR, required: false }
+    curso_c53_forma_ingresso_seriada: { phpName: CursoC53, type: LONGVARCHAR, required: false }
+    curso_c54_forma_ingresso_exofficio: { phpName: CursoC54, type: LONGVARCHAR, required: false }
+    curso_c55_forma_ingresso_judicial: { phpName: CursoC55, type: LONGVARCHAR, required: false }
+    curso_c56_mobilidade_academica: { phpName: CursoC56, type: LONGVARCHAR, required: false }
+    curso_c57_mobilidade_tipo: { phpName: CursoC57, type: LONGVARCHAR, required: false }
+    curso_c58_mobilidade_ies_destino: { phpName: CursoC58, type: LONGVARCHAR, required: false }
+    curso_c59_mobilidade_tipo_internacional: { phpName: CursoC59, type: LONGVARCHAR, required: false }
+    curso_c60_mobilidade_pais_destino: { phpName: CursoC60, type: LONGVARCHAR, required: false }
+    curso_c61_semestre_ingresso_curso: { phpName: CursoC61, type: LONGVARCHAR, required: false }
+    curso_c62_forma_ingresso_selecao_simples: { phpName: CursoC62, type: INTEGER, required: false }
+    curso_c63_forma_ingresso_selecao_remanescentes: { phpName: CursoC63, type: INTEGER, required: false }
+    curso_c64_forma_ingresso_selecao_especiais: { phpName: CursoC64, type: INTEGER, required: false }
+    exportado: { phpName: Exportado, type: BOOLEAN, required: false }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }

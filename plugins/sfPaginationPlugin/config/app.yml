@@ -1,0 +1,16 @@
+all:
+  sfPaginationPlugin:
+    #class of parent UL
+    ul_class:   sfPaginationPluginCssUl
+    #class of li for next button
+    li_next:    next
+    #class of li for previous button
+    li_prev:    previous
+    #class of li for active page button
+    li_active:  active
+    #class of li for normal page button
+    li:         ''
+    #default number of entries per page
+    default_entries: 20
+    #a list of all available option for entries per page
+    entries_per_page: [20,60,80,100]

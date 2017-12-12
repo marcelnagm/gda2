@@ -1,0 +1,245 @@
+<?php
+
+/**
+ * Tbaluno form.
+ *
+ * @package    derca
+ * @subpackage form
+ * @author     Your name here
+ * @version    SVN: $Id: sfPropelFormTemplate.php 10377 2008-07-21 07:10:32Z dwhittle $
+ */
+class NovoAlunoForm extends BaseTbalunoForm {
+
+    private $title = 'Matrícula de Novos Alunos';
+    private $URLPost = 'matricula/NovoAluno';
+
+    public function configure() {
+
+        unset($this['id_pessoa']);
+        unset($this['foto']);
+        unset($this['media_geral']);
+        unset($this['ch_eletiva_cursada']);
+        unset($this['ch_eletiva_solicitada']);
+        unset($this['ch_obrig_cursada']);
+        unset($this['ch_obrig_solicitada']);
+        unset($this['ch_total']);
+        unset($this['id_antigo']);
+        //vestibular
+        //unset($this['id_tipo_ingresso']);
+        unset($this['dt_ingresso']);
+        unset($this['dt_situacao']);
+        unset($this['id_situacao']);
+        unset($this['id_destino']);
+//        unset($this->widgetSchema['matricula']);
+        unset($this['uf_nascimento']);
+//        $this->widgetSchema['matricula']->setAttribute('readonly','readonly');
+        //local de trabalho
+        unset($this['id_trabalho']);
+        unset($this['ramal_trabalho']);
+        unset($this['fone_trabalho']);
+        unset($this['cep_trabalho']);
+        unset($this['cod_curso']);
+        unset($this['id_3grau']);
+        unset($this['ano_concl_3grau']);
+
+        $tipos = array(
+            '23' => 'PROCESSO SELETIVO',
+            '2' => 'VESTIBULAR',
+            '24' => 'ENEM SISU',
+            '22' => 'PROCESSO SELETIVO INDÍGENA',
+            '5' => 'GRADUAÇÃO',
+            '6' => 'ALUNO ESPECIAL',
+            '13' => 'TRANSFERÊNCIA'
+        );
+
+        $cursos = array(
+            '194' => 'TECNÓLOGO EM AGROECOLOGIA',
+            '162' => 'UAB - LICENCIATURA EM MATEMÁTICA',
+            '163' => 'UAB - LICENCIATURA EM INFORMÁTICA',
+            '12' => 'ADMINISTRAÇÃO',
+            '34' => 'AGRONOMIA',
+            '114' => 'ANTROPOLOGIA',
+            '28' => 'ARQUITETURA E URBANISMO',
+            '159' => 'ARTES VISUAIS',
+            '173' => 'CIÊNCIAS BIOLÓGICAS - BACHARELADO',
+            '174' => 'CIÊNCIAS BIOLÓGICAS - LICENCIATURA',
+            '23' => 'CIÊNCIAS SOCIAIS',
+            '175' => 'COMUNICAÇÃO SOCIAL',
+            '47' => 'DIREITO',
+            '60' => 'ECONOMIA - MATUTINO',
+            '38' => 'ECONOMIA - VESPERTINO/NOTURNO',
+            '50' => 'FÍSICA',
+            '57' => 'GEOGRAFIA - BACHARELADO',
+            '21' => 'GEOGRAFIA - LICENCIATURA',
+            '78' => 'GEOLOGIA',
+            '116' => 'GESTÃO TERRITORIAL INDÍGENA',
+            '166' => 'HISTÓRIA - MATUTINO',
+            '167' => 'HISTÓRIA - NOTURNO',
+            '79' => 'INTERCULTURAL',
+            '110' => 'LETRAS - LITERATURA',
+            '111' => 'LETRAS - ESPANHOL',
+            '112' => 'LETRAS - FRANCÊS',
+            '113' => 'LETRAS - INGLÊS',
+            '182' => 'MATEMÁTICA - BACHARELADO',
+            '183' => 'MATEMÁTICA - LICENCIATURA',
+            '62' => 'MEDICINA',
+            '155' => 'MEDICINA',
+            '95' => 'PEDAGOGIA',
+            '29' => 'PSICOLOGIA',
+            '61' => 'QUÍMICA',
+            '179' => 'QUÍMICA',
+            '66' => 'RELAÇÕES INTERNACIONAIS',
+            '108' => 'SECRETARIADO',
+            '62' => 'MEDICINA',
+            '30' => 'ZOOTECNIA',
+            '96' => 'CIÊNCIA DA COMPUTAÇÃO',
+            '37' => 'ENGENHARIA CIVIL',
+            '109' => 'CONTABILIDADE',
+            '149' => 'ENGENHARIA ELÉTRICA',
+            '177' => 'ENFERMAGEM',
+            '185' => 'MESTRADO EM DESENVOLVIMENTO REGIONAL DA AMAZÔNIA',
+            '180' => 'MESTRADO PROFISSIONAL EM MATEMÁTICA - PROFMAT',
+            '187' => 'PROGRAMA DE PÓS-GRADUAÇÃO EM SOCIEDADE E FRONTEIRAS - PPGSOF'
+        );
+
+        if (sfContext::getInstance()->getUser()->getAttribute('import')) {
+            $aluno = sfContext::getInstance()->getUser()->getAttribute('novo_aluno');
+            $this->widgetSchema['matricula'] = new sfWidgetFormInput();
+            $this->validatorSchema['matricula'] = new sfValidatorString();
+            $this->widgetSchema['id_versao_curso'] = new sfWidgetFormChoice(array(
+                        'expanded' => false,
+                        'multiple' => false,
+                        'label' => 'Curso',
+                        'choices' => array($aluno->getIdVersaoCurso() => $cursos[$aluno->getIdVersaoCurso()])
+                    ));
+            $this->widgetSchema['id_tipo_ingresso'] = new sfWidgetFormChoice(array(
+                        'expanded' => false,
+                        'multiple' => false,
+                        'choices' => array($aluno->getIdTipoIngresso() => $tipos[$aluno->getIdTipoIngresso()]),
+                        'label' => 'Tipo de Ingresso',
+                    ));
+
+            $this->widgetSchema['id_polo'] = new sfWidgetFormChoice(array(
+                        'choices' => array(
+                            '0' => 'BOA VISTA'
+                        ),
+                        'expanded' => false,
+                        'multiple' => false,
+                        'label' => 'Pólo'
+                ));
+            $this->widgetSchema['sexo'] = new sfWidgetFormChoice(array(
+                        'choices' => array(
+                            'M' => 'Masculino',
+                            'F' => 'Feminino'
+                        ),
+                        'expanded' => true,
+                        'multiple' => false
+                    ));
+
+            $wids = array('matricula');
+            foreach ($wids as $wid) {
+                $this->widgetSchema[$wid]->setAttribute('readonly', 'readonly');
+            }
+        }
+
+        $this->widgetSchema['nome']->setAttribute('size', 50);
+        $this->widgetSchema['celular']->setAttribute('size', 12);
+        $this->widgetSchema['fone_residencial']->setAttribute('size', 12);
+
+        $years = range(date('Y') - 10, date('Y') - 100);
+        $this->widgetSchema['dt_nascimento'] = new sfWidgetFormDate(array(
+                    'format' => '%day%/%month%/%year%',
+                    'years' => array_combine($years, $years),
+                    'label' => 'Data de Nascimento'
+                ));
+
+        $years = range(date('Y'), date('Y') - 100);
+        $this->widgetSchema['rg_dt_exped'] = new sfWidgetFormDate(array(
+                    'format' => '%day%/%month%/%year%',
+                    'years' => array_combine($years, $years),
+                    'label' => 'Data de Expedição do RG'
+                ));
+
+        $this->widgetSchema['cpf']->setLabel('CPF');
+        $this->widgetSchema['cpf']->setAttribute('size', 11);
+        $this->widgetSchema['cpf']->setAttribute('maxlength', 11);
+        $this->validatorSchema['cpf'] = new sfValidatorRegex(array('pattern' => '/^[0-9]+$/'));
+
+        $this->widgetSchema['titulo_zona']->setAttribute('size', 4);
+        $this->widgetSchema['titulo_zona']->setLabel('Zona Eleitoral');
+        $this->widgetSchema['titulo_secao']->setAttribute('size', 4);
+        $this->widgetSchema['titulo_secao']->setLabel('Seção Eleitoral');
+
+        $this->widgetSchema['pai']->setAttribute('size', 50);
+        $this->widgetSchema['pai']->setLabel('Nome do Pai');
+        $this->widgetSchema['mae']->setAttribute('size', 50);
+        $this->widgetSchema['mae']->setLabel('Nome da Mãe');
+
+        $this->widgetSchema['numero']->setAttribute('size', 4);
+        $this->widgetSchema['ano_concl_2grau']->setAttribute('size', 4);
+        $this->widgetSchema['ano_concl_2grau']->setLabel('Ano de Conclusão do Ensino Médio');
+
+        $crit_cidade = new Criteria();
+        $crit_cidade->addAscendingOrderByColumn(TbcidadePeer::DESCRICAO);
+        $this->widgetSchema['naturalidade'] = new sfWidgetFormPropelChoice(array('model' => 'Tbcidade', 'add_empty' => false, 'criteria' => $crit_cidade));
+
+        $crit_cep = new Criteria();
+        $crit_cep->addAscendingOrderByColumn(TblogradouroPeer::CEP);
+        $this->widgetSchema['cep'] = new sfWidgetFormPropelChoice(array('model' => 'Tblogradouro', 'add_empty' => false, 'key_method' => 'getCep', 'criteria' => $crit_cep, 'label' => 'CEP'));
+
+        $crit_escola = new Criteria();
+        $crit_escola->addAscendingOrderByColumn(TbinstexternaPeer::DESCRICAO);
+        $this->widgetSchema['id_2grau'] = new sfWidgetFormPropelChoice(array('model' => 'Tbinstexterna', 'add_empty' => true, 'criteria' => $crit_escola, 'label' => 'Instituição de Conclusão do 2ºGrau'));
+
+        $this->widgetSchema['id_neces_especial']->setLabel('Necessidade Especial');
+        $this->widgetSchema['fone_residencial']->setLabel('Telefone Residencial');
+        $this->widgetSchema['celular']->setLabel('Telefone Celular');
+        $this->widgetSchema['id_neces_especial']->setLabel('Necessidade Especial');
+        $this->widgetSchema['id_raca']->setLabel('Raça/Cor');
+        $this->widgetSchema['rg']->setLabel('RG');
+        $this->widgetSchema['rg_org_exped']->setLabel('Órgão Emissor do RG');
+        $this->widgetSchema['email']->setLabel('E-mail');
+        //        $this->widgetSchema['ano_concl_2grau']
+        // valores padrão com form em branco
+
+        $this->widgetSchema->setHelp('id_2grau', 'Para pesquisar, clique na lupa, digite parte do nome da sua escola em letras MAIÚSCULAS, e aperte a tecla TAB.<br>Exemplos: ANA LIBÓRIA, MONTEIRO, CENTRO FEDERAL.<br>Caso não encontre, peça ajuda ao funcionário responsável.');
+        $this->widgetSchema->setHelp('cep', 'Para pesquisar, clique na lupa, digite parte do seu endereço em letras MAIÚSCULAS, e aperte a tecla TAB.<br>Exemplos: VIA DAS FLORES, VILLE ROY, ACÁCIAS.<br>Caso não encontre, peça ajuda ao funcionário responsável.');
+        $this->widgetSchema->setHelp('naturalidade', 'Para pesquisar, clique na lupa, digite parte do nome da sua cidade natal em letras MAIÚSCULAS, e aperte a tecla TAB.<br>Exemplos: BOA VISTA, RORAINÓPOLIS, AMAJARI.<br>Caso não encontre, peça ajuda ao funcionário responsável.');
+        $this->widgetSchema->setHelp('email', 'Cadastre um email valido pois o DERCA poderá entrar em contato com você');
+        //$this->widgetSchema->setHelp('id_versao_curso', '(L) = Licenciatura, (B) = Bacharelado ');
+
+        $this->widgetSchema['estado_civil'] = new sfWidgetFormChoice(array(
+                    'choices' => array(
+                        'Solteiro' => 'Solteiro',
+                        'Casado' => 'Casado',
+                        'Divorciado' => 'Divorciado',
+                        'Viuvo' => 'Viúvo',
+                        'União Estável' => 'União Estável'
+                    ),
+                    'expanded' => false,
+                    'multiple' => false,
+                    'label' => 'Estado Civil'
+                ));
+    }
+
+    function getURLPost() {
+        return $this->URLPost;
+    }
+
+    function setURLPost($v) {
+        $this->URLPost = $v;
+    }
+
+    function getTitle() {
+        return $this->title;
+    }
+
+    function setTitle($t) {
+        $this->title = $t;
+    }
+
+    function getFormFields() {
+        return $this->formFields;
+    }
+
+}

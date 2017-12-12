@@ -1,0 +1,33 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbofertahorario
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbofertahorario
+    plural:                tbofertahorarios
+    route_prefix:          tbofertahorario
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        peer_method: doSelectJoinAll
+        display: [Tboferta,=diaNome,hora_inicio,hora_fim]
+        fields:
+          hora_inicio: { format: '%hour%:%minute%' }
+          hora_fim:    { format: '%hour%:%minute%' }
+      filter:  ~
+      form:
+        display: [id_oferta,dia,hora_inicio,hora_fim]
+        actions:
+          voltar: { label: Voltar para oferta }
+          _save:          ~
+          _save_and_add:  ~
+          _delete:        ~
+      edit:
+        title: 'Editando horário da oferta: "%%Tboferta%%"'
+      new:     ~

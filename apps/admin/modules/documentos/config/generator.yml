@@ -1,0 +1,35 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Tbdocs
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Tbdocs
+    plural:                Tbdocss
+    route_prefix:          tbdocs
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        id_docs: { label: 'ID' }
+        data_entrada: { label: 'Data de entrada' }
+        data_finalizado: { label: 'Finalizado em' }
+        data_saida: { label: 'Data de saída' }
+        nome_entrada: { label: 'Quem recebeu?' }
+        nome_finalizado: { label: 'Quem executou?' }
+        nome_saida: { label: 'Quem enviou?' }
+      list:
+        display: [=id_docs, descricao, data_entrada, nome_entrada, data_finalizado, nome_finalizado, data_saida, nome_saida]
+      filter:
+        display: [descricao, data_entrada, nome_entrada, data_finalizado, nome_finalizado, data_saida, nome_saida]
+      form:
+        display:
+          "Descrição do Documento" : [descricao]
+          "Entrada" : [data_entrada,nome_entrada]
+          "Execução" : [data_finalizado,nome_finalizado]
+          "Saída" : [data_saida,nome_saida]
+      edit:    ~
+      new:     ~

@@ -1,0 +1,29 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Tbmatriculacomprovante
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Tbmatriculacomprovante
+    plural:                Tbmatriculacomprovantes
+    route_prefix:          tbmatriculacomprovante
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        object_actions:
+          edit: ~
+          consultaComprovante:
+               label: Consultar
+               params: { target: _blank }
+          transfer: { label: Transferir }
+          delete: ~
+        display: [=matricula,Tbalunomatricula,_list_curso,datahora,codigo,situacao]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

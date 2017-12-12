@@ -1,0 +1,60 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tboferta
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              tboferta
+    plural:                tbofertas
+    route_prefix:          tboferta
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        #peer_method: doSelectJoinTbofertahorario
+        display: [id_oferta,Tbperiodo,=cod_disciplina,turma,_list_disciplina,tbsala,_list_horario,vagas,_list_aceitos,_list_solicitacoes,_list_professores,tbofertasituacao]
+        fields:
+          id_oferta:         { label: ID }
+          cod_disciplina:    { label: Cód. D. }
+          list_disciplina:   { label: Nome da disciplina }
+          list_horario:      { label: Horário }
+          list_solicitacoes: { label: Solicitações }
+          list_aceitos:      { label: Matriculados }
+          tbofertasituacao:  { label: Situacao da Oferta }
+          tbsala:  { label: Sala }
+        actions:
+          _new: ~
+          exportar: { action: exportar }
+        batch_actions:
+          _delete: ~
+          putCalouros: { label: Cadastrar para calouros }
+          criaTurma: { label: Criar turma }
+        object_actions:
+          _delete: ~
+          _edit: ~
+          criaTurma: {label: Criar turma desta oferta}
+      filter:  ~
+      form:
+        fields:
+          id_matricula_prof2: { label: Professor auxiliar }
+          id_polo: { label: Local, help: Local onde a turma irá assistir as aulas }
+          id_setor: { help: Departamento que fornece o professor da disciplina }
+          cod_curso: { help: Curso que coordena e oferta a disciplina }
+          cod_curso_destino: { help: Curso que terá prioridade na alocação de vagas da disciplina }
+          dt_inicio: { help: Data em que a oferta aparecerá na lista }
+          dt_fim:    { help: Data em que a oferta sairá da lista }
+      edit:
+        actions:
+          _list: ~
+          _new:  { label: Adicionar outra oferta , action: new }
+          _save: ~
+      new:
+        title: Nova Oferta
+        display: [ id_periodo,id_turno,cod_curso,cod_curso_destino,cod_disciplina,turma,id_sala,vagas,id_matricula_prof,id_matricula_prof2,id_setor,id_polo]
+        actions:
+          _list: ~
+          _save: ~

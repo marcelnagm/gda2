@@ -1,0 +1,33 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbhistorico
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbhistorico
+    plural:                tbhistoricos
+    route_prefix:          tbhistorico
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        max_per_page: 20
+        display: [matricula,=Tbaluno,Tbperiodo,=Tbdisciplina,carater,media,faltas,_list_conceito,duplicado]
+        fields:
+          list_conceito: { label: Conceito }
+        batch_actions:
+          mudarConceito: { label: Mudar conceito para... }
+          mudarDisciplina: { label: Mudar disciplina para... }
+          _delete: ~
+        actions:
+          _new: ~
+          exportar: { action: exportar }
+      filter:
+        display: [matricula,cod_disciplina,id_periodo,id_conceito,duplicado,created_by,created_at]
+      form:    ~
+      edit:    ~
+      new:     ~

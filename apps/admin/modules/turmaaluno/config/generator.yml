@@ -1,0 +1,26 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           TbturmaAluno
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Aluno
+    plural:                Alunos
+    route_prefix:          tbturma_aluno
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    ~
+      filter:  ~
+      form:
+        actions:
+          voltar: {label: Voltar para turma}
+          _save:          ~
+          _save_and_add:  ~
+          _delete:        ~
+      edit:    ~
+      new:     ~

@@ -1,0 +1,24 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbturmasumula
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbturmasumula
+    plural:                tbturmasumulas
+    route_prefix:          tbturmasumula
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list: ~
+      filter:  ~
+      form:
+        fields:
+          id_turma: {help: "Selecione a turma e o semestre correto da sua disciplina"}
+          matricula_prof: {label: SIAPE do professor}
+      edit:    ~
+      new: ~

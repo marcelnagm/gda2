@@ -1,0 +1,24 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbalunosenha
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbalunosenha
+    plural:                tbalunosenhas
+    route_prefix:          tbalunosenha
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [matricula,Tbaluno]
+        actions:
+          _new: ~          
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

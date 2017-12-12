@@ -1,0 +1,2 @@
+﻿ALTER TABLE tboferta ADD COLUMN id_matricula_prof2 integer;
+ALTER TABLE tboferta ADD CONSTRAINT tb_oferta_id_matricula_prof2 FOREIGN KEY (id_matricula_prof2) REFERENCES tbprofessor (matricula_prof) ON UPDATE NO ACTION ON DELETE NO ACTION;

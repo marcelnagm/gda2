@@ -1,0 +1,22 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbpais
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbpais
+    plural:                tbpaiss
+    route_prefix:          tbpais
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [=descricao,sucinto,nacionalidade]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

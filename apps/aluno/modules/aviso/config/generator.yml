@@ -1,0 +1,25 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Tbaviso
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Tbaviso
+    plural:                Tbavisos
+    route_prefix:          tbaviso
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: 
+        _delete: { credentials: [admin_usuarios] }
+        _new:    { credentials: [admin_usuarios] }
+      fields:  ~
+      list:
+        display: [=titulo,publicado,Tbavisolocal]
+
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

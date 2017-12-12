@@ -1,0 +1,36 @@
+## YAML Template.
+all:
+  is_secure: true
+
+ListCancelar:
+  credentials: alterar
+
+ListRemove:
+  credentials: alterar
+
+Notas:
+  credentials: alterar
+
+SalvaNNotas:
+  credentials: alterar
+
+SalvaNota:
+  credentials: alterar
+
+ListSumulas:
+  credentials: alterar
+
+TransferirNotasHistorico:
+  credentials: alterar
+
+ListTransferirNotasHist:
+  credentials: alterar
+
+IncluirAluno:
+  credentials: alterar
+
+ListNotas:
+  credentials: alterar
+
+ListNotasEdit:
+  credentials: alterar

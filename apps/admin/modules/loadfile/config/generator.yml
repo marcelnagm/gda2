@@ -1,0 +1,28 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Tbloadfile
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Upload
+    plural:                Uploads
+    route_prefix:          tbloadfile
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Uploaded Files Management
+        object_actions:
+          parsing:     ~
+          _edit:      ~
+          _delete:    ~
+      filter:  ~
+      form:    ~
+      edit:
+        title: Altering File Data
+      new:
+        title: Uploading File

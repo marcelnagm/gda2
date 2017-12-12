@@ -1,0 +1,42 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbaluno
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbaluno
+    plural:                tbalunos
+    route_prefix:          tbaluno
+    with_propel_route:     1
+    actions_base_class:    sfActions
+#_list_td_actions
+#_list_actions
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        actions:
+          Exportar: { action: Exportar, label: Formato para impressão }
+        object_actions:
+          Fila: {label: Exibir Fila }
+          Historico: {label: Historico }
+        title: Lista de Alunos do Curso
+        display: [=matricula,=nome,cpf,Tbcursoversao,Tbalunosituacao]
+        batch_actions: 
+          -: {}
+      filter:
+        display: [matricula,nome,cpf,id_neces_especial,id_polo,dt_nascimento,uf_nascimento,sexo,estado_civil,id_versao_curso,id_tipo_ingresso,dt_ingresso,id_situacao,dt_situacao,pai,mae]
+        fields:
+          nome: {help: Você pode digitar apenas parte do nome do aluno para filtra-los pelo que possuem este nome}
+          id_tipo_ingresso: {label: Tipo de Ingresso}
+          dt_ingresso: {label: Data de Ingresso}
+          dt_situacao: {label: Data da Situacao , help: Use este campo para saber desde quando o aluno entrou na situação que está}
+          id_versao_curso: {label: Grade de Curso , help: Quanto maior V. mais nova será a grade.}
+          id_situacao: {label: Situação do Aluno}
+          dt_nascimento: {label: Data de Nascimento , help: Dica:Use este campo para determinar a idade do aluno }
+          id_neces_especial: {label: Possui necessidade Especial , help: Use este campo para selecionar os alunos com alguma deficiência física ou marque nenhuma para selecionar todos}
+          id_polo: { label: Pólo , help: Use este campo para separar os alunos por pólo. }
+      form:    ~
+      edit:    ~
+      new:     ~

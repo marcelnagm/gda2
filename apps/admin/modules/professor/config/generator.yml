@@ -1,0 +1,40 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbprofessor
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbprofessor
+    plural:                tbprofessors
+    route_prefix:          tbprofessor
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        tbturma_professor_list: { help: Segure a tecla CTRL e clique com o botão esquerdo do mouse nas turmas para selecionar mais de uma.}
+      list:
+        actions:
+          _new: ~          
+          exportar: { action: exportar }
+        display: [matricula_prof,siape,nome,cpf,Tbcurso,Tbsetor,Tbproftipovinculo,Tbprofessorsituacao]
+        fields:
+          matricula_prof: {label: Cód.}
+          Tbproftipovinculo: {label: Vínculo}
+          Tbprofessorsituacao: {label: Situação}
+        object_actions:
+          TrocarCoordenador: { label: "Trocar Coordenador de Curso" ,action: ListTrocarCoordenador}
+          _edit: ~
+          _delete: ~
+      filter:
+        display: [matricula_prof,siape,nome,cpf,email,id_neces_especial,cod_curso,id_tipo_vinculo,id_formacao,id_prof_sit,id_setor,coordenador,tbcoordenadorcurso_list]
+      form:
+        display: [matricula_prof,siape,nome,cpf,email,celular,fone_residencial,id_neces_especial,cod_curso,id_tipo_vinculo,id_formacao,id_prof_sit,id_setor,coordenador,tbcoordenadorcurso_list]
+        fields:
+          tbcoordenadorcurso_list: {label: 'De quais versões de curso esta pessoa é coordenador?'}
+      edit:    ~
+      new:
+        fields:
+          matricula_prof: { help: Preencha com o SIAPE do professor }

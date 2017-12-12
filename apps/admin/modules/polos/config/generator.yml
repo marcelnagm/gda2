@@ -1,0 +1,22 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Tbpolos
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Tbpolos
+    plural:                Tbpoloss
+    route_prefix:          tbpolos
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [id_polo,descricao]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

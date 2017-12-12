@@ -1,0 +1,32 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Tbpendencia
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Tbpendencia
+    plural:                Tbpendencias
+    route_prefix:          tbpendencia
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        actions:
+          _new: ~
+          Adicionar: { label: Adicionar Pendências }
+        display: [=matricula,Tbaluno,Tbpendenciatipo,resolvido]
+        object_actions:
+          _edit: ~
+          Resolver: {label: Pendência Resolvida }
+          UnResolver: {label: Gerar Pendência }
+        batch_actions:
+          Resolver: {label: Pendências Resolvidas }
+          UnResolver: {label: Gerar Pendências }
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

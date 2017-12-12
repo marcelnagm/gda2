@@ -1,0 +1,22 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbestado
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbestado
+    plural:                tbestados
+    route_prefix:          tbestado
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [=descricao,uf,Tbpais]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

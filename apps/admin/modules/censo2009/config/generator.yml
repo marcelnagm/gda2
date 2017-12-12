@@ -1,0 +1,32 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           censo2009
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              censo2009
+    plural:                censo2009s
+    route_prefix:          censo2009
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        actions:
+          monitores: { action: MonitoresProcess }
+          updateCenso: { label: Atualizar (Antigos) }
+          updatedCenso: { label: Exportar (Antigos) }
+          exportAll: { label: Exportar (Ingressantes) }
+          repopulation: { label: Truncate + Insert Ingressantes }
+        batch_actions:
+          export: { label: Exportar }
+          markExported: { label: Marcar como exportado }
+          markNotExported: { label: Marcar como não exportado }
+          _delete:  ~
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

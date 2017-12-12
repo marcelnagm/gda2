@@ -1,0 +1,11 @@
+recuperaSenha:
+  is_secure: false
+
+recuperacaoCPF:
+  is_secure: false
+
+recuperacaoNome:
+  is_secure: false
+
+atualizaSenha:
+  is_secure: false

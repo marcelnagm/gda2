@@ -1,0 +1,13 @@
+## YAML Template.
+all:
+  is_secure: true
+
+
+NovoAluno:
+  credentials: cadastro_aluno
+
+GerarFicha:
+  credentials: cadastro_aluno_ficha
+
+ListLimpaTurmas:
+  credentials: apagar

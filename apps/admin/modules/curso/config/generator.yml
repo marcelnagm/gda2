@@ -1,0 +1,25 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbcurso
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbcurso
+    plural:                tbcursos
+    route_prefix:          tbcurso
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [cod_curso,descricao,sucinto ,centro, Tbcursonivel]
+        actions:
+          _new: ~
+          exportar: { action: exportar }
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

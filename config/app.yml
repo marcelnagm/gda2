@@ -1,0 +1,32 @@
+all:
+
+  culture : pt_BR
+  date_format: %day%/%month%/%year%
+  diretor: 'Professor'
+  
+  years_range: 30
+  tostring_method:
+    fields: [nome,sucinto,descricao,username,id]
+    chars: 30
+
+  .array:
+    
+    # Lista de IDs da situação do aluno para matrícula
+    # ID - Descricao (checar no banco, tbalunosituacao)
+    # 0  - aluno regular
+    # 12 - aluno especial
+    situacoes_matricula_turma: [ 0,12 ]
+
+    # Lista dias da semana para o horário
+    dias_semana:
+      1: Segunda
+      2: Terça
+      3: Quarta
+      4: Quinta
+      5: Sexta
+      6: Sábado
+      7: Domingo
+    diretor: 'Professor'
+    
+
+

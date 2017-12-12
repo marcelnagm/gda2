@@ -1,0 +1,33 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbdisciplina
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbdisciplina
+    plural:                tbdisciplinas
+    route_prefix:          tbdisciplina
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [=cod_disciplina,descricao,ch,ch_teorica,ch_pratica,inicio,termino,Tbdisciplinasituacao]
+        object_actions:
+          #TrocaCodigo: {label: Trocar Codigo}
+          _edit: ~
+          _delete: ~
+        actions:
+          _new: ~
+          exportar: { action: exportar }
+      filter:
+        display:
+          [cod_disciplina,descricao,ch,ch_teorica,ch_pratica,inicio,termino,id_situacao]
+      form:
+       fields:
+         cod_disciplina: {help: 'O cod da disciplina aceita Codigos iniciados com LetraNumero.(Letra ou Numero ,apenas um dos dois)  Ex: PRN1.A OU PRN1.1  '  }
+      edit:    ~
+      new:     ~

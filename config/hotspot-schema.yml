@@ -1,0 +1,15 @@
+# Schema do banco de dados de autenticacao
+hotspot_aluno:
+  _attributes:
+    package: lib.model
+    defaultIdMethod: native
+
+  radcheck:
+    _attributes: { phpName: HotSpotRadcheck }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    username: { phpName: Username, type: VARCHAR, size: '64', required: true, defaultValue: '' }
+    attribute: { phpName: Attribute, type: VARCHAR, size: '64', required: true, defaultValue: 'MD5-Password' }
+    op: { phpName: Op, type: CHAR, size: '2', required: true, defaultValue: ':=' }
+    value: { phpName: Value, type: VARCHAR, size: '253', required: true, defaultValue: '' }
+    _uniques: { username_key: [username] }
+    _indexes: { radcheck_username: [username, attribute] }

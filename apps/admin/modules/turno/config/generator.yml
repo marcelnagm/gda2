@@ -1,0 +1,22 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbturno
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbturno
+    plural:                tbturnos
+    route_prefix:          tbturno
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [=descricao,hora_inicial,hora_final]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

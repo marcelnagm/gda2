@@ -1,0 +1,762 @@
+tbdocs:
+  class: sfPropelRouteCollection
+  options:
+    model:                Tbdocs
+    module:               documentos
+    prefix_path:          /documentos
+    column:               id_docs
+    with_wildcard_routes: true
+
+tbdisciplinamask:
+  class: sfPropelRouteCollection
+  options:
+    model:                Tbdisciplinamask
+    module:               tbdisciplinamask
+    prefix_path:          /tbdisciplinamask
+    column:               id_disciplina_mask
+    with_wildcard_routes: true
+
+tbdisciplinacorequisitos:
+  class: sfPropelRouteCollection
+  options:
+    model:                Tbdisciplinacorequisitos
+    module:               tbdisciplinacorequisitos
+    prefix_path:          /tbdisciplinacorequisitos
+    column:               id_corequisito
+    with_wildcard_routes: true
+
+tbalunomatricula:
+  class: sfPropelRouteCollection
+  options:
+    model:                Tbalunomatricula
+    module:               prematricula
+    prefix_path:          /prematricula
+    column:               matricula
+    with_wildcard_routes: true
+
+tbmatriculacomprovante:
+  class: sfPropelRouteCollection
+  options:
+    model:                Tbmatriculacomprovante
+    module:               matriculacomprovante
+    prefix_path:          /matriculacomprovante
+    column:               id_comprovante
+    with_wildcard_routes: true
+
+tbgrade_equivalente:
+  class: sfPropelRouteCollection
+  options:
+    model:                TbgradeEquivalente
+    module:               grade_equivalente
+    prefix_path:          /grade_equivalente
+    column:               id_grade_equivalente
+    with_wildcard_routes: true
+
+tbpendenciatipo:
+  class: sfPropelRouteCollection
+  options:
+    model:                Tbpendenciatipo
+    module:               pendencia_tipo
+    prefix_path:          /pendencia_tipo
+    column:               id
+    with_wildcard_routes: true
+
+tbpendencia:
+  class: sfPropelRouteCollection
+  options:
+    model:                Tbpendencia
+    module:               pendencia
+    prefix_path:          /pendencia
+    column:               id
+    with_wildcard_routes: true
+
+tbvalidacao:
+  class: sfPropelRouteCollection
+  options:
+    model:                Tbvalidacao
+    module:               tbvalidacao
+    prefix_path:          /tbvalidacao
+    column:               id
+    with_wildcard_routes: true
+
+tbpolos:
+  class: sfPropelRouteCollection
+  options:
+    model:                Tbpolos
+    module:               polos
+    prefix_path:          /polos
+    column:               id_polo
+    with_wildcard_routes: true
+
+listaespera:
+  url:   /espera/:action
+  param: { module: listaespera }
+
+loadaluno:
+  url:   /la/:action
+  param: { module: loadaluno}
+
+tbvagas:
+  class: sfPropelRouteCollection
+  options:
+    model:                Tbvagas
+    module:               listaespera
+    prefix_path:          /listaespera
+    column:               id_vagas
+    with_wildcard_routes: true
+
+tbalunoracacor:
+  class: sfPropelRouteCollection
+  options:
+    model:                Tbalunoracacor
+    module:               aluno_raca
+    prefix_path:          /aluno_raca
+    column:               id_raca
+    with_wildcard_routes: true
+
+tbinstexternatipo:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbinstexternatipo
+    module:               instexterna_tipo
+    prefix_path:          /instexterna_tipo
+    column:               id_tipo
+    with_wildcard_routes: true
+
+censo2009:
+  class: sfPropelRouteCollection
+  options:
+    model:                censo2009
+    module:               censo2009
+    prefix_path:          /censo2009
+    column:               id
+    with_wildcard_routes: true
+
+tbalunosolicitacao:
+  class: sfPropelRouteCollection
+  options:
+    model:                Tbalunosolicitacao
+    module:               aluno_solicitacao
+    prefix_path:          /aluno_solicitacao
+    column:               id_solicitacao
+    with_wildcard_routes: true
+
+tbloadfile:
+  class: sfPropelRouteCollection
+  options:
+    model:                Tbloadfile
+    module:               loadfile
+    prefix_path:          /loadfile
+    column:               id
+    with_wildcard_routes: true
+
+tbloadaluno:
+  class: sfPropelRouteCollection
+  options:
+    model:                Tbloadaluno
+    module:               loadaluno
+    prefix_path:          /loadaluno
+    column:               matricula
+    with_wildcard_routes: true
+
+tbprofessorticket:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbprofessorticket
+    module:               professorticket
+    prefix_path:          /professorticket
+    column:               id_professorticket
+    with_wildcard_routes: true
+
+export_excel:
+   url:     /:module/export
+   param:  {module: module, action: exportar}
+
+matricula:
+  url:   /alumni/:action
+  param: { module: aluno}
+
+tbcursonivel:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbcursonivel
+    module:               cursonivel
+    prefix_path:          /cursonivel
+    column:               id_nivel
+    with_wildcard_routes: true
+
+tbdisciplina_ignorada:
+  class: sfPropelRouteCollection
+  options:
+    model:                TbdisciplinaIgnorada
+    module:               tbdisciplinaignorada
+    prefix_path:          /tbdisciplinaignorada
+    column:               id_disciplina_ignorada
+    with_wildcard_routes: true
+
+
+tbofertasituacao:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbofertasituacao
+    module:               ofertasituacao
+    prefix_path:          /ofertasituacao
+    column:               id_situacao
+    with_wildcard_routes: true
+
+relatorio_tipo:
+  url:   /relatorio/nome/:nome
+  param: { module: relatorio, action: index }
+  requirements:
+    nome: "[a-zA-Z]+"
+
+usuario:
+  class: sfPropelRouteCollection
+  options:
+    model:                sfGuardUser
+    module:               usuario
+    prefix_path:          /usuario
+    column:               id
+    with_wildcard_routes: true
+  requirements:
+    id:             \d+
+
+tbturma_aluno:
+  class: sfPropelRouteCollection
+  options:
+    model:                TbturmaAluno
+    module:               turmaaluno
+    prefix_path:          /turmaaluno
+    column:               id_aluno
+    with_wildcard_routes: true
+
+tbdisciplinasituacao:
+  class: sfPropelRouteCollection
+  options:
+    model:                Tbdisciplinasituacao
+    module:               disciplinasituacao
+    prefix_path:          /disciplinasituacao
+    column:               id_situacao
+    with_wildcard_routes: true
+
+tbturmasumula:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbturmasumula
+    module:               turmasumula
+    prefix_path:          /turmasumula
+    column:               id_sumula
+    with_wildcard_routes: true
+
+tbturmaaluno:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbturmaaluno
+    module:               turmaaluno
+    prefix_path:          /turmaaluno
+    column:               id_aluno
+    with_wildcard_routes: true
+
+tbturmanota:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbturmanota
+    module:               turmanota
+    prefix_path:          /turmanota
+    column:               id_nota
+    with_wildcard_routes: true
+
+tbturma:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbturma
+    module:               turma
+    prefix_path:          /turma
+    column:               id_turma
+    with_wildcard_routes: true
+  requirements:
+    id_turma:             \d+
+
+tbaviso_local:
+  class: sfPropelRouteCollection
+  options:
+    model:                TbavisoLocal
+    module:               avisolocal
+    prefix_path:          /avisolocal
+    column:               id_local
+    with_wildcard_routes: true
+
+tbaviso:
+  class: sfPropelRouteCollection
+  options:
+    model:                Tbaviso
+    module:               aviso
+    prefix_path:          /aviso
+    column:               id_aviso
+    with_wildcard_routes: true
+
+sf_guard_signin:
+  url:   /login
+  param: { module: sfGuardAuth, action: signin }
+
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+
+sf_guard_password:
+  url:   /request_password
+  param: { module: sfGuardAuth, action: password }
+
+tbturno:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbturno
+    module:               turno
+    prefix_path:          /turno
+    column:               id_turno
+    with_wildcard_routes: true
+
+tbtipoingresso:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbtipoingresso
+    module:               tipoingresso
+    prefix_path:          /tipoingresso
+    column:               id_tipo_ingresso
+    with_wildcard_routes: true
+
+tbsumula:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbsumula
+    module:               sumula
+    prefix_path:          /sumula
+    column:               id_sumula
+    with_wildcard_routes: true
+
+tbsetor:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbsetor
+    module:               setor
+    prefix_path:          /setor
+    column:               id_setor
+    with_wildcard_routes: true
+
+tbsala:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbsala
+    module:               sala
+    prefix_path:          /sala
+    column:               id_sala
+    with_wildcard_routes: true
+
+tbproftipovinculo:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbproftipovinculo
+    module:               proftipovinculo
+    prefix_path:          /proftipovinculo
+    column:               id_tipo_vinculo
+    with_wildcard_routes: true
+
+tbprofessorsituacao:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbprofessorsituacao
+    module:               professorsituacao
+    prefix_path:          /professorsituacao
+    column:               id_situacao
+    with_wildcard_routes: true
+
+tbprofessorsenha:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbprofessorsenha
+    module:               professorsenha
+    prefix_path:          /professorsenha
+    column:               id
+    with_wildcard_routes: true
+
+tbprofessor:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbprofessor
+    module:               professor
+    prefix_path:          /professor
+    column:               matricula_prof
+    with_wildcard_routes: true
+
+tbpessoa:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbpessoa
+    module:               pessoa
+    prefix_path:          /pessoa
+    column:               id_pessoa
+    with_wildcard_routes: true
+
+tbperiodo:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbperiodo
+    module:               periodo
+    prefix_path:          /periodo
+    column:               id_periodo
+    with_wildcard_routes: true
+
+tbpais:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbpais
+    module:               pais
+    prefix_path:          /pais
+    column:               id_pais
+    with_wildcard_routes: true
+
+tbofertahorario:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbofertahorario
+    module:               ofertahorario
+    prefix_path:          /ofertahorario
+    column:               id_horario
+    with_wildcard_routes: true
+
+tboferta:
+  class: sfPropelRouteCollection
+  options:
+    model:                tboferta
+    module:               oferta
+    prefix_path:          /oferta
+    column:               id_oferta
+    with_wildcard_routes: true
+
+tbnecesespecial:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbnecesespecial
+    module:               necesespecial
+    prefix_path:          /necesespecial
+    column:               id_neces_especial
+    with_wildcard_routes: true
+
+tblogradouro:
+  class: sfPropelRouteCollection
+  options:
+    model:                tblogradouro
+    module:               logradouro
+    prefix_path:          /logradouro
+    column:               id_logradouro
+    with_wildcard_routes: true
+
+tblog:
+  class: sfPropelRouteCollection
+  options:
+    model:                tblog
+    module:               log
+    prefix_path:          /log
+    column:               id
+    with_wildcard_routes: true
+
+tbinstexterna:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbinstexterna
+    module:               instexterna
+    prefix_path:          /instexterna
+    column:               id_inst_externa
+    with_wildcard_routes: true
+
+tbhistorico:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbhistorico
+    module:               historico
+    prefix_path:          /historico
+    column:               id_historico
+    with_wildcard_routes: true
+  requirements:
+    id_historico:         \d+
+
+tbformacao:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbformacao
+    module:               formacao
+    prefix_path:          /formacao
+    column:               id_formacao
+    with_wildcard_routes: true
+
+tbfilasituacao:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbfilasituacao
+    module:               filasituacao
+    prefix_path:          /filasituacao
+    column:               id_situacao
+    with_wildcard_routes: true
+
+tbfilabkp:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbfilabkp
+    module:               filabkp
+    prefix_path:          /filabkp
+    column:               id
+    with_wildcard_routes: true
+
+tbfila:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbfila
+    module:               fila
+    prefix_path:          /fila
+    column:               id_fila
+    with_wildcard_routes: true
+  requirements:
+    id_fila:              \d+
+
+tbfilacalouros:
+  class: sfPropelRouteCollection
+  options:
+    model:                Tbfilacalouros
+    module:               filacalouros
+    prefix_path:          /filacalouros
+    column:               id_fila_calouros
+    with_wildcard_routes: true
+
+
+tbestado:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbestado
+    module:               estado
+    prefix_path:          /estado
+    column:               id_estado
+    with_wildcard_routes: true
+
+tbdisciplinarequisitos:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbdisciplinarequisitos
+    module:               disciplinarequisitos
+    prefix_path:          /disciplinarequisitos
+    column:               id_requisito
+    with_wildcard_routes: true
+
+tbdisciplina:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbdisciplina
+    module:               disciplina
+    prefix_path:          /disciplina
+    column:               cod_disciplina
+    with_wildcard_routes: true
+    segment_separators: [/ , .]
+    
+
+tbcursoversao:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbcursoversao
+    module:               cursoversao
+    prefix_path:          /cursoversao
+    column:               id_versao_curso
+    with_wildcard_routes: true
+
+tbcurso:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbcurso
+    module:               curso
+    prefix_path:          /curso
+    column:               cod_curso
+    with_wildcard_routes: true
+
+tbcurriculodisciplinas:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbcurriculodisciplinas
+    module:               curriculodisciplinas
+    prefix_path:          /curriculodisciplinas
+    column:               id_curriculo_disciplina
+    with_wildcard_routes: true
+
+tbconceito:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbconceito
+    module:               conceito
+    prefix_path:          /conceito
+    column:               id_conceito
+    with_wildcard_routes: true
+
+tbcidade:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbcidade
+    module:               cidade
+    prefix_path:          /cidade
+    column:               id_cidade
+    with_wildcard_routes: true
+
+tbcarater:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbcarater
+    module:               carater
+    prefix_path:          /carater
+    column:               id_carater
+    with_wildcard_routes: true
+
+tbcampus:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbcampus
+    module:               campus
+    prefix_path:          /campus
+    column:               id_campus
+    with_wildcard_routes: true
+
+tbbanca:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbbanca
+    module:               banca
+    prefix_path:          /banca
+    column:               banca_id
+    with_wildcard_routes: true
+
+tbbairro:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbbairro
+    module:               bairro
+    prefix_path:          /bairro
+    column:               id_bairro
+    with_wildcard_routes: true
+
+tbalunosituacao:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbalunosituacao
+    module:               alunosituacao
+    prefix_path:          /alunosituacao
+    column:               id_situacao
+    with_wildcard_routes: true
+
+tbalunosenha:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbalunosenha
+    module:               alunosenha
+    prefix_path:          /alunosenha
+    column:               id
+    with_wildcard_routes: true
+
+tbalunoperiodo:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbalunoperiodo
+    module:               alunoperiodo
+    prefix_path:          /alunoperiodo
+    column:               id_aluno_periodo
+    with_wildcard_routes: true
+
+tbalunoimport:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbalunoimport
+    module:               alunoimport
+    prefix_path:          /alunoimport
+    column:               id
+    with_wildcard_routes: true
+
+tbalunodiploma:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbalunodiploma
+    module:               alunodiploma
+    prefix_path:          /alunodiploma
+    column:               id_aluno_diploma
+    with_wildcard_routes: true
+
+tbalunoatual:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbalunoatual
+    module:               alunoatual
+    prefix_path:          /alunoatual
+    column:               matricula
+    with_wildcard_routes: true
+
+tbaluno:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbaluno
+    module:               aluno
+    prefix_path:          /aluno
+    column:               matricula
+    with_wildcard_routes: true
+
+tbacessogrupos:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbacessogrupos
+    module:               acessogrupos
+    prefix_path:          /acessogrupos
+    column:               id_acessogrupo
+    with_wildcard_routes: true
+
+tbacesso:
+  class: sfPropelRouteCollection
+  options:
+    model:                tbacesso
+    module:               acesso
+    prefix_path:          /acesso
+    column:               login
+    with_wildcard_routes: true
+
+ 
+
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+auth_signin:
+  url:   /login
+  param: { module: auth, action: signin }
+
+auth_signout:
+  url:   /logout
+  param: { module: auth, action: signout }
+
+# default rules
+
+form_nota:
+  url:   /notas.json
+  param: { module: turma, action: salvaNota, sf_format: json }
+
+form_nnotas:
+  url:   /n_notas
+  param: { module: turma, action: salvaNNotas }
+
+
+homepage:
+  url:   /
+  param: { module: painel, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+
+
+default:
+  url:   /:module/:action/*
+
+

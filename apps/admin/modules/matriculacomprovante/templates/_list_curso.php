@@ -1,0 +1,1 @@
+<span><?php echo TbalunomatriculaPeer::getCursoLabel($Tbmatriculacomprovante->getTbalunomatricula()->getIdVersaoCurso()); ?></span>

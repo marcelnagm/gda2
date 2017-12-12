@@ -1,0 +1,52 @@
+#!/bin/bash
+
+DATE=$(date +%Y-%m-%d-%H%M)
+PROJECT_DIR=/var/www/gda2.derca.ufrr.br
+SCHEMA_PATH=$PROJECT_DIR/config/schema.yml
+
+if [ ! -f "$SCHEMA_PATH" ]; then echo "Erro ao ler arquivo $SCHEMA_PATH"; exit 1; fi;
+
+cp $SCHEMA_PATH $PROJECT_DIR/config/.bkp/schema-$DATE.yml.bkp
+
+if [ ! -f "$PROJECT_DIR/config/*-schema.yml" ]; then rm $PROJECT_DIR/config/*-schema.yml; fi;
+
+# Schemas
+$PROJECT_DIR/symfony propel:build-schema
+if [ "$?" != 0 ]; then echo "Erro ao gerar o schema"; exit 1; fi;
+
+# Retirar os campos defaultValue para evitar erros de segmentation fault no propel
+sed -i '5,53d' $SCHEMA_PATH # apaga linhas das tabelas do sf_guard
+sed -i -r "s/, defaultValue: [^,}]+//g" $SCHEMA_PATH
+sed -i -r "/^    usuario: .+$/d" $SCHEMA_PATH
+sed -i -r "/^    datahora: .+$/d" $SCHEMA_PATH
+sed -i -r "/^    ip: .+$/d" $SCHEMA_PATH
+sed -i -r "/^    created_at: .+$/d" $SCHEMA_PATH
+#sed -i -r "s/^    created_at: .+$/    created_at: ~/g" $SCHEMA_PATH
+sed -i -r "/^    updated_at: .+$/d" $SCHEMA_PATH
+#sed -i -r "s/^    updated_at: .+$/    updated_at: ~/g" $SCHEMA_PATH
+#exit 1;
+
+if [ "$?" != 0 ]; then echo "Erro ao modificar o schema"; exit 1; fi;
+
+
+# gera as models, forms, filters
+$PROJECT_DIR/symfony propel:build-model
+if [ "$?" != 0 ]; then echo "Erro no build-model"; exit 1; fi;
+
+$PROJECT_DIR/symfony propel:build-form
+if [ "$?" != 0 ]; then echo "Erro no build-form"; exit 1; fi;
+
+$PROJECT_DIR/symfony propel:build-filter
+if [ "$?" != 0 ]; then echo "Erro no build-filter"; exit 1; fi;
+
+
+#sed -i "s/\$this->addColumn('CREATED_AT'/##\$this->addColumn('CREATED_AT'/g" ../lib/model/map/*.php
+#sed -i "s/\$this->addColumn('UPDATED_AT'/##\$this->addColumn('UPDATED_AT'/g" ../lib/model/map/*.php
+#sed -i "s/\$this->addColumn('USUARIO'/##\$this->addColumn('USUARIO'/g" ../lib/model/map/*.php
+#sed -i "s/\$this->addColumn('IP'/##\$this->addColumn('IP'/g" ../lib/model/map/*.php
+
+$PROJECT_DIR/symfony cc
+
+$PROJECT_DIR/symfony project:permissions
+
+

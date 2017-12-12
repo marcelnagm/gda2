@@ -1,0 +1,3 @@
+all:
+   # desfazer o uso de sfOutputEscaperArrayDecorator ao passar array ao template
+   escaping_strategy:    false

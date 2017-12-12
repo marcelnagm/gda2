@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://gda2.derca.ufrr.br.local/" />
+<title>preenche_novoALuno</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">preenche_novoALuno</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/admin/_dev.php/matricula/NovoAluno</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>tbaluno_nome</td>
+	<td>Uhaaa</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>tbaluno_sexo_M</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>tbaluno_celular</td>
+	<td>53453</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>tbaluno_fone_residencial</td>
+	<td>342423</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>tbaluno_dt_nascimento_day</td>
+	<td>label=16</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>tbaluno_dt_nascimento_year</td>
+	<td>label=1989</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>tbaluno_dt_nascimento_month</td>
+	<td>label=07</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>tbaluno_mae</td>
+	<td>trh</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>tbaluno_pai</td>
+	<td>jfghfghfgh</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>tbaluno_email</td>
+	<td>m@m.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>tbaluno_cpf</td>
+	<td>757898</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>tbaluno_rg</td>
+	<td>857678</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>tbaluno_rg_org_exped</td>
+	<td>ssp</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>tbaluno_rg_dt_exped_day</td>
+	<td>label=17</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>tbaluno_rg_dt_exped_month</td>
+	<td>label=05</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>tbaluno_rg_dt_exped_year</td>
+	<td>label=1997</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>tbaluno_titulo</td>
+	<td>534543</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>tbaluno_titulo_zona</td>
+	<td>4231</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>tbaluno_titulo_secao</td>
+	<td>423</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>tbaluno_reservista</td>
+	<td>34321</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>tbaluno_numero</td>
+	<td>321</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>tbaluno_complemento</td>
+	<td>321312</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>tbaluno_id_2grau</td>
+	<td>label=ESCOLA ESTADUAL PLÁCIDO DE CASTRO - RS</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>tbaluno_ano_concl_2grau</td>
+	<td>2009</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value='Matricular']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=aqui</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/admin/_dev.php/aluno</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Remover</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Tem certeza em executar esta ação?</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

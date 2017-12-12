@@ -1,0 +1,22 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbprofessorticket
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbprofessorticket
+    plural:                tbprofessortickets
+    route_prefix:          tbprofessorticket
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields: ~
+      list:
+        display: [id_professorticket,tbperiodo,tbprofessor,dt_inicio,dt_fim]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

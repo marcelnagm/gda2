@@ -1,0 +1,22 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbtipoingresso
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbtipoingresso
+    plural:                tbtipoingressos
+    route_prefix:          tbtipoingresso
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [=descricao,sigla_pingifes]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

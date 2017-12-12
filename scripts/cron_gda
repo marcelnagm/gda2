@@ -1,0 +1,3 @@
+# Script for /etc/cron.d
+
+0 5 * * * postgres /var/www/gda2/scripts/bkp_db

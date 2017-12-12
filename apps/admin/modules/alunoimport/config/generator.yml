@@ -1,0 +1,21 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbalunoimport
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbalunoimport
+    plural:                tbalunoimports
+    route_prefix:          tbalunoimport
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    ~
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

@@ -1,0 +1,22 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbcampus
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbcampus
+    plural:                tbcampuss
+    route_prefix:          tbcampus
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [=descricao,Tbcidade]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

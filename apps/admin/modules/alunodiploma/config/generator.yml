@@ -1,0 +1,38 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbalunodiploma
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbalunodiploma
+    plural:                tbalunodiplomas
+    route_prefix:          tbalunodiploma
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        id_aluno_diploma: { label: ID }
+        dt_entrega: { label: Data de Entrega do diploma }
+        dt_entrega_historico: { label: Data de Entrega do Histórico }
+        dt_enade: { label: Data do ENADE }
+        dt_registro: { label: Data de registro }
+        n_registro: { label: No. Registro }
+        n_processo: { label: No. Processo }
+        obs: { label: Observação }
+      list:
+        display: [id_aluno_diploma, matricula, dt_entrega, dt_entrega_historico, dt_enade, n_registro,livro,folha,n_processo,obs]
+        fields:
+          id_aluno_diploma: { label: ID }
+          dt_entrega: { label: Entrega do diploma, date_format: dd/MM/yyyy }
+          dt_entrega_historico: { label: Entrega do Histórico, date_format: dd/MM/yyyy }
+          dt_enade: { label: ENADE, date_format: dd/MM/yyyy }
+          n_registro: { label: No. Registro }
+          n_processo: { label: No. Processo }
+          obs: { label: Obs. }
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

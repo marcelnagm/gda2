@@ -1,0 +1,21 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbpessoa
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbpessoa
+    plural:                tbpessoas
+    route_prefix:          tbpessoa
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    ~
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

@@ -1,0 +1,6 @@
+#!/bin/bash
+DATE=$(date +%Y-%m-%d-%H%M)
+BACKUP_DIR="/var/backups/postgres/"
+FILENAME="gda"
+
+pg_dump gda | gzip > "$BACKUP_DIR$FILENAME-$DATE.gz"

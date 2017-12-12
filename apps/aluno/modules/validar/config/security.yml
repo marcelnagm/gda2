@@ -1,0 +1,6 @@
+## YAML Template.
+index:
+   is_secure: false
+
+Pesquisa:
+   is_secure: false

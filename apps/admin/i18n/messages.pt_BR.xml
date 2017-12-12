@@ -1,0 +1,1076 @@
+<?xml version="1.0" ?>
+<xliff version="1.0">
+    <file original="global" source-language="en" datatype="plaintext">
+        <body>
+            <trans-unit>
+                <source>Tbaviso</source>
+                <target>Aviso</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbavisolocal</source>
+                <target>Local do Aviso</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbaluno</source>
+                <target>Aluno</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbalunodiploma</source>
+                <target>Diploma</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbalunoimport</source>
+                <target>Aluno Import</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbalunoperiodo</source>
+                <target>Período do aluno</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbalunosenha</source>
+                <target>Senha do Aluno</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbalunosituacao</source>
+                <target>Situação do Aluno</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbbairro</source>
+                <target>Bairro</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbcampus</source>
+                <target>Campus</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbcarater</source>
+                <target>Caráter de Disciplina</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbcidade</source>
+                <target>Cidade</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbconceito</source>
+                <target>Conceito</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbcurriculodisciplinas</source>
+                <target>Grade curricular</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbcurso</source>
+                <target>Curso</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbcursoversao</source>
+                <target>Versão de curso</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbdisciplina</source>
+                <target>Disciplina</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbdisciplinarequisitos</source>
+                <target>Requisito de disciplina</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbdisciplinasituacao</source>
+                <target>Situação da disciplina</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbestado</source>
+                <target>Estado</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbfila</source>
+                <target>Fila eletrônica</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbfilabkp</source>
+                <target>Fila BKP</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbfilasituacao</source>
+                <target>Situação da Fila Eletrônica</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbformacao</source>
+                <target>Formação</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbhistorico</source>
+                <target>Histórico</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbinstexterna</source>
+                <target>Instituição Externa</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tblog</source>
+                <target>LOG</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tblogradouro</source>
+                <target>Logradouro</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbnecesespecial</source>
+                <target>Necessidade Especial</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tboferta</source>
+                <target>Oferta de disciplina</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbofertahorario</source>
+                <target>Horário da oferta</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbpais</source>
+                <target>País</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbperiodo</source>
+                <target>Período</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbpessoa</source>
+                <target>Pessoa</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbprofessor</source>
+                <target>Professor</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbprofessorsituacao</source>
+                <target>Situação do Professor</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbproftipovinculo</source>
+                <target>Tipo de Vínculo</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbsala</source>
+                <target>Sala</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbsetor</source>
+                <target>Setor</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbtipoingresso</source>
+                <target>Tipo de ingresso</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbturno</source>
+                <target>Turno</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbdiplona</source>
+                <target>Diploma</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbbanca</source>
+                <target>Banca</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbprofessorsenha</source>
+                <target>Senha do Professor</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbturmasumula</source>
+                <target>Súmula</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbturma</source>
+                <target>Turma</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbturmanota</source>
+                <target>Notas</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Aluno List</source>
+                <target>Lista de Alunos</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Aviso List</source>
+                <target>Lista de Avisos</target>
+            </trans-unit>
+            <trans-unit>
+                <source>AvisoLocal List</source>
+                <target>Lista de Locais de Avisos</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Historico List</source>
+                <target>Lista de Históricos</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Conceito List</source>
+                <target>Lista de Conceitos</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Alunodiploma List</source>
+                <target>Lista de Diplomas</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Alunosituacao List</source>
+                <target>Lista de Situações do Aluno</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Alunosenha List</source>
+                <target>Lista de Senhas dos Alunos</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tipoingresso List</source>
+                <target>Lista de Tipos de Ingresso</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Professor List</source>
+                <target>Lista de Professores</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Notas List</source>
+                <target>Lista de Notas</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Sumula List</source>
+                <target>Lista de Súmulas</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Professorsituacao List</source>
+                <target>Lista de Situações do Professor</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Proftipovinculo List</source>
+                <target>Lista de Tipos de Vínculos do Professor</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Professorsenha List</source>
+                <target>Lista de Senhas dos Professores</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Curso List</source>
+                <target>Lista de Cursos</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Cursoversao List</source>
+                <target>Lista de Versões de Cursos</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Curriculodisciplinas List</source>
+                <target>Lista de Grades Curriculares</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Turno List</source>
+                <target>Lista de Turnos</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Disciplina List</source>
+                <target>Lista de Disciplinas</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Disciplinarequisitos List</source>
+                <target>Lista de Requisitos de Disciplinas</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Carater List</source>
+                <target>Lista de Caráter de Disciplinas</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Periodo List</source>
+                <target>Lista de Períodos</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Fila List</source>
+                <target>Fila Eletrônica</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Filasituacao List</source>
+                <target>Lista de Situações da Fila Eletrônica</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Oferta List</source>
+                <target>Lista de Oferta de Disciplinas</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Ofertahorario List</source>
+                <target>Lista de Horários das Ofertas</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Sala List</source>
+                <target>Lista de Salas de Aula</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Setor List</source>
+                <target>Lista de Setores</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Campus List</source>
+                <target>Lista de Campi</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Instexterna List</source>
+                <target>Lista de Instituições Externas</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Logradouro List</source>
+                <target>Lista de Logradouros</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Bairro List</source>
+                <target>Lista de Bairros</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Cidade List</source>
+                <target>Lista de Cidades</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Estado List</source>
+                <target>Lista de Estados</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Pais List</source>
+                <target>Lista de Países</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Banca List</source>
+                <target>Lista de Bancas</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Formacao List</source>
+                <target>Lista de Formação de Professor e Curso</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Necesespecial List</source>
+                <target>Lista de Necessidades Especiais</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Show fields</source>
+                <target>Mostrar Campos</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Matricula</source>
+                <target>Matrícula</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Cpf</source>
+                <target>CPF</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Rg</source>
+                <target>RG</target>
+            </trans-unit>
+            <trans-unit>
+                <source>RgDtExped</source>
+                <target>RG Data de Expedição</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Rg dt exped</source>
+                <target>RG - Data de Expedição</target>
+            </trans-unit>
+            <trans-unit>
+                <source>RgOrgExped</source>
+                <target>RG Órgão Expedidor</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Rg org exped</source>
+                <target>RG - Órgão Expedidor</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Email</source>
+                <target>e-mail</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Uf</source>
+                <target>UF</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Cep</source>
+                <target>CEP</target>
+            </trans-unit>
+            <trans-unit>
+                <source>IdNecesEspecial</source>
+                <target>Necessidade Especial</target>
+            </trans-unit>
+            <trans-unit>
+                <source>FoneResidencial</source>
+                <target>Telefone Residencial</target>
+            </trans-unit>
+            <trans-unit>
+                <source>DtNascimento</source>
+                <target>Data de nascimento</target>
+            </trans-unit>
+            <trans-unit>
+                <source>UfNascimento</source>
+                <target>UF Nascimento</target>
+            </trans-unit>
+            <trans-unit>
+                <source>EstadoCivil</source>
+                <target>Estado Civil</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Titulo</source>
+                <target>Título</target>
+            </trans-unit>
+            <trans-unit>
+                <source>TituloZona</source>
+                <target>Título Zona</target>
+            </trans-unit>
+            <trans-unit>
+                <source>TituloSecao</source>
+                <target>Título Seção</target>
+            </trans-unit>
+            <trans-unit>
+                <source>IdVersaoCurso</source>
+                <target>Versão de curso</target>
+            </trans-unit>
+            <trans-unit>
+                <source>IdTipoIngresso</source>
+                <target>Tipo de Ingresso</target>
+            </trans-unit>
+            <trans-unit>
+                <source>DtIngresso</source>
+                <target>Data de Ingresso</target>
+            </trans-unit>
+            <trans-unit>
+                <source>IdSituacao</source>
+                <target>Situação</target>
+            </trans-unit>
+            <trans-unit>
+                <source>DtSituacao</source>
+                <target>Data da Situação</target>
+            </trans-unit>
+            <trans-unit>
+                <source>IdDestino</source>
+                <target>Instituição Destino</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id2grau</source>
+                <target>Inst. 2o. Grau</target>
+            </trans-unit>
+            <trans-unit>
+                <source>AnoConcl2grau</source>
+                <target>Ano de conclusão do 2o. Grau</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id3grau</source>
+                <target>Inst. 3o. Grau</target>
+            </trans-unit>
+            <trans-unit>
+                <source>AnoConcl3grau</source>
+                <target>Ano de conclusão do 3o. Grau</target>
+            </trans-unit>
+            <trans-unit>
+                <source>IdTrabalho</source>
+                <target>Inst. Trabalho</target>
+            </trans-unit>
+            <trans-unit>
+                <source>CepTrabalho</source>
+                <target>Endereço do Trabalho</target>
+            </trans-unit>
+            <trans-unit>
+                <source>FoneTrabalho</source>
+                <target>Telefone do Trabalho</target>
+            </trans-unit>
+            <trans-unit>
+                <source>RamalTrabalho</source>
+                <target>Ramal do Trabalho</target>
+            </trans-unit>
+            <trans-unit>
+                <source>MediaGeral</source>
+                <target>Média Geral</target>
+            </trans-unit>
+            <trans-unit>
+                <source>ChEletivaCursada</source>
+                <target>C.H. Eletiva Cursada</target>
+            </trans-unit>
+            <trans-unit>
+                <source>ChEletivaSolicitada</source>
+                <target>C.H. Eletiva Solicitada</target>
+            </trans-unit>
+            <trans-unit>
+                <source>ChObrigCursada</source>
+                <target>C.H. Obrigatória Cursada</target>
+            </trans-unit>
+            <trans-unit>
+                <source>ChObrigSolicitada</source>
+                <target>C.H. Obrigatória Solicitada</target>
+            </trans-unit>
+            <trans-unit>
+                <source>ChTotal</source>
+                <target>C.H. Total</target>
+            </trans-unit>
+            <trans-unit>
+                <source>IdSala</source>
+                <target>Sala</target>
+            </trans-unit>
+            <trans-unit>
+                <source>IdSetor</source>
+                <target>Setor</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Matricula prof</source>
+                <target>Cód. Professor</target>
+            </trans-unit>
+            <trans-unit>
+                <source>IdMatriculaProf</source>
+                <target>Cód. Professor</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Fone residencial</source>
+                <target>Tel. Residencial</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id neces especial</source>
+                <target>Necessidade Especial</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id tipo vinculo</source>
+                <target>Tipo de Vínculo</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id formacao</source>
+                <target>Formação</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id prof sit</source>
+                <target>Situação</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id setor</source>
+                <target>Setor</target>
+            </trans-unit>
+            <trans-unit>
+                <source>IdTurno</source>
+                <target>Turno</target>
+            </trans-unit>
+            <trans-unit>
+                <source>IdPeriodo</source>
+                <target>Período</target>
+            </trans-unit>
+            <trans-unit>
+                <source>CodDisciplina</source>
+                <target>Cód. Disciplina</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Cod disciplina</source>
+                <target>Cód. Disciplina</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Ch</source>
+                <target>Carga Horária</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Ch teorica</source>
+                <target>C.H. Teórica</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Ch pratica</source>
+                <target>C.H. Prática</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Cred teorico</source>
+                <target>Créd. Teórico</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Cred pratico</source>
+                <target>Créd. Prático</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Inicio</source>
+                <target>Início</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Termino</source>
+                <target>Término</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Cod curso</source>
+                <target>Cód. Curso</target>
+            </trans-unit>
+            <trans-unit>
+                <source>CodCurso</source>
+                <target>Cód. Curso</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Periodo</source>
+                <target>Período</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id periodo</source>
+                <target>Período</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Descricao</source>
+                <target>Descrição</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Situacao</source>
+                <target>Situação</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id situacao</source>
+                <target>Situação</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id aluno situacao</source>
+                <target>Situação do Aluno</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id fila situacao</source>
+                <target>Situação na Fila</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id oferta</source>
+                <target>Oferta</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id turma</source>
+                <target>Turma</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Media</source>
+                <target>Média</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id conceito</source>
+                <target>Conceito</target>
+            </trans-unit>
+            <trans-unit>
+                <source>N notas</source>
+                <target>Avaliações</target>
+            </trans-unit>
+            <trans-unit>
+                <source>is empty</source>
+                <target>está vazio</target>
+            </trans-unit>
+            <trans-unit>
+                <source>from</source>
+                <target>de</target>
+            </trans-unit>
+            <trans-unit>
+                <source>to</source>
+                <target>para</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Filter</source>
+                <target>Filtro</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Filters</source>
+                <target>Filtros</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Users</source>
+                <target>Usuários</target>
+            </trans-unit>
+            <trans-unit>
+                <source>New User</source>
+                <target>Novo Usuário</target>
+            </trans-unit>
+            <trans-unit>
+                <source>New Group</source>
+                <target>Novo Grupo</target>
+            </trans-unit>
+            <trans-unit>
+                <source>New Permission</source>
+                <target>Nova Permissão</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Permissions and groups</source>
+                <target>Permissões e grupos</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Editing User "%%username%%"</source>
+                <target>Editando usuário "%%username%%"</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Editing Group "%%name%%"</source>
+                <target>Editando Grupo "%%name%%"</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Editing Permission "%%name%%"</source>
+                <target>Editando Permissão "%%name%%"</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Authentication</source>
+                <target>Área Administrativa - Autenticação</target>
+            </trans-unit>
+            <trans-unit>
+                <source>The username and/or password is invalid.</source>
+                <target>Usuário e/ou senha inválido(a)</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Password is invalid</source>
+                <target>Senha inválida</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Username</source>
+                <target>Usuário</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Password</source>
+                <target>Senha</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Current password</source>
+                <target>Senha atual</target>
+            </trans-unit>
+            <trans-unit>
+                <source>The two passwords must be the same.</source>
+                <target>As duas senhas devem ser a mesma</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Created at</source>
+                <target>Data de criação</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Updated at</source>
+                <target>Data de modificação</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Last login</source>
+                <target>Última entrada</target>
+            </trans-unit>
+            <trans-unit>
+                <source>sign in</source>
+                <target>entrar</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Logout</source>
+                <target>Sair</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Remember</source>
+                <target>Lembrar de mim</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Required.</source>
+                <target>Preencha este campo</target>
+            </trans-unit>
+            <trans-unit>
+                <source>CSRF attack detected.</source>
+                <target>Token inválido. Recarregue esta página</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Password (again)</source>
+                <target>Senha (novamente)</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Invalid.</source>
+                <target>Dado Inválido.</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Is active</source>
+                <target>Está ativo</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Is super admin</source>
+                <target>É super usuário</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Groups</source>
+                <target>Grupos</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Permissions</source>
+                <target>Permissões</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Name</source>
+                <target>Nome</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Description</source>
+                <target>Descrição</target>
+            </trans-unit>
+            <trans-unit>
+                <source>User list</source>
+                <target>Lista de Usuários</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Group list</source>
+                <target>Lista de Grupos</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Permission list</source>
+                <target>Lista de Permissões</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbturma professor list</source>
+                <target>Lista Professor/Turma</target>
+            </trans-unit>
+            <trans-unit>
+                <source>You don't have the required permission to access this page.</source>
+                <target>Você não tem permissão para abrir esta página.</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Text to filter. The first will be selected.</source>
+                <target>Digite o texto que será procurado na lista. A primeira ocorrência será selecionada.</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Reports</source>
+                <target>Relatórios</target>
+            </trans-unit>
+            <trans-unit>
+                <source>%s List</source>
+                <target>Lista de %s</target>
+            </trans-unit>
+            <trans-unit>
+                <source>New %s</source>
+                <target>Cadastro de %s</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Edit %s</source>
+                <target>Cadastro de %s</target>
+            </trans-unit>
+            <trans-unit>
+                <source>New Turmaaluno</source>
+                <target>Incluir aluno</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Qtde alunos</source>
+                <target>Qtde. alunos</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Observacao</source>
+                <target>Observação</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id turno</source>
+                <target>Turno</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id sala</source>
+                <target>Sala</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id matricula prof</source>
+                <target>Professor</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Dt inicio</source>
+                <target>Data de início</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Dt fim</source>
+                <target>Data de encerramento</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id versao curso</source>
+                <target>Versão do curso</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Dt nascimento</source>
+                <target>Data de nascimento</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id tipo ingresso</source>
+                <target>Tipo de ingresso</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Mae</source>
+                <target>Mãe</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Uf nascimento</source>
+                <target>U.F. nascimento</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Dt ingresso</source>
+                <target>Data de ingresso</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Dt situacao</source>
+                <target>Data da situação</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id destino</source>
+                <target>Destino</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id 2grau</source>
+                <target>2o. Grau</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Ano concl 2grau</source>
+                <target>2o. Grau - Ano de conclusão</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id 3grau</source>
+                <target>3o. Grau</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Ano concl 3grau</source>
+                <target>3o. Grau - Ano de conclusão</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id trabalho</source>
+                <target>Trabalho</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Titulo zona</source>
+                <target>Título - zona</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Titulo secao</source>
+                <target>Título - seção</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Cep trabalho</source>
+                <target>CEP Trabalho</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Fone trabalho</source>
+                <target>Telefone Trabalho</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Ramal trabalho</source>
+                <target>Ramal Trabalho</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Numero</source>
+                <target>Número</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Dia nome</source>
+                <target>Dia</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Horario</source>
+                <target>Horário</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Sem horario</source>
+                <target>Sem horário</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Max per page</source>
+                <target>Registros por página</target>
+            </trans-unit>
+            <trans-unit>
+                <source>New Ofertahorario</source>
+                <target>Novo horário</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Reprovacoes</source>
+                <target>Reprovações</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id bairro</source>
+                <target>Bairro</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id cidade</source>
+                <target>Cidade</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id logradouro</source>
+                <target>Logradouro</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id campus</source>
+                <target>Campus</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id inst externa</source>
+                <target>Instituição</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id pais</source>
+                <target>País</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id estado</source>
+                <target>Estado</target>
+            </trans-unit>
+            <trans-unit>
+                <source>ChDisciplina</source>
+                <target>C.H.</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbofertahorarios</source>
+                <target>Horário</target>
+            </trans-unit>
+            <trans-unit>
+                <source>TblogradouroRelatedByCep</source>
+                <target>Logradouro</target>
+            </trans-unit>
+            <trans-unit>
+                <source>TbinstexternaRelatedByIdDestino</source>
+                <target>Inst. Destino</target>
+            </trans-unit>
+            <trans-unit>
+                <source>TbinstexternaRelatedById2grau</source>
+                <target>Inst. 2o. Grau</target>
+            </trans-unit>
+            <trans-unit>
+                <source>TbinstexternaRelatedById3grau</source>
+                <target>Inst. 3o. Grau</target>
+            </trans-unit>
+            <trans-unit>
+                <source>TbinstexternaRelatedByIdTrabalho</source>
+                <target>Inst. Trabalho</target>
+            </trans-unit>
+            <trans-unit>
+                <source>TblogradouroRelatedByCepTrabalho</source>
+                <target>Logradouro Trabalho</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Associated</source>
+                <target>Associado</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Unassociated</source>
+                <target>Não associado</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Change password</source>
+                <target>Trocar senha</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Id carater</source>
+                <target>Caráter</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbgrade equivalente list</source>
+                <target>Disciplina equivalente</target>
+            </trans-unit>
+            <trans-unit>
+                <source>PorcentagemChCursada</source>
+                <target>% C.H. Cursada</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Porcentagem ch cursada</source>
+                <target>% C.H. Cursada</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Minimo</source>
+                <target>Mínimo</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Maximo</source>
+                <target>Máximo</target>
+            </trans-unit>
+            <trans-unit>
+                <source>AlunosMatriculados</source>
+                <target>Alunos Matriculados</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Cod integracao</source>
+                <target>Cód. Integração</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Cod integracao tipo</source>
+                <target>Tipo de Integração</target>
+            </trans-unit>
+            <trans-unit>
+                <source>Tbcoordenadorcurso list</source>
+                <target>Coordenador(a)</target>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>

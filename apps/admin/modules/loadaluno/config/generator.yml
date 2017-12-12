@@ -1,0 +1,35 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Tbloadaluno
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Tbloadaluno
+    plural:                Tbloadalunos
+    route_prefix:          tbloadaluno
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [=matricula,nome,cpf,Tbcursoversao,Tbtipoingresso,classificacao,opcao,op_ingresso,processo]
+        actions:
+          _new: ~
+          exportar: { action: Exportar }
+        max_per_page: 20
+        object_actions:
+          _edit: ~
+          _delete: ~
+          Faltou: { label: Faltou }
+          Matricula: { label: Matricula }
+        batch_actions:
+          Faltou: { label: Faltou }
+          _delete: ~
+      filter:
+        display: [matricula,nome,cpf,id_tipo_ingresso,id_versao_curso,opcao,processo,op_ingresso]
+      form:    ~
+      edit:    ~
+      new:     ~

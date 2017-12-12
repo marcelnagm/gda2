@@ -1,0 +1,30 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbcurriculodisciplinas
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbcurriculodisciplinas
+    plural:                tbcurriculodisciplinass
+    route_prefix:          tbcurriculodisciplinas
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [id_curriculo_disciplina,Tbcursoversao,Tbdisciplina,semestre_disciplina,_list_disciplina,Tbcarater]
+        fields:
+          id_curriculo_disciplina: { label: ID }
+          semestre_disciplina: { label:Semestre }
+          Tbcarater: { label: Caráter }
+          list_disciplina: { label: Equivalência }
+        actions:
+          _new: ~
+          exportar: { action: exportar }
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

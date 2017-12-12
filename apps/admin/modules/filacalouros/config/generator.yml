@@ -1,0 +1,23 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Tbfilacalouros
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Tbfilacalouros
+    plural:                Tbfilacalouross
+    route_prefix:          tbfilacalouros
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [Tboferta,Tbcursoversao,Tbperiodo]
+      filter:
+        display: [id_versao_curso, id_periodo]
+      form:    ~
+      edit:    ~
+      new:     ~

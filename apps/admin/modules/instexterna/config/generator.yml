@@ -1,0 +1,25 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbinstexterna
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbinstexterna
+    plural:                tbinstexternas
+    route_prefix:          tbinstexterna
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [=descricao,sucinto,uf]
+        actions:
+          _new: ~
+          exportar: { action: exportar }
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

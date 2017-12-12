@@ -1,0 +1,223 @@
+body {
+    margin:0px;
+    font-family:Arial,Helvetica,Sans-Serif;
+}
+.cabecalho {
+    text-align: center;
+}
+.cabecalho h1, .cabecalho h3,
+.content h1, .content h3,
+.info th, .info td{
+    margin:0px;
+    padding:0px;
+}
+.content h1{
+    font-size:20px;
+}
+.content h3{
+    font-size:14px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+table{
+    font-family: arial;
+    font-size: 9px;
+}
+#assinatura {
+    margin-top:5em;
+    line-height:1.5em;
+    text-align: center;
+    font-size: 9px;
+}
+
+td{
+    vertical-align: top;
+    padding: 3px;
+}
+
+th {
+    border: 1px solid #000 !important;
+    margin:0;
+}
+
+
+select {
+    border: 0 !important;
+    background-color: transparent;
+}
+
+table.formnotas {
+    margin: 3px;
+}
+
+td.mp,
+td.mf,
+td.conceito,
+input.objNota {
+    text-align:center;
+    font-size: 12px !important;
+}
+
+table,
+table tr,
+table td{
+    /*border: 1px solid #000 !important;*/
+    border-collapse: collapse;
+    font-size: 11px;
+}
+
+.objNota {
+    width: 30px;
+    height: 11px;
+    overflow: visible;
+    border: 0 !important;
+    padding:3px;
+}
+
+/* esconder objetos */
+a.sair,
+a.imprimir,
+input[type=submit],
+.art-nav,
+.caixaErro,
+.art-Footer{
+    display:none !important;
+}
+
+.art-Logo {
+    margin-bottom: 10px;
+}
+.art-Logo h1,
+.art-Logo-text {
+    font-size:14px;
+    display: inline;
+}
+
+.centro {
+    text-align: center;
+}
+
+a.dados-pessoais:before {
+    content: "Professor(a): ";
+}
+
+.info table {
+    margin: 2px auto 1em auto;
+}
+
+
+.info table th,
+.info table td {
+    border:0 !important;
+    padding:1px 2px;
+    margin:0;
+}
+.info table th {
+    text-align: right;
+
+    vertical-align: top;
+}
+
+.info table td {
+    text-align: left;
+    vertical-align: top;
+}
+
+.info table th:after {
+    content: ":";
+}
+
+.lista {
+    margin: 0 auto;
+}
+.legenda {
+    margin: 0 auto;
+    width: 770px;
+}
+
+BODY{
+    margin:0;
+    padding:0;
+}
+BODY, TD, TH, P {
+    font-family: Verdana, Arial,sans-serif;
+    font-size: 11px;
+}
+IMG{border:0}
+
+.aba{
+    display:none;
+}
+
+#conteudo{
+    margin:7px;
+}
+@media print{
+
+    #aviso,
+    .content,
+    fieldset
+    {border:0}
+
+    #menu,
+    .aba,
+    .menu .botao
+    {display: none}
+
+}
+
+
+/* menu */
+.titulo{
+    height: 45px;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 22px;
+    padding:0 0 0 55px;
+    margin:0;
+    line-height:1.2em;
+}
+
+.titulo2{
+    color:#000;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1em;
+}
+#menu{
+    background: url('../../aluno/images/fila/painel_grad.png') repeat-x bottom #DCDCDC;
+}
+#menu TABLE.menu{
+    padding:0;
+    margin: 0;
+    background-position: 3px center;
+    background-repeat: no-repeat;
+    width: 100%;
+
+}
+#menu td{
+    padding: 3px;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 50px;
+}
+a.botao,a.botao:visited{
+    display:block;
+    padding: 3px;
+    margin-left:17px;
+    border: 1px outset #BEBEBE;
+    text-decoration: none;
+    font-weight:bold;
+    color:blue;
+    line-height:1.2em;
+    background-color: #D3D3D3;
+}
+a.botao:hover{
+    text-decoration: underline;
+    background-color: white;
+}

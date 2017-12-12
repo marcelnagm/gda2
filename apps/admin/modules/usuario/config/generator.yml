@@ -1,0 +1,35 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           sfGuardUser
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              sfGuardUser
+    plural:                sfGuardUsers
+    route_prefix:          usuario
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      fields:
+        password_current: { label: "Current password" }
+        password_again: { label: "Password (again)" }
+
+      list: ~
+
+      form:
+        class: AlterarSenhaForm
+        display:
+          "Trocar senha": [username, password_current, password, password_again]
+        fields:
+          password:  { label: Senha nova }
+          password_again:  { label: Redigite a senha nova }
+
+        actions:
+          _save: ~
+
+      edit:
+        title: Editing User "%%username%%"
+
+      new: ~

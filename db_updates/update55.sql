@@ -1,0 +1,1 @@
+ALTER TABLE tbcoordenadorcurso DROP CONSTRAINT tbcoordenadorcurso_id_versao_curso_key;

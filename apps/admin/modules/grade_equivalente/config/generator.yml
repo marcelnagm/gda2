@@ -1,0 +1,26 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           TbgradeEquivalente
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              TbgradeEquivalente
+    plural:                TbgradeEquivalentes
+    route_prefix:          tbgrade_equivalente
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [_list_versao,_list_disciplina,Tbdisciplina]
+        fields:
+          list_versao: { label: Versão de curso }
+          list_disciplina: { label: Disciplina da Grade }
+          Tbdisciplina: { label: Disciplina Equivalente }
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

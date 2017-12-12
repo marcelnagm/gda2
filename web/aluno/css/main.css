@@ -1,0 +1,439 @@
+#sf_admin_bar {
+    margin-top: -40px;
+    vertical-align: middle;
+    line-height: 24px;
+}
+
+.sf_admin_filter {
+    display: none;
+}
+.sf_admin_filter{
+    position:relative;
+    z-index:1000;
+    float:right;
+}
+#sf_admin_bar .art-button-wrapper{
+    float:right;
+    margin-left: 10px;
+}
+
+.sf_admin_text a {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+ul.sf_admin_actions li,
+ul.sf_admin_td_actions li,
+ul.checkbox_list li
+{
+    background-image:none !important;
+    padding-left:0px !important;
+    list-style-type:none;
+}
+
+/* sfGuardPlugin */
+.authform{
+    margin: auto;
+    width: 500px;
+    text-align: center;
+}
+
+.authform.signin{
+    float:right;
+    width: 400px;
+}
+
+.authform table,
+.authform input,
+.authform ul li{
+    text-align: left;
+    font-size: 17px !important;
+}
+
+.authform th{
+    text-align: right;
+    vertical-align: bottom;
+    padding-bottom: 7px;
+}
+
+ul.error_list li {
+    background:url('../sfPropelPlugin/images/error.png') no-repeat scroll 4px 4px transparent !important;
+    color:#FFFFFF;
+    list-style:none outside none;
+    padding:4px 4px 4px 25px !important;
+}
+
+ul.error_list {
+    background-color:#FF3333;
+    border:medium none;
+    color:#DD3333;
+    margin:0 0 7px;
+}
+
+.authform .art-BlockContent table,
+.authform .art-BlockContent tr,
+.authform .art-BlockContent th,
+.authform .art-BlockContent td{
+    border:0 !important;
+}
+
+.authform .art-BlockContent td,
+.authform .art-BlockContent tr,
+.authform .art-BlockContent th {
+    background-color: transparent !important;
+}
+
+.show-select-filter img,
+.art-button-wrapper img
+{
+    vertical-align: middle;
+}
+
+#sf_admin_bar .warning {
+    color: red;
+    letter-spacing: 1px;
+    float:right;
+    line-height: 24px;
+}
+
+#btn_filter {
+
+    background: url('../images/filter_form.png') 7px center no-repeat;
+    padding-left: 25px !important;
+
+}
+
+.art-PostContent h1
+{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+
+.art-PostContent td,
+.art-PostContent th
+{
+    border-color:#DDDDDD;
+    border-left:0 none;
+    border-right:0 none;
+    border-style:solid none;
+    border-width:1px 0;
+    padding:0.5em 1em 0.5em 0.5em;
+}
+
+/*.art-PostContent td{
+    vertical-align: top;
+}*/
+.art-PostContent td img{
+    vertical-align: middle;
+}
+.art-PostContent th  {
+    background-color:#E7EEF6;
+    white-space:nowrap;
+}
+
+.art-PostContent table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+.art-PostContent tr {
+    background-color:#FFFFFF;
+    border-left:1px solid #DDDDDD;
+    border-right:1px solid #DDDDDD;
+}
+
+#painel {
+    text-align: left;
+    float: right;
+    width: 200px;
+    margin-right: 15px;
+}
+
+#painel a{
+    display:block;
+    /*    border: 1px solid #878EF6;
+    */    background-color: #E7EEF6;
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    padding: 5px 5px 5px 50px;
+    margin: 2px 0;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#painel a:hover{
+    background-color: #878EF6;
+    color: #FFF;
+}
+
+#painel a.turma {
+    background-image: url('../../images/icons/lista-turmas.png');
+}
+
+#painel a.sair {
+    background-image: url('../../images/icons/logout.png');
+}
+
+#nav-one a{
+    background-position: 15px center;
+    background-repeat: no-repeat;
+    padding-left: 15px;
+}
+
+.user-info-box {
+    float: right;
+    padding: 3px 5px;
+    margin: 3px 5px;
+    background-color: #6590b0;
+    -moz-border-radius:1em 1em 1em 1em;
+}
+
+.user-info-box table {
+    margin-bottom:0;
+}
+
+.user-info-box td,
+.user-info-box th{
+    font-size: 11px;
+    padding:0;
+    margin:0;
+    border:0;
+    white-space: nowrap;
+}
+
+.user-info-box th{
+    font-weight: bold;
+    text-align: right;
+    padding-right: 3px;
+}
+.user-info-box th:after{
+    content: ":";
+}
+
+.user-info-box .icone-pequeno {
+    text-decoration: none;
+    vertical-align: middle;
+    padding-left: 20px;
+    background-position: 2px center;
+    background-repeat: no-repeat;
+    line-height: 18px;
+    height: 18px;
+}
+
+.user-info-box .info{
+    margin-right: 70px;
+}
+
+.user-info-box a.sair {
+    float: right;
+    position: relative;
+    z-index: 999;
+}
+
+
+
+.user-info-box,
+.user-info-box a {
+    color: #FFF !important;
+    font-weight: bold;
+}
+
+/* quadro de avisos */
+#avisos {
+    float: left;
+    width: 500px;
+    padding: 0 20px;
+    font-size: 16px;
+}
+
+.art-button-wrapper  a{
+    line-height:25px;
+    text-decoration: none !important;
+    padding: 2px 5px 2px 23px;
+    background-position: 5px center;
+    background-repeat: no-repeat;
+}
+
+a.painel {
+    background-image: url('../../images/icons/painel-small.png');
+}
+
+a.turma {
+    background-image: url('../../images/icons/lista-turmas-small.png');
+}
+
+a.trocar-senha{
+    background-image: url('../../images/icons/key-small.png');
+}
+a.alterar-dados{
+    background-image: url('../../images/icons/user_edit-small.png');
+}
+a.dados-pessoais{
+    background-image: url('../../images/icons/user-small.png');
+}
+a.sair {
+    background-image: url('../../images/icons/logout-small.png');
+}
+
+.art-BlockContent a.dados-pessoais{
+    background-image: url('../../images/icons/user.png');
+    height: 16px;
+    line-height: 16px;
+}
+
+.art-button-wrapper a.voltar{
+    background-image: url('../../images/icons/resultset_previous-small.png');
+}
+
+.art-button-wrapper a.frequencia{
+    background-image: url('../../images/icons/lista-small.png');
+}
+
+.art-button-wrapper a.sumula{
+    background-image: url('../../images/icons/calendar-small.png');
+}
+.art-button-wrapper a.sumula-adicionar{
+    background-image: url('../../images/icons/calendar_add-small.png');
+}
+.art-button-wrapper a.sumula-apagar{
+    background-image: url('../../images/icons/calendar_delete-small.png');
+}
+.art-button-wrapper a.sumula-editar{
+    background-image: url('../../images/icons/calendar_edit-small.png');
+}
+
+.art-button-wrapper a.imprimir{
+    background-image: url('../../images/icons/printer-small.png');
+}
+.art-button-wrapper a.restante{
+    background-image: url('../../images/icons/calendar-small.png');
+}
+
+.art-button-wrapper a.filas{
+    background-image: url('../../images/icons/folder_table-small.png');
+}
+
+.art-button-wrapper a.notas{
+    background-image: url('../../images/icons/folder_table-small.png');
+}
+
+.ui-datepicker-trigger{
+    padding:5px;
+    border: 1px solid silver;
+    background-color: #EEE;
+}
+
+img.ui-datepicker-trigger{
+    padding:2px;
+    margin: 5px;
+    border: 1px solid silver;
+    background-color: #EEE;
+    vertical-align: middle;
+}
+
+input[type=submit] {
+    font-weight: bold;
+    color: green;
+    height: 26px;
+    line-height: 26px;
+}
+
+
+tr.even {
+    background-color:#eff1f5;
+}
+
+.notice  {
+    background:url("../../images/icons/tick-small.png") no-repeat scroll 10px 4px #FFFFCC;
+    border-bottom:1px solid #DDDDDD;
+    border-top:1px solid #DDDDDD;
+    margin:4px 0;
+    padding:4px 4px 4px 30px;
+    width:300px;
+}
+
+/* historico */
+.conceito1,
+.conceito4,
+.conceito7,
+.conceito8
+{
+    color:green;
+}
+
+.conceito2,
+.conceito3
+{
+    color:red;
+}
+
+/* icones */
+.book-small{
+    background-image: url('../../images/icons/book-small.png');
+}
+.lista-small{
+    background-image: url('../../images/icons/lista-small.png');
+}
+.lista2-small{
+    background-image: url('../../images/icons/lista2-small.png');
+}
+.foldertable-small{
+    background-image: url('../../images/icons/folder_table-small.png');
+}
+
+.contato-small{
+    background-image: url('../../images/icons/PostHeaderIcon.png');
+}
+
+.docs-small{
+    background-image: url('../../images/icons/menu-small.png');
+}
+
+.centro {
+    text-align: center;
+}
+
+.esquerda {
+    text-align: left;
+}
+
+.direita {
+    text-align: left;
+}
+
+/* Situacoes do aluno */
+.alunosituacao0 {
+    color: #8F9 !important;
+}
+
+.error{
+    font-size: 14px;
+    color: white;
+    background-color: red;
+    padding: 5px;
+}
+
+.adicionar{
+     background: url('../images/fila/linhas.gif');
+}
+
+.pager {
+        padding: 5px;
+        text-align: center;
+}
+
+.pager a, .pager a:visited, .pager a:link, .pager .current {
+        text-decoration: none;
+        padding: 3px 5px;
+        border: 1px solid #AAF;
+        background-color: #EEF;
+        vertical-align: middle;
+        height: 20px;
+        line-height: 20px;
+}
+.pager a:hover, .pager .current {
+        color: #FFF !important;
+        background-color: #88F !important;
+}

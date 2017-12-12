@@ -1,0 +1,1 @@
+<div style='color:white;background-color:red;'>Lembre-se de enviar ao DERCA a lista de ofertas através de memo para efeito de arquivamento.</div>

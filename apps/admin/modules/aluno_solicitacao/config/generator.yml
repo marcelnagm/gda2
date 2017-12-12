@@ -1,0 +1,30 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Tbalunosolicitacao
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Tbalunosolicitacao
+    plural:                Tbalunosolicitacaos
+    route_prefix:          tbalunosolicitacao
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: "Lista de Solicitações"
+        display: [=matricula,TipoCompleto,descricao,situacao,observacao,data_solicitacao,data_encerrado]
+        fields:
+          TipoCompleto: {label: Tipo}
+        actions: {}
+        object_actions:
+          Cancelar: {label: Cancelar Chamado}
+          Falta: {label: Cancelar Chamado por falta de informações}
+          Concluido: {label: Concluir Chamado}
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

@@ -1,0 +1,39 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbfila
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbfila
+    plural:                tbfilas
+    route_prefix:          tbfila
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [id_fila,matricula,Tbaluno,Tboferta,pontos,reprovacoes,_list_formando,_list_situacao,created_by,created_at]
+        fields:
+          id_fila: { label: ID }
+          list_formando: { label: Formando }
+          list_situacao: { label: Situação }
+
+        actions:
+          _new: ~
+          processos: { action: processosForm }
+          insereMultiplos: { action: Insere Muitos }
+          exportar: { action: exportar }
+          VerificaTrancamento: { action: VerificaTrancamento, label: Tranc. Autom. }
+          TrancamentoRemove: { action: TrancamentoRemove, label: Remover Trancados }
+        batch_actions:
+          mudarSituacao: { label: Mudar situação para... }
+          mudarOferta: { label: Mudar oferta... }
+          _delete: ~
+      filter:
+        display: [matricula,nome,id_periodo,cod_curso,cod_disciplina,turma,id_oferta,id_situacao,pontos,reprovacoes,formando,created_at,updated_at,created_by,updated_by]
+      form:    ~
+      edit:    ~
+      new:     ~

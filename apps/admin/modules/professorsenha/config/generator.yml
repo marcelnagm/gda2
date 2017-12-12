@@ -1,0 +1,24 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbprofessorsenha
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbprofessorsenha
+    plural:                tbprofessorsenhas
+    route_prefix:          tbprofessorsenha
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [Tbprofessor]
+        object_actions:
+          _delete: ~
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

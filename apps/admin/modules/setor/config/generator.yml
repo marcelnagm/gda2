@@ -1,0 +1,24 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbsetor
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbsetor
+    plural:                tbsetors
+    route_prefix:          tbsetor
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [=descricao,sucinto]
+      filter:  ~
+      form:
+        fields:
+          sucinto: {help: "Use a sigla do setor/departamento" }
+      edit:    ~
+      new:     ~

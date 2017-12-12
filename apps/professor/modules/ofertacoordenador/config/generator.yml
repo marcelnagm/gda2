@@ -1,0 +1,78 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tboferta
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tboferta
+    plural:                tbofertas
+    route_prefix:          tboferta
+    with_propel_route:     1
+    actions_base_class:    sfActions
+    config:
+      actions:        
+        _new: 
+           label: Adicionar Nova Oferta        
+      fields:  ~
+      list:
+        actions:
+          _new: ~
+          Anterior: { label: Ofertas anteriores, action: anterior }
+          Imprimir: { label: Imprimir oferta atual, action: export }
+        title: Ofertas
+        display: [Tbperiodo,_list_cod_disciplina,turma,_list_disciplina,_list_horario,vagas,_list_aceitos,_list_solicitacoes,_list_professores, tbpolos ]
+        fields:
+          cod_disciplina:    { label: Código }
+          list_disciplina:   { label: Disciplina }
+          list_horario:      { label: Horário }
+          list_aceitos: { label: Aceitos }
+          list_solicitacoes: { label: Pedidos }
+          list_professores: { label: Professores }
+          tbofertasituacao:  { label: Situacao }
+        object_actions:
+         _delete:
+            label: Deletar 
+            params: confirm=Deseja realmente Deletar a Oferta? 
+         _edit: ~
+         AdicionaHorario: {label: Editar Horários }
+      filter:
+        display: [id_oferta, id_turno, cod_disciplina ,id_matricula_prof , cod_curso , turma , id_sala , vagas , id_setor, id_polo  ]
+        fields:
+          id_sala: {label: Sala, help: "caso não tenha sido definida a sala ainda,click na lupa e digite Não definida e clique fora para filtrar pela sala não definida "  }
+          id_turno: {label: Turno}
+          id_matricula_prof: {label: Professor da disciplina , help: "Digite parte do nome da professor, todos os caracteres devem ser em caixa ALTA ,lembre-se de colocar SUBSTITUTO para professor substituto OU não definido" }
+          cod_curso: {help: Indica o Departamente que esta ofertando a disciplina}
+          id_setor: { label: Departamento , help: Setor que autoriza a oferta da disciplina para o semetre }          
+          cod_disciplina: {help: Digite parte do nome da disciplina ou o código todos os caracteres devem ser em caixa ALTA}
+      form:
+        display: [id_oferta, id_periodo , id_turno, cod_disciplina ,id_matricula_prof, id_matricula_prof2 , cod_curso ,cod_curso_destino , turma , id_sala , vagas , id_setor, id_polo ]
+        fields:
+          id_periodo: {label: Indica o Periodo da Oferta}
+          id_sala: {label: Sala, help: "caso não tenha sido definida a sala ainda,click na lupa e digite Não definida e clique fora para filtrar pela sala não definida "  }
+          id_turno: {label: Turno}
+          id_matricula_prof: {label: Professor da disciplina , help: "Digite parte do nome da professor, todos os caracteres devem ser em caixa ALTA ,lembre-se de colocar SUBSTITUTO para professor substituto OU não definido" }
+          id_matricula_prof2: {label: Professor auxiliar , help: "Digite parte do nome da professor, todos os caracteres devem ser em caixa ALTA ,lembre-se de colocar SUBSTITUTO para professor substituto OU não definido" }
+          cod_curso: {help: Indica o Departamente que esta ofertando a disciplina}
+          cod_curso_destino: {help: "Indica a que curso será ofertado a disciplina, Caso seja para o seu curso mantenha vazio,caso sejá para outro curso preencher com o curso a que é destinado esta disciplina "}
+          id_setor: { label: Departamento , help: Setor que autoriza a oferta da disciplina para o semetre }
+          dt_inicio: { help: Data em que as aulas da disciplina irão iniciar }
+          dt_fim:    { help: Data em que as aulas da disciplina irão terminar }
+          cod_disciplina: {help: Digite parte do nome da disciplina ou o código todos os caracteres devem ser em caixa ALTA}          
+          id situacao: {label: Situacao da Oferta, help: Não altere este campo ou sua oferta não será contabilizada}
+          turma: {help: "Digite uma LETRA para a turma , Ex: A , B"}
+          id_polo: {help: "Local onde será ofertada a disciplina"}
+      edit:
+        title: Editando Oferta
+        display: [id_oferta, id_periodo , id_turno, cod_disciplina ,id_matricula_prof, id_matricula_prof2 , cod_curso , turma , id_sala , vagas , id_setor,id_situacao, id_polo, dt_inicio, dt_fim  ]
+        actions:
+          _list: ~
+          _new:  { label: Adicionar outra oferta , action: new }
+          _save: ~
+      new:
+        title: Nova Oferta
+        display: [id_oferta, id_periodo , id_turno, cod_disciplina ,id_matricula_prof, id_matricula_prof2 , cod_curso ,cod_curso_destino , turma , id_sala , vagas , id_setor, id_polo, dt_inicio, dt_fim ]
+        actions:
+          _list: ~
+          _save: ~
+

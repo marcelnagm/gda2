@@ -1,0 +1,64 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tbturma
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tbturma
+    plural:                tbturmas
+    route_prefix:          tbturma
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+#        max_per_page: 100
+        batch_actions:
+          _delete: ~
+          TransferirHistorico: {label: Transferir para o historico turmas..}
+        #peer_method: doSelectJoinTbturmaProfessor
+        display: [=id_turma,Tbperiodo,cod_disciplina,turma,_list_disciplina,_list_professores,observacao,_list_qtde_alunos,notas_no_historico]
+        fields:
+          id_turma: {label: ID}
+          cod_disciplina: {label: Cód. D.}
+          list_disciplina: { label: Nome da disciplina }
+          list_professores: { label: Professor(es) }
+          observacao: { label: Obs. }
+          list_qtde_alunos: { label: Alunos }
+          porcentagemPreenchido: { label: % Preenchido }
+          notas_no_historico: {label: Transferido}
+        actions:
+          _new:         { label: Nova turma }
+          incluirAluno: { label: Incluir Aluno, action: incluirAluno }
+          insereMultiplos: { action: InsereMuitos }
+          transferirNotasHistorico: { label: Transferir notas para o histórico, action: transferirNotasHistorico, credentials: [atualizar_historico]}
+          exportar: { action: exportar }
+        object_actions:
+#          notas:     { label: Exibir Notas }
+          NotasEdit: { label: Editar Notas}
+          ImprimeNotas: { label: Notas}
+          frequencia: { label: Frequência }
+          SumulasImpressao: { label: Súmulas  }
+          contato: { label: Contatos }
+          transferirNotasHist: { label: Finalizar/Desfinalizar }
+#          Sumulas: { label: Sumulas desta turma  }
+#          cancelar:
+#            label: Cancelar Turma
+#            params: confirm=Deseja realmente cancelar a turma?
+#          remove:
+#            label: Retirar Alunos
+#            params: confirm=Deseja realmente remover os alunos?
+          _edit:      ~
+          _delete:    ~          
+      filter:
+        display: [id_periodo,cod_disciplina,turma,curso,matricula,tbturma_professor_list,notas_no_historico]
+      form: 
+        display: [id_periodo,cod_disciplina,turma,notas_no_historico,observacao,tbturma_professor_list]
+      edit:    ~
+      new:
+        actions:
+          _list: ~
+          _save: ~

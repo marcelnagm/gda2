@@ -1,0 +1,22 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           tblogradouro
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              tblogradouro
+    plural:                tblogradouros
+    route_prefix:          tblogradouro
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [=descricao,cep,Tbbairro,Tbcidade]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~
